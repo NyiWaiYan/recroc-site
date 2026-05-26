@@ -77,9 +77,14 @@ img { display: block; max-width: 100%; }
   font-size: 22px;
   font-weight: 500;
   letter-spacing: -0.02em;
-   width: 120px;
-  height: auto;
 }
+
+.logo img {
+  width: 120px;
+  height: auto;
+  display: block;
+}
+
 .logo-mark {
   color: var(--red);
   font-size: 14px;
