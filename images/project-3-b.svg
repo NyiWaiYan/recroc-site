@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg6" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1A0408"/>
+      <stop offset="100%" stop-color="#0F0F10"/>
+    </linearGradient>
+    <filter id="gn6"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0"/></filter>
+    <filter id="bl6"><feGaussianBlur stdDeviation="40"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg6)"/>
+  <!-- Apparel detail close-up - fabric folds -->
+  <path d="M 0 200 Q 400 150 800 250 T 1600 200 L 1600 700 Q 1200 750 800 650 T 0 700 Z" fill="#15161A"/>
+  <path d="M 0 250 Q 400 200 800 300 T 1600 250" stroke="#B11226" stroke-width="3" fill="none" opacity="0.5"/>
+  <path d="M 0 400 Q 400 350 800 450 T 1600 400" stroke="#7A0C1B" stroke-width="2" fill="none" opacity="0.6"/>
+  <path d="M 0 550 Q 400 500 800 600 T 1600 550" stroke="#B11226" stroke-width="3" fill="none" opacity="0.4"/>
+  <!-- Spot highlights -->
+  <ellipse cx="500" cy="350" rx="200" ry="80" fill="#B11226" opacity="0.3" filter="url(#bl6)"/>
+  <ellipse cx="1100" cy="550" rx="250" ry="100" fill="#FF3050" opacity="0.2" filter="url(#bl6)"/>
+  <!-- Light source -->
+  <circle cx="1300" cy="200" r="100" fill="#FFFFFF" opacity="0.1" filter="url(#bl6)"/>
+  <circle cx="1300" cy="200" r="40" fill="#B11226" opacity="0.4" filter="url(#bl6)"/>
+  <rect width="1600" height="900" filter="url(#gn6)" opacity="0.5"/>
+</svg>

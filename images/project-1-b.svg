@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#2A0610"/>
+      <stop offset="100%" stop-color="#0F0F10"/>
+    </linearGradient>
+    <radialGradient id="spot2" cx="30%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#B11226" stop-opacity="0.7"/>
+      <stop offset="100%" stop-color="#0F0F10" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="bl2"><feGaussianBlur stdDeviation="60"/></filter>
+    <filter id="gn2"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg2)"/>
+  <ellipse cx="500" cy="450" rx="600" ry="400" fill="url(#spot2)" filter="url(#bl2)"/>
+  <!-- Microphone close-up -->
+  <ellipse cx="800" cy="450" rx="140" ry="180" fill="#15161A"/>
+  <ellipse cx="800" cy="450" rx="120" ry="160" fill="#0A0A0B"/>
+  <ellipse cx="800" cy="450" rx="120" ry="160" fill="none" stroke="#B11226" stroke-width="2" opacity="0.4"/>
+  <!-- Grille pattern -->
+  <g opacity="0.4">
+    <line x1="700" y1="350" x2="900" y2="350" stroke="#2A2B2F" stroke-width="1"/>
+    <line x1="690" y1="400" x2="910" y2="400" stroke="#2A2B2F" stroke-width="1"/>
+    <line x1="685" y1="450" x2="915" y2="450" stroke="#2A2B2F" stroke-width="1"/>
+    <line x1="690" y1="500" x2="910" y2="500" stroke="#2A2B2F" stroke-width="1"/>
+    <line x1="700" y1="550" x2="900" y2="550" stroke="#2A2B2F" stroke-width="1"/>
+    <line x1="760" y1="280" x2="760" y2="620" stroke="#2A2B2F" stroke-width="1"/>
+    <line x1="800" y1="270" x2="800" y2="630" stroke="#2A2B2F" stroke-width="1"/>
+    <line x1="840" y1="280" x2="840" y2="620" stroke="#2A2B2F" stroke-width="1"/>
+  </g>
+  <!-- Stand -->
+  <rect x="790" y="630" width="20" height="270" fill="#1E1F22"/>
+  <!-- Highlight on mic -->
+  <ellipse cx="750" cy="380" rx="30" ry="40" fill="#B11226" opacity="0.3"/>
+  <!-- Light flares behind -->
+  <circle cx="1200" cy="200" r="60" fill="#B11226" opacity="0.6" filter="url(#bl2)"/>
+  <circle cx="1300" cy="600" r="80" fill="#FF3050" opacity="0.4" filter="url(#bl2)"/>
+  <rect width="1600" height="900" filter="url(#gn2)" opacity="0.5"/>
+</svg>

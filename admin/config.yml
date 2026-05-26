@@ -1,0 +1,90 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "site_content"
+    label: "Website Content"
+    files:
+      - label: "Homepage + Projects"
+        name: "homepage"
+        file: "projects.json"
+        format: "json"
+        fields:
+          - label: "Site Settings"
+            name: "site"
+            widget: "object"
+            fields:
+              - { label: "Logo Text", name: "logo_text", widget: "string", required: false }
+              - { label: "Logo Image", name: "logo_image", widget: "image", required: false }
+              - { label: "Hero Image", name: "hero_image", widget: "image", required: false }
+              - { label: "Hero Eyebrow", name: "hero_eyebrow", widget: "string", required: false }
+              - { label: "Hero Status", name: "hero_status", widget: "string", required: false }
+              - { label: "Hero Title Line 1", name: "hero_title_1", widget: "string", required: false }
+              - { label: "Hero Title Line 2", name: "hero_title_2", widget: "string", required: false }
+              - { label: "Hero Title Line 3", name: "hero_title_3", widget: "string", required: false }
+              - { label: "Hero Description", name: "hero_desc", widget: "text", required: false }
+              - { label: "About Lead", name: "about_lead", widget: "text", required: false }
+              - { label: "About Body", name: "about_body", widget: "text", required: false }
+              - { label: "Stat 1 Number", name: "stat_1_num", widget: "string", required: false }
+              - { label: "Stat 1 Label", name: "stat_1_label", widget: "string", required: false }
+              - { label: "Stat 2 Number", name: "stat_2_num", widget: "string", required: false }
+              - { label: "Stat 2 Label", name: "stat_2_label", widget: "string", required: false }
+              - { label: "Stat 3 Number", name: "stat_3_num", widget: "string", required: false }
+              - { label: "Stat 3 Label", name: "stat_3_label", widget: "string", required: false }
+              - { label: "Service 1 Title", name: "service_1_title", widget: "string", required: false }
+              - { label: "Service 1 Description", name: "service_1_desc", widget: "text", required: false }
+              - { label: "Service 2 Title", name: "service_2_title", widget: "string", required: false }
+              - { label: "Service 2 Description", name: "service_2_desc", widget: "text", required: false }
+              - { label: "Service 3 Title", name: "service_3_title", widget: "string", required: false }
+              - { label: "Service 3 Description", name: "service_3_desc", widget: "text", required: false }
+              - { label: "Service 4 Title", name: "service_4_title", widget: "string", required: false }
+              - { label: "Service 4 Description", name: "service_4_desc", widget: "text", required: false }
+              - { label: "Contact Email", name: "contact_email", widget: "string", required: false }
+              - { label: "Instagram URL", name: "social_instagram", widget: "string", required: false }
+              - { label: "Vimeo URL", name: "social_vimeo", widget: "string", required: false }
+              - { label: "YouTube URL", name: "social_youtube", widget: "string", required: false }
+              - { label: "Behance URL", name: "social_behance", widget: "string", required: false }
+              - { label: "Footer Location", name: "location", widget: "string", required: false }
+          - label: "Projects"
+            name: "projects"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.category}}"
+            fields:
+              - { label: "ID / Slug", name: "id", widget: "string", hint: "Use lowercase letters, numbers, and hyphens only. Example: neon-nights" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Client", name: "client", widget: "string", required: false }
+              - { label: "Year", name: "year", widget: "string", required: false }
+              - { label: "Category", name: "category", widget: "string", required: false }
+              - { label: "Tagline", name: "tagline", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Cover Image", name: "cover", widget: "image" }
+              - label: "Media"
+                name: "media"
+                widget: "list"
+                required: false
+                summary: "{{fields.type}}"
+                fields:
+                  - label: "Media Type"
+                    name: "type"
+                    widget: "select"
+                    options: ["image", "youtube"]
+                    default: "image"
+                  - { label: "Image", name: "url", widget: "image", required: false, hint: "Use this when Media Type is image." }
+                  - { label: "YouTube Video ID", name: "id", widget: "string", required: false, hint: "Use only the video ID, not the full URL." }
+              - label: "Credits"
+                name: "credits"
+                widget: "object"
+                required: false
+                fields:
+                  - { label: "Director", name: "Director", widget: "string", required: false }
+                  - { label: "DOP", name: "DOP", widget: "string", required: false }
+                  - { label: "Editor", name: "Editor", widget: "string", required: false }
+                  - { label: "Photographer", name: "Photographer", widget: "string", required: false }
+                  - { label: "Architect", name: "Architect", widget: "string", required: false }
+              - { label: "External Link", name: "external_link", widget: "string", required: false }

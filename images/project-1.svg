@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="p1-glow" cx="50%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#B11226" stop-opacity="0.7"/>
+      <stop offset="40%" stop-color="#7A0C1B" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0F0F10" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="p1-face" cx="50%" cy="40%" r="35%">
+      <stop offset="0%" stop-color="#FFB8A0" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#0F0F10" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="p1-bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1E0408"/>
+      <stop offset="100%" stop-color="#0F0F10"/>
+    </linearGradient>
+    <filter id="p1-blur"><feGaussianBlur stdDeviation="40"/></filter>
+    <filter id="p1-blurXL"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="p1-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="1000" fill="url(#p1-bg)"/>
+
+  <!-- Background red atmosphere -->
+  <ellipse cx="800" cy="500" rx="900" ry="500" fill="url(#p1-glow)" filter="url(#p1-blurXL)"/>
+
+  <!-- Neon vertical signs (out of focus) -->
+  <g opacity="0.7" filter="url(#p1-blur)">
+    <rect x="150" y="100" width="20" height="500" fill="#B11226"/>
+    <rect x="280" y="200" width="14" height="350" fill="#FF3050"/>
+    <rect x="1380" y="150" width="18" height="450" fill="#B11226"/>
+    <rect x="1480" y="80" width="14" height="600" fill="#FF3050"/>
+  </g>
+
+  <!-- Subject silhouette (centered figure) -->
+  <g>
+    <!-- Soft face light -->
+    <ellipse cx="800" cy="400" rx="220" ry="280" fill="url(#p1-face)" filter="url(#p1-blur)"/>
+    
+    <!-- Hooded figure silhouette -->
+    <path d="M 660 1000 L 660 700 Q 660 580 720 520 Q 720 460 760 420 Q 760 360 800 340 Q 840 360 840 420 Q 880 460 880 520 Q 940 580 940 700 L 940 1000 Z" fill="#080808"/>
+    
+    <!-- Hood edge -->
+    <path d="M 720 460 Q 720 380 800 340 Q 880 380 880 460 Q 870 480 800 470 Q 730 480 720 460 Z" fill="#0A0A0A"/>
+    
+    <!-- Rim light on shoulder -->
+    <path d="M 660 700 Q 660 600 700 540" stroke="#B11226" stroke-width="2" fill="none" opacity="0.6"/>
+    <path d="M 940 700 Q 940 600 900 540" stroke="#B11226" stroke-width="2" fill="none" opacity="0.6"/>
+  </g>
+
+  <!-- Foreground bokeh lights -->
+  <g opacity="0.8" filter="url(#p1-blur)">
+    <circle cx="200" cy="850" r="40" fill="#B11226"/>
+    <circle cx="400" cy="920" r="25" fill="#FF3050"/>
+    <circle cx="1200" cy="880" r="35" fill="#B11226"/>
+    <circle cx="1400" cy="930" r="28" fill="#FFD8A0" opacity="0.6"/>
+  </g>
+
+  <!-- Vignette -->
+  <radialGradient id="p1-vig" cx="50%" cy="50%" r="70%">
+    <stop offset="40%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.7"/>
+  </radialGradient>
+  <rect width="1600" height="1000" fill="url(#p1-vig)"/>
+
+  <!-- Grain -->
+  <rect width="1600" height="1000" filter="url(#p1-grain)" opacity="0.5"/>
+</svg>

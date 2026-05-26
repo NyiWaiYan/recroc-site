@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="rg5" cx="50%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#B11226" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#0F0F10"/>
+    </radialGradient>
+    <filter id="gn5"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter>
+    <filter id="bl5"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="blXL"><feGaussianBlur stdDeviation="80"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#rg5)"/>
+  <!-- Splashing water / particles -->
+  <g opacity="0.6">
+    <circle cx="200" cy="200" r="6" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="300" cy="150" r="4" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="450" cy="250" r="8" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="600" cy="180" r="5" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="800" cy="280" r="7" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="1000" cy="200" r="4" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="1200" cy="240" r="6" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="1400" cy="180" r="5" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="150" cy="600" r="7" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="350" cy="700" r="4" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="550" cy="650" r="6" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="750" cy="720" r="5" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="950" cy="680" r="8" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="1150" cy="730" r="4" fill="#FFFFFF" filter="url(#bl5)"/>
+    <circle cx="1350" cy="660" r="6" fill="#FFFFFF" filter="url(#bl5)"/>
+  </g>
+  <!-- Big light burst center -->
+  <circle cx="800" cy="450" r="200" fill="#FFFFFF" opacity="0.1" filter="url(#blXL)"/>
+  <circle cx="800" cy="450" r="80" fill="#FF3050" opacity="0.3" filter="url(#blXL)"/>
+  <!-- Center subject blur -->
+  <ellipse cx="800" cy="500" rx="180" ry="280" fill="#0A0A0B" opacity="0.8" filter="url(#bl5)"/>
+  <ellipse cx="800" cy="500" rx="120" ry="200" fill="#1E1F22" opacity="0.7"/>
+  <!-- Diagonal streaks -->
+  <line x1="0" y1="200" x2="1600" y2="700" stroke="#FFFFFF" stroke-width="2" opacity="0.2" filter="url(#bl5)"/>
+  <line x1="0" y1="700" x2="1600" y2="200" stroke="#B11226" stroke-width="3" opacity="0.3" filter="url(#bl5)"/>
+  <rect width="1600" height="900" filter="url(#gn5)" opacity="0.5"/>
+</svg>

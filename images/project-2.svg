@@ -1,0 +1,115 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="p2-sky" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A1A1F"/>
+      <stop offset="50%" stop-color="#0F0F10"/>
+      <stop offset="100%" stop-color="#0A0A0B"/>
+    </linearGradient>
+    <linearGradient id="p2-light" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B11226" stop-opacity="0.3"/>
+      <stop offset="50%" stop-color="#7A0C1B" stop-opacity="0.5"/>
+      <stop offset="100%" stop-color="#B11226" stop-opacity="0.2"/>
+    </linearGradient>
+    <linearGradient id="p2-wall" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1E1F22"/>
+      <stop offset="50%" stop-color="#2A2B2F"/>
+      <stop offset="100%" stop-color="#15161A"/>
+    </linearGradient>
+    <linearGradient id="p2-wallDark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#15161A"/>
+      <stop offset="100%" stop-color="#0F0F10"/>
+    </linearGradient>
+    <filter id="p2-blur"><feGaussianBlur stdDeviation="30"/></filter>
+    <filter id="p2-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0"/>
+    </filter>
+  </defs>
+
+  <!-- Sky -->
+  <rect width="1600" height="1000" fill="url(#p2-sky)"/>
+
+  <!-- Atmospheric red haze on horizon -->
+  <ellipse cx="800" cy="400" rx="1000" ry="120" fill="url(#p2-light)" filter="url(#p2-blur)"/>
+
+  <!-- Brutalist building - main mass -->
+  <g>
+    <!-- Left tower -->
+    <polygon points="100,1000 100,300 500,250 500,1000" fill="url(#p2-wall)"/>
+    <!-- Right tower (further back) -->
+    <polygon points="900,1000 900,400 1300,420 1300,1000" fill="url(#p2-wallDark)"/>
+    <!-- Connecting volume -->
+    <polygon points="500,1000 500,500 900,520 900,1000" fill="#1A1B1F"/>
+    
+    <!-- Window grid on left tower -->
+    <g fill="#0A0A0B">
+      <rect x="150" y="370" width="60" height="40"/>
+      <rect x="240" y="370" width="60" height="40"/>
+      <rect x="330" y="370" width="60" height="40"/>
+      <rect x="420" y="370" width="60" height="40"/>
+      
+      <rect x="150" y="460" width="60" height="40"/>
+      <rect x="240" y="460" width="60" height="40"/>
+      <rect x="330" y="460" width="60" height="40"/>
+      <rect x="420" y="460" width="60" height="40"/>
+      
+      <rect x="150" y="550" width="60" height="40"/>
+      <rect x="240" y="550" width="60" height="40"/>
+      <rect x="330" y="550" width="60" height="40"/>
+      <rect x="420" y="550" width="60" height="40"/>
+      
+      <rect x="150" y="640" width="60" height="40"/>
+      <rect x="240" y="640" width="60" height="40"/>
+      <rect x="330" y="640" width="60" height="40"/>
+      <rect x="420" y="640" width="60" height="40"/>
+      
+      <rect x="150" y="730" width="60" height="40"/>
+      <rect x="240" y="730" width="60" height="40"/>
+      <rect x="330" y="730" width="60" height="40"/>
+      <rect x="420" y="730" width="60" height="40"/>
+    </g>
+
+    <!-- A few lit windows -->
+    <rect x="240" y="460" width="60" height="40" fill="#FFD8A0" opacity="0.5"/>
+    <rect x="330" y="640" width="60" height="40" fill="#B11226" opacity="0.6"/>
+    <rect x="420" y="550" width="60" height="40" fill="#FFD8A0" opacity="0.4"/>
+    <rect x="150" y="730" width="60" height="40" fill="#FFD8A0" opacity="0.6"/>
+
+    <!-- Right tower windows -->
+    <g fill="#0A0A0B">
+      <rect x="950" y="500" width="50" height="35"/>
+      <rect x="1030" y="500" width="50" height="35"/>
+      <rect x="1110" y="500" width="50" height="35"/>
+      <rect x="1190" y="500" width="50" height="35"/>
+      
+      <rect x="950" y="580" width="50" height="35"/>
+      <rect x="1030" y="580" width="50" height="35"/>
+      <rect x="1110" y="580" width="50" height="35"/>
+      <rect x="1190" y="580" width="50" height="35"/>
+      
+      <rect x="950" y="660" width="50" height="35"/>
+      <rect x="1030" y="660" width="50" height="35"/>
+      <rect x="1110" y="660" width="50" height="35"/>
+      <rect x="1190" y="660" width="50" height="35"/>
+    </g>
+    <rect x="1110" y="580" width="50" height="35" fill="#FFD8A0" opacity="0.4"/>
+    <rect x="1030" y="660" width="50" height="35" fill="#FFD8A0" opacity="0.3"/>
+
+    <!-- Side light edge on building -->
+    <rect x="495" y="250" width="5" height="750" fill="#B11226" opacity="0.3"/>
+    <rect x="895" y="400" width="5" height="600" fill="#B11226" opacity="0.25"/>
+  </g>
+
+  <!-- Foreground darkness -->
+  <rect x="0" y="850" width="1600" height="150" fill="#0A0A0B"/>
+
+  <!-- Vignette -->
+  <radialGradient id="p2-vig" cx="50%" cy="50%" r="75%">
+    <stop offset="40%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.7"/>
+  </radialGradient>
+  <rect width="1600" height="1000" fill="url(#p2-vig)"/>
+
+  <!-- Grain -->
+  <rect width="1600" height="1000" filter="url(#p2-grain)" opacity="0.5"/>
+</svg>

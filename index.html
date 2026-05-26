@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Recroc — Visual Storytelling Studio</title>
+<meta name="description" content="Recroc is a US-based video & photography studio crafting cinematic stories that move people.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+<!-- Grain overlay -->
+<div class="grain" aria-hidden="true"></div>
+
+<!-- Navigation -->
+<header class="nav">
+  <a href="#top" class="logo">
+    <span class="logo-mark">●</span>
+    <span class="logo-text" id="logo-text">Recroc</span><sup id="logo-sup">®</sup>
+  </a>
+  <nav class="nav-links">
+    <a href="#work">Work</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <a href="#contact" class="nav-cta">
+    <span>Start a project</span>
+    <span class="arrow">→</span>
+  </a>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="top">
+  <div class="hero-bg" id="hero-bg" aria-hidden="true"></div>
+  <div class="hero-vignette" aria-hidden="true"></div>
+
+  <div class="hero-inner">
+    <div class="hero-grid">
+      <div class="hero-meta">
+        <span class="meta-line"></span>
+        <span id="hero-eyebrow"></span>
+      </div>
+      <div class="hero-status">
+        <span class="status-dot"></span>
+        <span id="hero-status"></span>
+      </div>
+    </div>
+
+    <h1 class="hero-title">
+      <span class="hero-line"><span id="hero-t1">Stories</span></span>
+      <span class="hero-line"><em id="hero-t2-em">that</em> <span id="hero-t2">move</span></span>
+      <span class="hero-line"><span id="hero-t3">people.</span></span>
+    </h1>
+
+    <div class="hero-bottom">
+      <p class="hero-desc">
+        <span id="hero-desc-text"></span>
+      </p>
+      <div class="hero-scroll">
+        <span class="scroll-line"></span>
+        <span>Scroll</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="marquee">
+    <div class="marquee-track">
+      <span>VIDEO PRODUCTION</span><span class="dot">●</span>
+      <span>PHOTOGRAPHY</span><span class="dot">●</span>
+      <span>BRAND FILMS</span><span class="dot">●</span>
+      <span>DOCUMENTARY</span><span class="dot">●</span>
+      <span>COMMERCIALS</span><span class="dot">●</span>
+      <span>VIDEO PRODUCTION</span><span class="dot">●</span>
+      <span>PHOTOGRAPHY</span><span class="dot">●</span>
+      <span>BRAND FILMS</span><span class="dot">●</span>
+      <span>DOCUMENTARY</span><span class="dot">●</span>
+      <span>COMMERCIALS</span><span class="dot">●</span>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section class="work" id="work">
+  <div class="section-head">
+    <div class="section-label">
+      <span class="label-num">01</span>
+      <span>Selected Work</span>
+    </div>
+    <h2 class="section-title">A reel of <em>recent</em> obsessions.</h2>
+  </div>
+
+  <div class="projects-grid" id="projects-grid">
+    <!-- Projects injected here -->
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="section-head">
+    <div class="section-label">
+      <span class="label-num">02</span>
+      <span>Capabilities</span>
+    </div>
+    <h2 class="section-title">What we <em>do</em>.</h2>
+  </div>
+
+  <div class="services-list">
+    <div class="service">
+      <span class="service-num">/ 01</span>
+      <h3 id="srv1t"></h3>
+      <p id="srv1d"></p>
+    </div>
+    <div class="service">
+      <span class="service-num">/ 02</span>
+      <h3 id="srv2t"></h3>
+      <p id="srv2d"></p>
+    </div>
+    <div class="service">
+      <span class="service-num">/ 03</span>
+      <h3 id="srv3t"></h3>
+      <p id="srv3d"></p>
+    </div>
+    <div class="service">
+      <span class="service-num">/ 04</span>
+      <h3 id="srv4t"></h3>
+      <p id="srv4d"></p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-label">
+      <span class="label-num">03</span>
+      <span>About</span>
+    </div>
+    <div class="about-body">
+      <p class="about-lead">
+        <span id="about-lead-text"></span>
+      </p>
+      <p>
+        <span id="about-body-text"></span>
+      </p>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num" id="stat1n"></span>
+          <span class="stat-label" id="stat1l"></span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="stat2n"></span>
+          <span class="stat-label" id="stat2l"></span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="stat3n"></span>
+          <span class="stat-label" id="stat3l"></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="section-label">
+      <span class="label-num">04</span>
+      <span>Get in touch</span>
+    </div>
+    <h2 class="contact-title">
+      Let's make <br><em>something</em> worth <br>watching.
+    </h2>
+    <a href="#" class="contact-email" id="contact-email-link">
+      <span id="contact-email-text"></span>
+      <span class="arrow">→</span>
+    </a>
+    <div class="contact-social">
+      <a href="#" id="soc-ig">Instagram</a>
+      <a href="#" id="soc-vim">Vimeo</a>
+      <a href="#" id="soc-yt">YouTube</a>
+      <a href="#" id="soc-beh">Behance</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="footer-row">
+    <span>© <span id="footer-logo">Recroc</span> Studio, <span id="year"></span></span>
+    <span id="footer-location"></span>
+    <span>v1.0</span>
+  </div>
+</footer>
+
+<!-- PROJECT MODAL -->
+<div class="modal" id="project-modal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+  <div class="modal-shell">
+    <button class="modal-close" data-close aria-label="Close">
+      <span class="close-text">Close</span>
+      <span class="close-x">×</span>
+    </button>
+    <div class="modal-content" id="modal-content">
+      <!-- Injected -->
+    </div>
+  </div>
+</div>
+
+
+<script>
+  if (window.netlifyIdentity) {
+    window.netlifyIdentity.on("init", user => {
+      if (!user && window.location.hash.includes("invite_token")) {
+        window.netlifyIdentity.open("signup");
+      }
+    });
+  }
+</script>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="spot" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#B11226" stop-opacity="0.55"/>
+      <stop offset="35%" stop-color="#7A0C1B" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#0F0F10" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="floor" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0F0F10"/>
+      <stop offset="100%" stop-color="#1E1F22"/>
+    </linearGradient>
+    <linearGradient id="beam1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B11226" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#B11226" stop-opacity="0.18"/>
+      <stop offset="100%" stop-color="#B11226" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="beam2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur"><feGaussianBlur stdDeviation="30"/></filter>
+    <filter id="blurBig"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/>
+    </filter>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1920" height="1080" fill="url(#floor)"/>
+
+  <!-- Atmospheric red glow -->
+  <ellipse cx="960" cy="500" rx="900" ry="400" fill="url(#spot)" filter="url(#blurBig)"/>
+
+  <!-- Distant city silhouette -->
+  <g opacity="0.4">
+    <rect x="0" y="620" width="120" height="180" fill="#0A0A0B"/>
+    <rect x="130" y="580" width="80" height="220" fill="#0A0A0B"/>
+    <rect x="220" y="600" width="140" height="200" fill="#0A0A0B"/>
+    <rect x="370" y="540" width="100" height="260" fill="#0A0A0B"/>
+    <rect x="480" y="570" width="160" height="230" fill="#0A0A0B"/>
+    <rect x="650" y="510" width="120" height="290" fill="#0A0A0B"/>
+    <rect x="780" y="550" width="200" height="250" fill="#0A0A0B"/>
+    <rect x="990" y="490" width="140" height="310" fill="#0A0A0B"/>
+    <rect x="1140" y="530" width="110" height="270" fill="#0A0A0B"/>
+    <rect x="1260" y="560" width="180" height="240" fill="#0A0A0B"/>
+    <rect x="1450" y="510" width="100" height="290" fill="#0A0A0B"/>
+    <rect x="1560" y="580" width="140" height="220" fill="#0A0A0B"/>
+    <rect x="1710" y="540" width="120" height="260" fill="#0A0A0B"/>
+    <rect x="1840" y="600" width="80" height="200" fill="#0A0A0B"/>
+  </g>
+
+  <!-- Tiny window lights on buildings -->
+  <g opacity="0.7">
+    <circle cx="50" cy="680" r="2" fill="#FFD8A0"/>
+    <circle cx="170" cy="640" r="2" fill="#FFD8A0"/>
+    <circle cx="280" cy="660" r="2" fill="#B11226"/>
+    <circle cx="420" cy="600" r="2" fill="#FFD8A0"/>
+    <circle cx="560" cy="630" r="2" fill="#FFD8A0"/>
+    <circle cx="700" cy="570" r="2" fill="#B11226"/>
+    <circle cx="850" cy="610" r="2" fill="#FFD8A0"/>
+    <circle cx="1050" cy="540" r="2" fill="#FFD8A0"/>
+    <circle cx="1190" cy="580" r="2" fill="#B11226"/>
+    <circle cx="1330" cy="610" r="2" fill="#FFD8A0"/>
+    <circle cx="1490" cy="560" r="2" fill="#FFD8A0"/>
+    <circle cx="1620" cy="630" r="2" fill="#B11226"/>
+    <circle cx="1760" cy="600" r="2" fill="#FFD8A0"/>
+  </g>
+
+  <!-- Light beams from above -->
+  <polygon points="400,0 480,0 750,1080 600,1080" fill="url(#beam2)" opacity="0.6"/>
+  <polygon points="1200,0 1280,0 1100,1080 950,1080" fill="url(#beam1)" opacity="0.7"/>
+  <polygon points="1600,0 1680,0 1500,1080 1350,1080" fill="url(#beam2)" opacity="0.4"/>
+
+  <!-- Atmospheric haze foreground -->
+  <ellipse cx="960" cy="900" rx="1200" ry="200" fill="#B11226" opacity="0.08" filter="url(#blurBig)"/>
+
+  <!-- Lens flare hint -->
+  <circle cx="1100" cy="420" r="40" fill="#B11226" opacity="0.4" filter="url(#blur)"/>
+  <circle cx="1100" cy="420" r="12" fill="#FFFFFF" opacity="0.3" filter="url(#blur)"/>
+
+  <!-- Vignette -->
+  <radialGradient id="vig" cx="50%" cy="50%" r="75%">
+    <stop offset="40%" stop-color="#000000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000000" stop-opacity="0.85"/>
+  </radialGradient>
+  <rect width="1920" height="1080" fill="url(#vig)"/>
+
+  <!-- Grain -->
+  <rect width="1920" height="1080" filter="url(#grain)" opacity="0.6"/>
+</svg>

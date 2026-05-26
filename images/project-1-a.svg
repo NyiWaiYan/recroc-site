@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1A0408"/>
+      <stop offset="100%" stop-color="#0A0204"/>
+    </linearGradient>
+    <radialGradient id="lamp" cx="50%" cy="30%" r="40%">
+      <stop offset="0%" stop-color="#FFB060" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0F0F10" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="bl"><feGaussianBlur stdDeviation="50"/></filter>
+    <filter id="gn"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.2 0"/></filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#bg)"/>
+  <ellipse cx="800" cy="250" rx="500" ry="300" fill="url(#lamp)" filter="url(#bl)"/>
+  <!-- Street with reflections -->
+  <rect x="0" y="600" width="1600" height="300" fill="#0A0A0B"/>
+  <!-- Wet street reflection -->
+  <ellipse cx="800" cy="700" rx="400" ry="60" fill="#B11226" opacity="0.2" filter="url(#bl)"/>
+  <ellipse cx="400" cy="780" rx="200" ry="30" fill="#FFB060" opacity="0.3" filter="url(#bl)"/>
+  <ellipse cx="1200" cy="780" rx="200" ry="30" fill="#FFB060" opacity="0.3" filter="url(#bl)"/>
+  <!-- Building silhouettes -->
+  <rect x="0" y="300" width="300" height="300" fill="#080808"/>
+  <rect x="350" y="200" width="250" height="400" fill="#0A0A0B"/>
+  <rect x="650" y="350" width="300" height="250" fill="#080808"/>
+  <rect x="1000" y="180" width="280" height="420" fill="#0A0A0B"/>
+  <rect x="1330" y="320" width="270" height="280" fill="#080808"/>
+  <!-- Window lights -->
+  <rect x="100" y="400" width="20" height="30" fill="#FFB060" opacity="0.7"/>
+  <rect x="200" y="450" width="20" height="30" fill="#B11226" opacity="0.6"/>
+  <rect x="400" y="350" width="15" height="25" fill="#FFB060" opacity="0.6"/>
+  <rect x="500" y="450" width="15" height="25" fill="#FFB060" opacity="0.5"/>
+  <rect x="1080" y="280" width="20" height="30" fill="#FFB060" opacity="0.6"/>
+  <rect x="1180" y="400" width="20" height="30" fill="#B11226" opacity="0.5"/>
+  <rect x="1400" y="450" width="15" height="25" fill="#FFB060" opacity="0.6"/>
+  <!-- Street lamp -->
+  <line x1="800" y1="900" x2="800" y2="400" stroke="#1E1F22" stroke-width="6"/>
+  <circle cx="800" cy="400" r="20" fill="#FFB060" opacity="0.9"/>
+  <circle cx="800" cy="400" r="60" fill="#FFB060" opacity="0.3" filter="url(#bl)"/>
+  <rect width="1600" height="900" filter="url(#gn)" opacity="0.5"/>
+</svg>

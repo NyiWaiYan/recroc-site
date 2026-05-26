@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <radialGradient id="p3-glow" cx="60%" cy="50%" r="60%">
+      <stop offset="0%" stop-color="#B11226" stop-opacity="0.8"/>
+      <stop offset="50%" stop-color="#7A0C1B" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#0F0F10" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="p3-bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F0F10"/>
+      <stop offset="100%" stop-color="#1A0408"/>
+    </linearGradient>
+    <linearGradient id="p3-streak1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#B11226" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FF3050" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#B11226" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="p3-streak2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FFFFFF" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#FFFFFF" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#FFFFFF" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="p3-figureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1F22"/>
+      <stop offset="100%" stop-color="#0A0A0B"/>
+    </linearGradient>
+    <filter id="p3-blur"><feGaussianBlur stdDeviation="3"/></filter>
+    <filter id="p3-blurMd"><feGaussianBlur stdDeviation="20"/></filter>
+    <filter id="p3-blurXL"><feGaussianBlur stdDeviation="80"/></filter>
+    <filter id="p3-grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" stitchTiles="stitch"/>
+      <feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.18 0"/>
+    </filter>
+  </defs>
+
+  <!-- Base -->
+  <rect width="1600" height="1000" fill="url(#p3-bg)"/>
+
+  <!-- Big atmospheric glow -->
+  <ellipse cx="1000" cy="500" rx="900" ry="500" fill="url(#p3-glow)" filter="url(#p3-blurXL)"/>
+
+  <!-- Running figure - silhouette in motion -->
+  <g>
+    <!-- Trailing motion blur copies -->
+    <g opacity="0.15" filter="url(#p3-blurMd)">
+      <path d="M 400 500 Q 420 420 460 380 L 480 360 L 500 340 L 520 380 L 540 420 L 560 460 L 580 500 L 560 560 L 540 620 L 520 680 L 500 740 L 480 800 L 460 850 L 440 880 L 420 850" fill="#B11226"/>
+    </g>
+    <g opacity="0.25" filter="url(#p3-blur)">
+      <path d="M 500 500 Q 520 420 560 380 L 580 360 L 600 340 L 620 380 L 640 420 L 660 460 L 680 500 L 660 560 L 640 620 L 620 680 L 600 740 L 580 800 L 560 850 L 540 880 L 520 850" fill="#B11226"/>
+    </g>
+    <g opacity="0.4" filter="url(#p3-blur)">
+      <path d="M 600 500 Q 620 420 660 380 L 680 360 L 700 340 L 720 380 L 740 420 L 760 460 L 780 500 L 760 560 L 740 620 L 720 680 L 700 740 L 680 800 L 660 850 L 640 880 L 620 850" fill="#0A0A0B"/>
+    </g>
+    
+    <!-- Main figure - athletic runner silhouette -->
+    <g fill="url(#p3-figureGrad)">
+      <!-- Head -->
+      <circle cx="780" cy="280" r="45"/>
+      <!-- Neck -->
+      <rect x="765" y="320" width="30" height="30"/>
+      <!-- Torso -->
+      <path d="M 720 350 L 840 350 L 850 540 L 820 580 L 760 580 L 730 540 Z"/>
+      <!-- Right arm (forward) -->
+      <path d="M 840 400 L 920 350 L 980 280 L 1000 250 L 1010 290 L 980 350 L 940 400 L 880 470 Z"/>
+      <!-- Left arm (back, bent) -->
+      <path d="M 720 400 L 660 480 L 600 540 L 580 580 L 620 580 L 680 540 L 720 480 Z"/>
+      <!-- Right leg (forward, lifted) -->
+      <path d="M 820 580 L 900 620 L 980 700 L 1020 750 L 1000 780 L 940 720 L 880 680 L 820 660 Z"/>
+      <!-- Left leg (planted) -->
+      <path d="M 760 580 L 720 720 L 700 850 L 720 880 L 760 880 L 780 850 L 800 720 L 800 600 Z"/>
+    </g>
+
+    <!-- Rim light on figure -->
+    <path d="M 820 350 L 850 540" stroke="#B11226" stroke-width="3" opacity="0.6" filter="url(#p3-blur)"/>
+    <path d="M 780 235 L 820 280" stroke="#FF3050" stroke-width="3" opacity="0.5" filter="url(#p3-blur)"/>
+  </g>
+
+  <!-- Speed streaks -->
+  <rect x="0" y="200" width="1600" height="3" fill="url(#p3-streak1)" opacity="0.7" filter="url(#p3-blur)"/>
+  <rect x="0" y="450" width="1600" height="4" fill="url(#p3-streak2)" opacity="0.5" filter="url(#p3-blur)"/>
+  <rect x="0" y="700" width="1600" height="2" fill="url(#p3-streak1)" opacity="0.6" filter="url(#p3-blur)"/>
+  <rect x="0" y="850" width="1600" height="3" fill="url(#p3-streak2)" opacity="0.4" filter="url(#p3-blur)"/>
+  <rect x="0" y="330" width="1600" height="2" fill="url(#p3-streak1)" opacity="0.4" filter="url(#p3-blur)"/>
+
+  <!-- Particles -->
+  <g opacity="0.7">
+    <circle cx="200" cy="300" r="3" fill="#FF3050"/>
+    <circle cx="350" cy="450" r="2" fill="#FFFFFF"/>
+    <circle cx="1200" cy="250" r="3" fill="#FF3050"/>
+    <circle cx="1350" cy="500" r="2" fill="#FFFFFF"/>
+    <circle cx="1450" cy="350" r="4" fill="#B11226"/>
+    <circle cx="150" cy="600" r="2" fill="#FFFFFF"/>
+    <circle cx="1500" cy="700" r="3" fill="#FF3050"/>
+  </g>
+
+  <!-- Vignette -->
+  <radialGradient id="p3-vig" cx="50%" cy="50%" r="75%">
+    <stop offset="40%" stop-color="#000" stop-opacity="0"/>
+    <stop offset="100%" stop-color="#000" stop-opacity="0.65"/>
+  </radialGradient>
+  <rect width="1600" height="1000" fill="url(#p3-vig)"/>
+
+  <!-- Grain -->
+  <rect width="1600" height="1000" filter="url(#p3-grain)" opacity="0.5"/>
+</svg>

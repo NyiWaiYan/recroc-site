@@ -1,0 +1,39 @@
+{
+  "site": {
+    "logo_text": "Recroc",
+    "hero_image": "images/hero.svg",
+    "hero_eyebrow": "NYC · LA · EST. 2021",
+    "hero_status": "Booking 2026 projects",
+    "hero_title_1": "Stories",
+    "hero_title_2": "that move",
+    "hero_title_3": "people.",
+    "hero_desc": "A US-based visual studio working at the intersection of cinema, photography, and brand storytelling — for clients who want to be remembered.",
+    "about_lead": "Recroc is a small, focused studio with bases in New York and Los Angeles. We work with brands, artists, and architects who care about how things look — and how they feel.",
+    "about_body": "Every project starts with a question, not a brief. We're interested in restraint, in patience, and in the kind of craft that holds up at 4K and at thumbnail size.",
+    "stat_1_num": "60+",
+    "stat_1_label": "Projects shipped",
+    "stat_2_num": "24",
+    "stat_2_label": "Awards & features",
+    "stat_3_num": "04",
+    "stat_3_label": "Years in the craft",
+    "service_1_title": "Video Production",
+    "service_1_desc": "Cinematic. Professional. From concept to color, end-to-end direction for brand films, music videos, and commercials.",
+    "service_2_title": "Photography",
+    "service_2_desc": "Editorial, architectural, and commercial photography. Composition with intent.",
+    "service_3_title": "Branding",
+    "service_3_desc": "Identity, strategy, impact. Visual systems that hold up across every surface.",
+    "service_4_title": "Visual Storytelling",
+    "service_4_desc": "We don't just make content. We trace moments, fast ones, quiet ones.",
+    "contact_email": "hello@recroc.studio",
+    "social_instagram": "#",
+    "social_vimeo": "#",
+    "social_youtube": "#",
+    "social_behance": "#",
+    "location": "Made in the USA"
+  },
+  "projects": [
+    {"id":"neon-nights","title":"Neon Nights","client":"Aurora Records","year":"2025","category":"Music Video","tagline":"A pulse through the city after dark.","description":"Cinematic music video shot over three nights across downtown Los Angeles.","cover":"images/project-1.svg","media":[{"type":"youtube","id":"dQw4w9WgXcQ"},{"type":"image","url":"images/project-1-a.svg"},{"type":"image","url":"images/project-1-b.svg"}],"credits":{"Director":"Recroc Studio","DOP":"Internal Team","Editor":"Recroc Studio"}},
+    {"id":"concrete-bloom","title":"Concrete Bloom","client":"Form Architects","year":"2024","category":"Architecture","tagline":"Brutalist forms, softened by light.","description":"Architectural photography commission documenting a residential brutalist project in Chicago.","cover":"images/project-2.svg","media":[{"type":"image","url":"images/project-2-a.svg"},{"type":"image","url":"images/project-2-b.svg"}],"credits":{"Photographer":"Recroc Studio","Architect":"Form Architects"}},
+    {"id":"pulse","title":"Pulse","client":"Kinetic Apparel","year":"2024","category":"Commercial","tagline":"Movement, distilled.","description":"30-second hero spot for a performance apparel launch.","cover":"images/project-3.svg","media":[{"type":"youtube","id":"ScMzIvxBSi4"},{"type":"image","url":"images/project-3-a.svg"},{"type":"image","url":"images/project-3-b.svg"}],"credits":{"Director":"Recroc Studio","DOP":"Internal Team"}}
+  ]
+}
