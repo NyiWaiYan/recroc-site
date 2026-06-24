@@ -6,6 +6,8 @@ const state = {
   projects: [],
 };
 
+let lastFocusedElement = null;
+
 const $ = (s, p = document) => p.querySelector(s);
 const $$ = (s, p = document) => [...p.querySelectorAll(s)];
 const escapeHtml = (str) => {
@@ -44,6 +46,11 @@ function applySiteSettings(s) {
   const heroBg = $('#hero-bg');
   if (heroBg && s.hero_image) heroBg.style.backgroundImage = `url("${s.hero_image}")`;
   // Logo: image if uploaded, else text
+  const currentLogoImage = $('.logo-image');
+  if (currentLogoImage && s.logo_image) {
+    currentLogoImage.src = s.logo_image;
+    currentLogoImage.alt = s.logo_text || 'Recroc';
+  }
   if (s.logo_image) {
     const logoEl = document.getElementById('logo-text');
     const supEl = document.getElementById('logo-sup');
@@ -82,7 +89,16 @@ function applySiteSettings(s) {
 function renderProjects() {
   const grid = $('#projects-grid');
   grid.innerHTML = state.projects.map((p, i) => `
-    <article class="project-card" data-id="${escapeHtml(p.id)}" style="animation: fadeIn 0.8s var(--ease) ${0.2 + i * 0.12}s backwards;">
+    <article
+      class="project-card"
+      data-id="${escapeHtml(p.id)}"
+      role="button"
+      tabindex="0"
+      aria-haspopup="dialog"
+      aria-controls="project-modal"
+      aria-label="Open project ${escapeHtml(p.title)}"
+      style="animation: fadeIn 0.8s var(--ease) ${0.2 + i * 0.12}s backwards;"
+    >
       <img class="project-cover" src="${escapeHtml(p.cover)}" alt="${escapeHtml(p.title)}" loading="lazy">
       <span class="project-view">View <span>↗</span></span>
       <div class="project-overlay">
@@ -97,7 +113,14 @@ function renderProjects() {
   `).join('');
 
   $$('.project-card').forEach(card => {
-    card.addEventListener('click', () => openProject(card.dataset.id));
+    const open = () => openProject(card.dataset.id);
+    card.addEventListener('click', open);
+    card.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open();
+      }
+    });
   });
 }
 
@@ -133,6 +156,8 @@ function buildHeroHtml(project) {
 function openProject(id) {
   const project = state.projects.find(p => p.id === id);
   if (!project) return;
+
+  lastFocusedElement = document.activeElement instanceof HTMLElement ? document.activeElement : null;
 
   const credits = project.credits || {};
   const creditsHtml = Object.keys(credits).filter(k => credits[k]).map(k => `
@@ -178,6 +203,9 @@ function openProject(id) {
   document.body.style.overflow = 'hidden';
   $('#modal-content').scrollTop = 0;
 
+  const closeButton = $('#project-modal .modal-close');
+  if (closeButton) closeButton.focus({ preventScroll: true });
+
   history.replaceState(null, '', `#project=${encodeURIComponent(id)}`);
 }
 
@@ -186,6 +214,11 @@ function closeModal() {
   $('#project-modal').setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
   $('#modal-content').innerHTML = '';
+
+  if (lastFocusedElement && typeof lastFocusedElement.focus === 'function') {
+    lastFocusedElement.focus({ preventScroll: true });
+  }
+  lastFocusedElement = null;
 
   if (location.hash.startsWith('#project=')) {
     history.replaceState(null, '', location.pathname + location.search);
