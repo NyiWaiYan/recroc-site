@@ -1,12 +1,2 @@
 [build]
   publish = "."
-
-[[redirects]]
-  from = "/admin"
-  to = "/admin/"
-  status = 301
-
-[[redirects]]
-  from = "/studio-c01ez7hdxx985r8d.html"
-  to = "/admin/"
-  status = 301
