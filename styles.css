@@ -166,6 +166,19 @@ section[id] { scroll-margin-top: 96px; }
   transition: transform 0.5s var(--ease);
 }
 
+/* Compact content-hugging pill on desktop */
+@media (min-width: 1025px) {
+  .nav-shell { width: fit-content; }
+
+  .site-nav {
+    grid-template-columns: auto auto auto;
+    gap: clamp(28px, 3.4vw, 52px);
+    padding-inline: 12px 8px;
+  }
+
+  .primary-nav { gap: clamp(16px, 1.8vw, 26px); }
+}
+
 .nav-shell.is-hidden { transform: translateY(calc(-100% - 20px)); }
 
 .site-nav {
