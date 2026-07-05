@@ -14,8 +14,6 @@
   var spyLinks = document.querySelectorAll('[data-spy]');
   var revealItems = document.querySelectorAll('[data-reveal]');
   var statBlocks = document.querySelectorAll('[data-count-stats]');
-  var viewfinder = document.querySelector('[data-viewfinder]');
-  var tcEl = document.querySelector('[data-timecode]');
 
   /* ----- Lenis smooth scroll ----- */
   var lenis = null;
@@ -189,48 +187,6 @@
       if (heroTitle) heroTitle.classList.add('words-in');
     });
   });
-
-  /* ----- Ticking timecode (24fps): only while hero is on screen ----- */
-  if (tcEl && !reduceMotion) {
-    var running = false;
-    var startTime = null;
-    var rafId = null;
-
-    function pad(n) { return n < 10 ? '0' + n : String(n); }
-
-    function tick(now) {
-      if (!running) return;
-      if (startTime === null) startTime = now;
-
-      var elapsed = (now - startTime) / 1000;
-      var totalFrames = Math.floor(elapsed * 24);
-      var f = totalFrames % 24;
-      var s = Math.floor(elapsed) % 60;
-      var m = Math.floor(elapsed / 60) % 60;
-      var h = Math.floor(elapsed / 3600);
-
-      tcEl.textContent = pad(h) + ':' + pad(m) + ':' + pad(s) + ':' + pad(f);
-      rafId = requestAnimationFrame(tick);
-    }
-
-    if ('IntersectionObserver' in window && viewfinder) {
-      var tcObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting && !running) {
-            running = true;
-            rafId = requestAnimationFrame(tick);
-          } else if (!entry.isIntersecting && running) {
-            running = false;
-            if (rafId) cancelAnimationFrame(rafId);
-          }
-        });
-      }, { threshold: 0.1 });
-      tcObserver.observe(viewfinder);
-    } else {
-      running = true;
-      requestAnimationFrame(tick);
-    }
-  }
 
   /* ----- Magnetic buttons (fine pointers only) ----- */
   if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
