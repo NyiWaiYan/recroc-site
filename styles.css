@@ -1,5 +1,5 @@
 /* ==========================================================
-   RECROC STUDIO — v2 "Press record"
+   RECROC STUDIO v2 "Press record"
    White paper / REC-red / camera-OSD design language
    ========================================================== */
 
@@ -152,7 +152,7 @@ section[id] { scroll-margin-top: 96px; }
 .button-ghost:hover .ic { transform: translateY(3px); }
 
 /* ==========================================================
-   NAV — floating shell
+   NAV: floating shell
    ========================================================== */
 
 .nav-shell {
@@ -176,7 +176,7 @@ section[id] { scroll-margin-top: 96px; }
     padding-inline: 12px 8px;
   }
 
-  .primary-nav { gap: clamp(16px, 1.8vw, 26px); }
+  .primary-nav { gap: 4px; }
 }
 
 .nav-shell.is-hidden { transform: translateY(calc(-100% - 20px)); }
@@ -218,7 +218,7 @@ section[id] { scroll-margin-top: 96px; }
   justify-self: center;
   display: inline-flex;
   align-items: center;
-  gap: clamp(18px, 2.4vw, 30px);
+  gap: 4px;
 }
 
 .primary-nav a {
@@ -226,26 +226,26 @@ section[id] { scroll-margin-top: 96px; }
   font-size: 14.5px;
   font-weight: 500;
   color: var(--ink-soft);
-  padding: 6px 2px;
-  transition: color 0.25s var(--ease);
+  padding: 9px 13px;
+  border-radius: 10px;
+  transition: background 0.25s var(--ease), box-shadow 0.25s var(--ease),
+              color 0.25s var(--ease), transform 0.25s var(--ease);
 }
 
 .primary-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  right: 100%;
-  bottom: 0;
-  height: 2px;
-  background: var(--red);
-  border-radius: 2px;
-  transition: right 0.35s var(--ease);
+  display: none;
 }
 
 .primary-nav a:hover,
-.primary-nav a.is-active { color: var(--ink); }
-.primary-nav a:hover::after,
-.primary-nav a.is-active::after { right: 0; }
+.primary-nav a.is-active {
+  background: #F0EFEC;
+  box-shadow: inset 0 0 0 1px rgba(20, 19, 17, 0.04);
+  color: var(--ink);
+}
+
+.primary-nav a:hover {
+  transform: translateY(-1px);
+}
 
 .nav-end {
   display: inline-flex;
@@ -345,7 +345,7 @@ section[id] { scroll-margin-top: 96px; }
 .accent { color: var(--red); font-style: italic; }
 
 /* ==========================================================
-   Slate — the section header device
+   Slate: the section header device
    ========================================================== */
 
 .section { padding-block: var(--section-y); }
@@ -398,22 +398,6 @@ section[id] { scroll-margin-top: 96px; }
 .hero {
   padding-top: calc(var(--nav-h) + clamp(72px, 12vh, 140px));
   padding-bottom: 0;
-}
-
-.hero-eyebrow {
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  margin-bottom: clamp(26px, 4vw, 44px);
-}
-
-.hero-eyebrow-text {
-  font-family: var(--mono);
-  font-size: 11.5px;
-  font-weight: 500;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
 }
 
 .hero-title {
@@ -726,7 +710,7 @@ section[id] { scroll-margin-top: 96px; }
 .service-card:hover .service-tags span { border-color: #D8D4CC; color: var(--ink); }
 
 /* ==========================================================
-   02 WORK — dark film index
+   02 WORK: dark film index
    ========================================================== */
 
 .work-section {
@@ -1046,7 +1030,7 @@ section[id] { scroll-margin-top: 96px; }
 }
 
 /* ==========================================================
-   06 CONTACT — red finale
+   06 CONTACT: red finale
    ========================================================== */
 
 .contact-section {

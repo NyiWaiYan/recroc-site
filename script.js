@@ -1,5 +1,5 @@
 /* ==========================================================
-   RECROC STUDIO — interactions
+   RECROC STUDIO interactions
    Lenis smooth scroll · reveals · scrollspy · timecode
    ========================================================== */
 
@@ -190,7 +190,7 @@
     });
   });
 
-  /* ----- Ticking timecode (24fps) — only while hero is on screen ----- */
+  /* ----- Ticking timecode (24fps): only while hero is on screen ----- */
   if (tcEl && !reduceMotion) {
     var running = false;
     var startTime = null;
