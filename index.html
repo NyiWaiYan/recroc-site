@@ -1,264 +1,536 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>document.documentElement.classList.add('js');</script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="color-scheme" content="light">
-<meta name="theme-color" content="#F6F3EE">
-<title>RecRoc — Creative Studio</title>
-<meta name="description" content="RecRoc provides professional branding, video production, photography, DJ services, and event production for brands, organizations, and events.">
+<meta name="theme-color" content="#FFFFFF">
+<title>RecRoc — Production Studio, North Dakota</title>
+<meta name="description" content="RecRoc is a production studio in North Dakota. Brand films, photography, branding, and live events — made by the people who shoot, score, and mix them.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:ital,wght@0,400;0,500;1,400&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<header class="site-nav" data-nav>
-  <a class="wordmark" href="#top" aria-label="RecRoc home">
-    <span class="wordmark-dot" aria-hidden="true"></span>
-    <span>RecRoc</span>
-  </a>
-  <nav class="primary-nav" aria-label="Primary navigation">
-    <a href="#services">What We Do</a>
-    <a href="#why">Why Us</a>
+
+<!-- ============ SVG ICON SPRITE (Iconsax-style linear, 24px grid, 1.5 stroke) ============ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="ic-video" viewBox="0 0 24 24">
+    <path d="M12.53 20.42H6.21C3.05 20.42 2 18.32 2 16.21V7.79C2 4.63 3.05 3.58 6.21 3.58h6.32c3.16 0 4.21 1.05 4.21 4.21v8.42c0 3.16-1.06 4.21-4.21 4.21Z"/>
+    <path d="m19.52 17.1-2.78-1.95V8.84l2.78-1.95C20.88 5.94 22 6.52 22 8.19v7.62c0 1.67-1.12 2.25-2.48 1.29Z"/>
+  </symbol>
+  <symbol id="ic-camera" viewBox="0 0 24 24">
+    <path d="M6.76 22h10.48c2.76 0 3.86-1.69 3.99-3.75l.52-8.26A3.753 3.753 0 0 0 18 6c-.61 0-1.17-.35-1.45-.89l-.72-1.45C15.37 2.75 14.17 2 13.15 2h-2.29c-1.03 0-2.23.75-2.69 1.66l-.72 1.45C7.17 5.65 6.61 6 6 6a3.753 3.753 0 0 0-3.75 3.99l.52 8.26C2.89 20.31 4 22 6.76 22Z"/>
+    <path d="M10.5 8h3"/>
+    <path d="M12 18a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7Z"/>
+  </symbol>
+  <symbol id="ic-brush" viewBox="0 0 24 24">
+    <path d="M14.19 2H9.81C4.99 2 2 4.99 2 9.81v4.37C2 19.01 4.99 22 9.81 22h4.38C19.01 22 22 19.01 22 14.19V9.81C22 4.99 19.01 2 14.19 2Z"/>
+    <path d="M7.33 14.49c-.6.6-.6 1.58 0 2.18.6.6 1.58.6 2.18 0l7.16-7.16c.6-.6.6-1.58 0-2.18-.6-.6-1.58-.6-2.18 0l-7.16 7.16Z"/>
+    <path d="m12.87 6.87 4.26 4.26"/>
+  </symbol>
+  <symbol id="ic-headphone" viewBox="0 0 24 24">
+    <path d="M4 17.98v-5.94C4 7.6 7.58 4 12 4s8 3.6 8 8.04v5.94"/>
+    <path d="M4 18.5A2.5 2.5 0 0 1 6.5 16c1.1 0 2 .9 2 2v1.5c0 1.1-.9 2-2 2A2.5 2.5 0 0 1 4 19v-.5ZM20 18.5a2.5 2.5 0 0 0-2.5-2.5c-1.1 0-2 .9-2 2v1.5c0 1.1.9 2 2 2a2.5 2.5 0 0 0 2.5-2.5v-.5Z"/>
+  </symbol>
+  <symbol id="ic-search" viewBox="0 0 24 24">
+    <path d="M11.5 21a9.5 9.5 0 1 0 0-19 9.5 9.5 0 0 0 0 19Z"/>
+    <path d="m22 22-2-2"/>
+  </symbol>
+  <symbol id="ic-note" viewBox="0 0 24 24">
+    <path d="M8 2v3M16 2v3"/>
+    <path d="M21 8.5V17c0 3-1.5 5-5 5H8c-3.5 0-5-2-5-5V8.5C3 5.5 4.5 4 8 4h8c3.5 0 5 1.5 5 4.5Z"/>
+    <path d="M8 11h8M8 16h5"/>
+  </symbol>
+  <symbol id="ic-record" viewBox="0 0 24 24">
+    <path d="M12 22c5.52 0 10-4.48 10-10S17.52 2 12 2 2 6.48 2 12s4.48 10 10 10Z"/>
+    <path d="M12 16.2a4.2 4.2 0 1 0 0-8.4 4.2 4.2 0 0 0 0 8.4Z"/>
+  </symbol>
+  <symbol id="ic-send" viewBox="0 0 24 24">
+    <path d="m7.4 6.32 8.49-2.83c3.81-1.27 5.88.81 4.62 4.62l-2.83 8.49c-1.9 5.71-5.02 5.71-6.92 0l-.84-2.52-2.52-.84c-5.71-1.9-5.71-5.01 0-6.92ZM10.11 13.65l3.58-3.59"/>
+  </symbol>
+  <symbol id="ic-arrow-right" viewBox="0 0 24 24">
+    <path d="M14.43 5.93 20.5 12l-6.07 6.07M3.5 12h16.83"/>
+  </symbol>
+  <symbol id="ic-arrow-down" viewBox="0 0 24 24">
+    <path d="M18.07 9.57 12 15.64 5.93 9.57"/>
+  </symbol>
+  <symbol id="ic-play" viewBox="0 0 24 24">
+    <path d="M4 11.98V8.44c0-4.4 3.11-6.2 6.92-4l3.07 1.77 3.07 1.77c3.81 2.2 3.81 5.8 0 8l-3.07 1.77-3.07 1.77c-3.81 2.2-6.92.4-6.92-4v-3.54Z"/>
+  </symbol>
+  <symbol id="ic-export" viewBox="0 0 24 24">
+    <path d="M13 11 21.2 2.8M21.998 6.83V2h-4.83"/>
+    <path d="M11 2H9C4 2 2 4 2 9v6c0 5 2 7 7 7h6c5 0 7-2 7-7v-2"/>
+  </symbol>
+  <symbol id="ic-menu" viewBox="0 0 24 24">
+    <path d="M3 7h18M3 12h18M3 17h18"/>
+  </symbol>
+  <symbol id="ic-close" viewBox="0 0 24 24">
+    <path d="m6 6 12 12M18 6 6 18"/>
+  </symbol>
+  <symbol id="ic-spark" viewBox="0 0 24 24">
+    <path d="M12 1.5c.9 5.6 4.9 9.6 10.5 10.5-5.6.9-9.6 4.9-10.5 10.5C11.1 16.9 7.1 12.9 1.5 12 7.1 11.1 11.1 7.1 12 1.5Z" fill="currentColor" stroke="none"/>
+  </symbol>
+</svg>
+
+<!-- ============ NAV ============ -->
+<div class="nav-shell" data-nav>
+  <header class="site-nav">
+    <a class="wordmark" href="#top" aria-label="RecRoc home">
+      <span class="wordmark-mark" aria-hidden="true"><span class="wordmark-rec"></span></span>
+      <span class="wordmark-text">RecRoc</span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="#services" data-spy="services">What we do</a>
+      <a href="#work" data-spy="work">Work</a>
+      <a href="#why" data-spy="why">Why us</a>
+      <a href="#about" data-spy="about">About</a>
+      <a href="#contact" data-spy="contact">Contact</a>
+    </nav>
+
+    <div class="nav-end">
+      <a class="button button-red nav-cta" href="#contact">Start a project
+        <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Open menu" data-nav-toggle>
+        <svg class="ic ic-open" aria-hidden="true"><use href="#ic-menu"/></svg>
+        <svg class="ic ic-shut" aria-hidden="true"><use href="#ic-close"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
+    <a href="#services">What we do</a>
+    <a href="#work">Work</a>
+    <a href="#why">Why us</a>
     <a href="#about">About</a>
     <a href="#contact">Contact</a>
+    <a class="button button-red mobile-cta" href="#contact">Start a project
+      <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+    </a>
   </nav>
-  <a class="button nav-button" href="#contact">Start a project <span aria-hidden="true">&rarr;</span></a>
-</header>
+</div>
 
 <main id="top">
+
+  <!-- ============ HERO ============ -->
   <section class="hero" aria-labelledby="hero-title">
-    <div class="container hero-inner">
-      <h1 class="hero-title" id="hero-title" aria-label="Stories that move people.">
+    <div class="container">
+      <p class="hero-eyebrow" data-reveal>
+        <span class="rec-chip"><span class="rec-dot" aria-hidden="true"></span>REC</span>
+        <span class="hero-eyebrow-text">Production studio &mdash; North Dakota, USA</span>
+      </p>
+
+      <h1 class="hero-title" id="hero-title" aria-label="Press record on your brand.">
         <span class="headline-line">
-          <span class="word-clip"><span class="word" style="--i: 0;">Stories</span></span>
+          <span class="word-clip"><span class="word" style="--i:0">Press</span></span>
+          <span class="word-clip"><span class="word accent" style="--i:1">record</span></span>
         </span>
         <span class="headline-line">
-          <span class="word-clip"><span class="word accent italic" style="--i: 1;">that</span></span>
-          <span class="word-clip"><span class="word" style="--i: 2;">move</span></span>
-        </span>
-        <span class="headline-line">
-          <span class="word-clip"><span class="word" style="--i: 3;">people.</span></span>
+          <span class="word-clip"><span class="word" style="--i:2">on</span></span>
+          <span class="word-clip"><span class="word" style="--i:3">your</span></span>
+          <span class="word-clip"><span class="word" style="--i:4">brand.</span></span>
+          <svg class="hero-spark ic" aria-hidden="true"><use href="#ic-spark"/></svg>
         </span>
       </h1>
 
-      <p class="hero-subline">Professional branding, video production, and DJ services for brands, organizations, and events.</p>
-      <a class="button hero-button" href="#contact">Start a project <span aria-hidden="true">&rarr;</span></a>
+      <div class="hero-foot" data-reveal style="--i:1">
+        <p class="hero-subline">Brand films, photography, and live events for the Midwest &mdash; made by the people who actually shoot, score, and mix them.</p>
+        <div class="hero-actions">
+          <a class="button button-red" href="#contact">Start a project
+            <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+          </a>
+          <a class="button button-ghost" href="#work">See the work
+            <svg class="ic" aria-hidden="true"><use href="#ic-arrow-down"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Viewfinder — swap the inner placeholder for a <video> showreel when ready -->
+      <figure class="viewfinder" data-reveal style="--i:2" data-viewfinder>
+        <span class="vf-corner vf-tl" aria-hidden="true"></span>
+        <span class="vf-corner vf-tr" aria-hidden="true"></span>
+        <span class="vf-corner vf-bl" aria-hidden="true"></span>
+        <span class="vf-corner vf-br" aria-hidden="true"></span>
+
+        <div class="vf-osd vf-top" aria-hidden="true">
+          <span class="vf-rec"><span class="rec-dot"></span>REC <span class="vf-tc" data-timecode>00:00:00:00</span></span>
+          <span class="vf-meta">4K &middot; 23.98 FPS</span>
+        </div>
+
+        <div class="vf-center">
+          <span class="vf-play" aria-hidden="true">
+            <svg class="ic" ><use href="#ic-play"/></svg>
+          </span>
+          <span class="vf-label">Showreel &mdash; 2026</span>
+        </div>
+
+        <div class="vf-osd vf-bottom" aria-hidden="true">
+          <span class="vf-meta">A001_C002_RECROC</span>
+          <span class="vf-audio"><i></i><i></i><i></i><i></i><i></i></span>
+        </div>
+      </figure>
     </div>
 
     <div class="hero-marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>VIDEO PRODUCTION</span><span>&bull;</span>
-        <span>PHOTOGRAPHY</span><span>&bull;</span>
-        <span>BRAND FILMS</span><span>&bull;</span>
-        <span>DJ SERVICES</span><span>&bull;</span>
-        <span>EVENT PRODUCTION</span><span>&bull;</span>
-        <span>VIDEO PRODUCTION</span><span>&bull;</span>
-        <span>PHOTOGRAPHY</span><span>&bull;</span>
-        <span>BRAND FILMS</span><span>&bull;</span>
-        <span>DJ SERVICES</span><span>&bull;</span>
-        <span>EVENT PRODUCTION</span><span>&bull;</span>
+        <span>Video production</span><span class="marquee-dot"></span>
+        <span>Photography</span><span class="marquee-dot"></span>
+        <span>Brand films</span><span class="marquee-dot"></span>
+        <span>DJ services</span><span class="marquee-dot"></span>
+        <span>Event production</span><span class="marquee-dot"></span>
+        <span>Video production</span><span class="marquee-dot"></span>
+        <span>Photography</span><span class="marquee-dot"></span>
+        <span>Brand films</span><span class="marquee-dot"></span>
+        <span>DJ services</span><span class="marquee-dot"></span>
+        <span>Event production</span><span class="marquee-dot"></span>
       </div>
     </div>
   </section>
 
+  <!-- ============ 01 SERVICES ============ -->
   <section class="section services-section" id="services" aria-labelledby="services-title">
     <div class="container">
-      <div class="section-kicker service-intro" data-reveal>
-        <span class="kicker-number">01</span>
-        <span>What We Do</span>
-      </div>
-      <h2 class="section-heading service-intro" id="services-title" data-reveal>
-        A full-suite creative <span class="accent italic">studio.</span>
-      </h2>
+      <header class="slate" data-reveal>
+        <div class="slate-meta">
+          <span class="rec-chip"><span class="rec-dot" aria-hidden="true"></span>REC</span>
+          <span class="slate-index">01&thinsp;/&thinsp;06</span>
+          <span class="slate-name">What we do</span>
+          <span class="slate-rule" aria-hidden="true"></span>
+          <span class="slate-tc">TC&nbsp;00:01</span>
+        </div>
+        <h2 class="slate-title" id="services-title" aria-label="One studio. Every frame.">
+          <span class="word-clip"><span class="word" style="--i:0">One</span></span>
+          <span class="word-clip"><span class="word" style="--i:1">studio.</span></span>
+          <span class="word-clip"><span class="word accent" style="--i:2">Every</span></span>
+          <span class="word-clip"><span class="word accent" style="--i:3">frame.</span></span>
+        </h2>
+      </header>
 
       <div class="services-grid">
-        <article class="service-card" data-reveal style="--i: 0;">
-          <div class="service-copy">
-            <div class="service-number">/ 01</div>
-            <h3>Video Production</h3>
-            <p>Cinematic brand films, commercials, and music videos. Concept to color.</p>
+        <article class="service-card" data-reveal style="--i:0">
+          <div class="service-top">
+            <span class="icon-chip" aria-hidden="true"><svg class="ic"><use href="#ic-video"/></svg></span>
+            <span class="service-number">/&thinsp;01</span>
           </div>
-          <figure class="service-proof">
-            <div class="placeholder-frame" aria-hidden="true">
-              <span class="placeholder-tag">16:9 RECAP PROOF</span>
-              <span class="placeholder-line line-wide"></span>
-              <span class="placeholder-line"></span>
-              <span class="placeholder-line line-short"></span>
-            </div>
-            <figcaption>
-              <span>VIDEO SLOT</span>
-              <span>BRAND FILM / REEL</span>
-            </figcaption>
-          </figure>
+          <h3>Video production</h3>
+          <p>Cinematic brand films, commercials, and music videos. Concept, shoot, edit, color &mdash; one team from first call to final export.</p>
+          <div class="service-tags">Brand film &middot; Commercial &middot; Music video</div>
         </article>
-        <article class="service-card" data-reveal style="--i: 1;">
-          <div class="service-copy">
-            <div class="service-number">/ 02</div>
-            <h3>Photography</h3>
-            <p>Editorial, architectural, and commercial photography. Composition with intent.</p>
+
+        <article class="service-card" data-reveal style="--i:1">
+          <div class="service-top">
+            <span class="icon-chip" aria-hidden="true"><svg class="ic"><use href="#ic-camera"/></svg></span>
+            <span class="service-number">/&thinsp;02</span>
           </div>
-          <figure class="service-proof">
-            <div class="placeholder-frame" aria-hidden="true">
-              <span class="placeholder-tag">IMAGE SET</span>
-              <span class="placeholder-line line-wide"></span>
-              <span class="placeholder-line"></span>
-              <span class="placeholder-line line-short"></span>
-            </div>
-            <figcaption>
-              <span>PHOTO SLOT</span>
-              <span>EDITORIAL</span>
-            </figcaption>
-          </figure>
+          <h3>Photography</h3>
+          <p>Editorial, architectural, and commercial photography. Composition with intent &mdash; images built to carry a campaign, not fill a folder.</p>
+          <div class="service-tags">Editorial &middot; Architecture &middot; Product</div>
         </article>
-        <article class="service-card" data-reveal style="--i: 2;">
-          <div class="service-copy">
-            <div class="service-number">/ 03</div>
-            <h3>Branding</h3>
-            <p>Identity, strategy, and visual systems that hold up across every surface.</p>
+
+        <article class="service-card" data-reveal style="--i:2">
+          <div class="service-top">
+            <span class="icon-chip" aria-hidden="true"><svg class="ic"><use href="#ic-brush"/></svg></span>
+            <span class="service-number">/&thinsp;03</span>
           </div>
-          <figure class="service-proof">
-            <div class="placeholder-frame" aria-hidden="true">
-              <span class="placeholder-tag">SYSTEM PREVIEW</span>
-              <span class="placeholder-line line-wide"></span>
-              <span class="placeholder-line"></span>
-              <span class="placeholder-line line-short"></span>
-            </div>
-            <figcaption>
-              <span>BRAND SLOT</span>
-              <span>IDENTITY</span>
-            </figcaption>
-          </figure>
+          <h3>Branding</h3>
+          <p>Identity, strategy, and visual systems that hold up across every surface &mdash; from a business card to a billboard to a title card.</p>
+          <div class="service-tags">Identity &middot; Strategy &middot; Systems</div>
         </article>
-        <article class="service-card" data-reveal style="--i: 3;">
-          <div class="service-copy">
-            <div class="service-number">/ 04</div>
-            <h3>DJ &amp; Event Production</h3>
-            <p>Live mixing, scratching, and festival-level performance for events that hit different.</p>
+
+        <article class="service-card" data-reveal style="--i:3">
+          <div class="service-top">
+            <span class="icon-chip" aria-hidden="true"><svg class="ic"><use href="#ic-headphone"/></svg></span>
+            <span class="service-number">/&thinsp;04</span>
           </div>
-          <figure class="service-proof">
-            <div class="placeholder-frame" aria-hidden="true">
-              <span class="placeholder-tag">LIVE RECAP</span>
-              <span class="placeholder-line line-wide"></span>
-              <span class="placeholder-line"></span>
-              <span class="placeholder-line line-short"></span>
-            </div>
-            <figcaption>
-              <span>EVENT SLOT</span>
-              <span>DJ SET</span>
-            </figcaption>
-          </figure>
+          <h3>DJ &amp; event production</h3>
+          <p>Live mixing, scratching, and festival-level performance. Sound, energy, and pacing for events that people actually remember.</p>
+          <div class="service-tags">Live sets &middot; Corporate &middot; Festivals</div>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- ============ 02 WORK (dark film index) ============ -->
+  <section class="section work-section" id="work" aria-labelledby="work-title">
+    <div class="container">
+      <header class="slate slate-invert" data-reveal>
+        <div class="slate-meta">
+          <span class="rec-chip"><span class="rec-dot" aria-hidden="true"></span>REC</span>
+          <span class="slate-index">02&thinsp;/&thinsp;06</span>
+          <span class="slate-name">Selected work</span>
+          <span class="slate-rule" aria-hidden="true"></span>
+          <span class="slate-tc">TC&nbsp;00:02</span>
+        </div>
+        <h2 class="slate-title" id="work-title" aria-label="Straight from the timeline.">
+          <span class="word-clip"><span class="word" style="--i:0">Straight</span></span>
+          <span class="word-clip"><span class="word" style="--i:1">from</span></span>
+          <span class="word-clip"><span class="word" style="--i:2">the</span></span>
+          <span class="word-clip"><span class="word accent" style="--i:3">timeline.</span></span>
+        </h2>
+      </header>
+
+      <!-- Placeholder index — replace titles/links with real projects -->
+      <div class="work-index" data-reveal>
+        <div class="work-head" aria-hidden="true">
+          <span>No</span><span>Project</span><span>Type</span><span>Runtime</span><span>Year</span>
+        </div>
+        <a class="work-row" href="#contact" style="--i:0">
+          <span class="work-no">01</span>
+          <span class="work-name">Prairie Roast Co.</span>
+          <span class="work-type">Brand film</span>
+          <span class="work-runtime">01:24</span>
+          <span class="work-year">2026</span>
+          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+        </a>
+        <a class="work-row" href="#contact" style="--i:1">
+          <span class="work-no">02</span>
+          <span class="work-name">Fargo Winter Market</span>
+          <span class="work-type">Event recap</span>
+          <span class="work-runtime">02:10</span>
+          <span class="work-year">2025</span>
+          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+        </a>
+        <a class="work-row" href="#contact" style="--i:2">
+          <span class="work-no">03</span>
+          <span class="work-name">Northline Outfitters</span>
+          <span class="work-type">Commercial</span>
+          <span class="work-runtime">00:45</span>
+          <span class="work-year">2025</span>
+          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+        </a>
+        <a class="work-row" href="#contact" style="--i:3">
+          <span class="work-no">04</span>
+          <span class="work-name">Red River Sessions</span>
+          <span class="work-type">Music video</span>
+          <span class="work-runtime">03:32</span>
+          <span class="work-year">2025</span>
+          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+        </a>
+        <a class="work-row" href="#contact" style="--i:4">
+          <span class="work-no">05</span>
+          <span class="work-name">Bison Ridge Realty</span>
+          <span class="work-type">Photography</span>
+          <span class="work-runtime">24 stills</span>
+          <span class="work-year">2024</span>
+          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+        </a>
+        <a class="work-row" href="#contact" style="--i:5">
+          <span class="work-no">06</span>
+          <span class="work-name">Static Bloom &mdash; Live</span>
+          <span class="work-type">DJ set</span>
+          <span class="work-runtime">58:00</span>
+          <span class="work-year">2024</span>
+          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+        </a>
+      </div>
+
+      <p class="work-note" data-reveal>Full reel and case studies available on request &mdash; <a href="mailto:hello@recroc.studio">hello@recroc.studio</a></p>
+    </div>
+  </section>
+
+  <!-- ============ 03 WHY US ============ -->
   <section class="section why-section" id="why" aria-labelledby="why-title">
-    <div class="container why-grid">
-      <div class="why-copy">
-        <div class="section-kicker">
-          <span class="kicker-number">02</span>
-          <span>Why Us</span>
+    <div class="container">
+      <header class="slate" data-reveal>
+        <div class="slate-meta">
+          <span class="rec-chip"><span class="rec-dot" aria-hidden="true"></span>REC</span>
+          <span class="slate-index">03&thinsp;/&thinsp;06</span>
+          <span class="slate-name">Why us</span>
+          <span class="slate-rule" aria-hidden="true"></span>
+          <span class="slate-tc">TC&nbsp;00:03</span>
         </div>
-        <h2 class="section-heading reveal-words" id="why-title" data-reveal aria-label="Direct access to the makers.">
-          <span class="word-clip"><span class="word" style="--i: 0;">Direct</span></span>
-          <span class="word-clip"><span class="word" style="--i: 1;">access</span></span>
-          <span class="word-clip"><span class="word" style="--i: 2;">to</span></span>
-          <span class="word-clip"><span class="word" style="--i: 3;">the</span></span>
-          <span class="word-clip"><span class="word accent italic" style="--i: 4;">makers.</span></span>
+        <h2 class="slate-title" id="why-title" aria-label="Direct access to the makers.">
+          <span class="word-clip"><span class="word" style="--i:0">Direct</span></span>
+          <span class="word-clip"><span class="word" style="--i:1">access</span></span>
+          <span class="word-clip"><span class="word" style="--i:2">to</span></span>
+          <span class="word-clip"><span class="word" style="--i:3">the</span></span>
+          <span class="word-clip"><span class="word accent" style="--i:4">makers.</span></span>
         </h2>
-      </div>
+      </header>
 
-      <div class="value-list reveal-group" data-reveal>
-        <article class="value-row" style="--i: 0;">
-          <h3>No middlemen</h3>
-          <p>You work directly with filmmakers, DJs, and composers. No account managers. No telephone game.</p>
+      <div class="value-list">
+        <article class="value-row" data-reveal style="--i:0">
+          <span class="value-index" aria-hidden="true">01</span>
+          <span class="icon-chip" aria-hidden="true"><svg class="ic"><use href="#ic-record"/></svg></span>
+          <div class="value-copy">
+            <h3>No middlemen</h3>
+            <p>You work directly with filmmakers, DJs, and composers. No account managers. No telephone game. The person on the call is the person on set.</p>
+          </div>
+          <svg class="ic value-arrow" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
         </article>
-        <article class="value-row" style="--i: 1;">
-          <h3>Never templated</h3>
-          <p>Every project is built from scratch. No AI filler. No recycled ideas. Your work looks like yours.</p>
+
+        <article class="value-row" data-reveal style="--i:1">
+          <span class="value-index" aria-hidden="true">02</span>
+          <span class="icon-chip" aria-hidden="true"><svg class="ic"><use href="#ic-brush"/></svg></span>
+          <div class="value-copy">
+            <h3>Never templated</h3>
+            <p>Every project is built from scratch. No AI filler. No recycled ideas. Your work looks like yours &mdash; and nothing like your competitor&rsquo;s.</p>
+          </div>
+          <svg class="ic value-arrow" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
         </article>
-        <article class="value-row" style="--i: 2;">
-          <h3>Midwest rooted</h3>
-          <p>Based in North Dakota, serving the Midwest. We help local businesses launch, grow, and stand out.</p>
+
+        <article class="value-row" data-reveal style="--i:2">
+          <span class="value-index" aria-hidden="true">03</span>
+          <span class="icon-chip" aria-hidden="true"><svg class="ic"><use href="#ic-send"/></svg></span>
+          <div class="value-copy">
+            <h3>Midwest rooted</h3>
+            <p>Based in North Dakota, serving the Midwest. We help local businesses launch, grow, and stand out &mdash; because your win is our neighborhood&rsquo;s win.</p>
+          </div>
+          <svg class="ic value-arrow" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
         </article>
       </div>
     </div>
   </section>
 
+  <!-- ============ 04 PROCESS ============ -->
+  <section class="section process-section" id="process" aria-labelledby="process-title">
+    <div class="container">
+      <header class="slate" data-reveal>
+        <div class="slate-meta">
+          <span class="rec-chip"><span class="rec-dot" aria-hidden="true"></span>REC</span>
+          <span class="slate-index">04&thinsp;/&thinsp;06</span>
+          <span class="slate-name">Process</span>
+          <span class="slate-rule" aria-hidden="true"></span>
+          <span class="slate-tc">TC&nbsp;00:04</span>
+        </div>
+        <h2 class="slate-title" id="process-title" aria-label="Four steps. Zero chaos.">
+          <span class="word-clip"><span class="word" style="--i:0">Four</span></span>
+          <span class="word-clip"><span class="word" style="--i:1">steps.</span></span>
+          <span class="word-clip"><span class="word accent" style="--i:2">Zero</span></span>
+          <span class="word-clip"><span class="word accent" style="--i:3">chaos.</span></span>
+        </h2>
+      </header>
+
+      <ol class="process-grid">
+        <li class="process-card" data-reveal style="--i:0">
+          <div class="process-top">
+            <span class="process-step">[&thinsp;01&thinsp;]</span>
+            <span class="icon-chip" aria-hidden="true"><svg class="ic"><use href="#ic-search"/></svg></span>
+          </div>
+          <h3>Discover</h3>
+          <p>A 30-minute call. Your goals, audience, and budget &mdash; no jargon, no pitch deck.</p>
+        </li>
+        <li class="process-card" data-reveal style="--i:1">
+          <div class="process-top">
+            <span class="process-step">[&thinsp;02&thinsp;]</span>
+            <span class="icon-chip" aria-hidden="true"><svg class="ic"><use href="#ic-note"/></svg></span>
+          </div>
+          <h3>Plan</h3>
+          <p>Script, shot list, schedule, and a fixed quote. You approve everything before we roll.</p>
+        </li>
+        <li class="process-card" data-reveal style="--i:2">
+          <div class="process-top">
+            <span class="process-step">[&thinsp;03&thinsp;]</span>
+            <span class="icon-chip" aria-hidden="true"><svg class="ic"><use href="#ic-record"/></svg></span>
+          </div>
+          <h3>Produce</h3>
+          <p>Shoot day or show day. Small crew, professional kit, and a set that runs on time.</p>
+        </li>
+        <li class="process-card" data-reveal style="--i:3">
+          <div class="process-top">
+            <span class="process-step">[&thinsp;04&thinsp;]</span>
+            <span class="icon-chip" aria-hidden="true"><svg class="ic"><use href="#ic-export"/></svg></span>
+          </div>
+          <h3>Deliver</h3>
+          <p>Edit, color, sound. Final files cut for every platform you publish on.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ============ 05 ABOUT ============ -->
   <section class="section about-section" id="about" aria-labelledby="about-title">
-    <div class="container about-grid">
-      <div class="about-heading">
-        <div class="section-kicker">
-          <span class="kicker-number">03</span>
-          <span>About</span>
+    <div class="container">
+      <header class="slate" data-reveal>
+        <div class="slate-meta">
+          <span class="rec-chip"><span class="rec-dot" aria-hidden="true"></span>REC</span>
+          <span class="slate-index">05&thinsp;/&thinsp;06</span>
+          <span class="slate-name">About</span>
+          <span class="slate-rule" aria-hidden="true"></span>
+          <span class="slate-tc">TC&nbsp;00:05</span>
         </div>
-        <h2 class="section-heading reveal-words" id="about-title" data-reveal aria-label="Small studio. Big craft.">
-          <span class="word-clip"><span class="word" style="--i: 0;">Small</span></span>
-          <span class="word-clip"><span class="word" style="--i: 1;">studio.</span></span>
-          <span class="word-clip"><span class="word accent italic" style="--i: 2;">Big</span></span>
-          <span class="word-clip"><span class="word" style="--i: 3;">craft.</span></span>
+        <h2 class="slate-title" id="about-title" aria-label="Small studio. Big craft.">
+          <span class="word-clip"><span class="word" style="--i:0">Small</span></span>
+          <span class="word-clip"><span class="word" style="--i:1">studio.</span></span>
+          <span class="word-clip"><span class="word accent" style="--i:2">Big</span></span>
+          <span class="word-clip"><span class="word accent" style="--i:3">craft.</span></span>
         </h2>
+      </header>
+
+      <div class="about-grid">
+        <p class="about-lede" data-reveal>RecRoc is a hybrid production company and creative agency based in North Dakota. Our filmmakers have contributed to professional movie productions. Our DJs perform with festival-level mixing backgrounds.</p>
+        <div class="about-copy" data-reveal style="--i:1">
+          <p>We&rsquo;re committed to helping local businesses and entrepreneurs grow &mdash; because when businesses thrive in our communities, it creates more opportunities for everyone.</p>
+          <p>Small crew, no overhead theater, and a habit of over-delivering. That&rsquo;s the whole business model.</p>
+        </div>
       </div>
 
-      <div class="about-copy reveal-group" data-reveal>
-        <p class="about-paragraph" style="--i: 0;">RecRoc is a hybrid production company and creative agency based in North Dakota. Our production team are filmmakers who've contributed to professional movie productions. Our DJs are performers with festival-level mixing backgrounds.</p>
-        <p class="about-paragraph" style="--i: 1;">We're committed to helping local businesses and entrepreneurs grow &mdash; because when businesses thrive in our communities, it creates more opportunities for everyone.</p>
-
-        <div class="stats" data-reveal data-count-stats>
-          <div class="stat">
-            <div class="stat-number" data-count="60" data-suffix="+">0</div>
-            <div class="stat-label">Projects Shipped</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number" data-count="24">0</div>
-            <div class="stat-label">Awards &amp; Features</div>
-          </div>
-          <div class="stat">
-            <div class="stat-number" data-count="4">0</div>
-            <div class="stat-label">Years In The Craft</div>
-          </div>
+      <div class="stats" data-reveal data-count-stats>
+        <div class="stat" style="--i:0">
+          <div class="stat-number"><span data-count="60" data-suffix="+">0</span></div>
+          <div class="stat-label">Projects shipped</div>
+        </div>
+        <div class="stat" style="--i:1">
+          <div class="stat-number"><span data-count="24">0</span></div>
+          <div class="stat-label">Awards &amp; features</div>
+        </div>
+        <div class="stat" style="--i:2">
+          <div class="stat-number"><span data-count="4">0</span></div>
+          <div class="stat-label">Years in the craft</div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- ============ 06 CONTACT (red finale) ============ -->
   <section class="contact-section" id="contact" aria-labelledby="contact-title">
     <div class="container">
-      <div class="section-kicker contact-kicker">
-        <span class="kicker-number">04</span>
-        <span>Get In Touch</span>
-      </div>
-      <h2 class="contact-heading reveal-words" id="contact-title" data-reveal aria-label="Let's make something worth watching.">
-        <span class="word-clip"><span class="word" style="--i: 0;">Let's</span></span>
-        <span class="word-clip"><span class="word" style="--i: 1;">make</span></span>
-        <span class="word-clip"><span class="word accent italic" style="--i: 2;">something</span></span>
-        <span class="word-clip"><span class="word" style="--i: 3;">worth</span></span>
-        <span class="word-clip"><span class="word" style="--i: 4;">watching.</span></span>
-      </h2>
+      <header class="slate slate-onred" data-reveal>
+        <div class="slate-meta">
+          <span class="rec-chip rec-chip-onred"><span class="rec-dot" aria-hidden="true"></span>REC</span>
+          <span class="slate-index">06&thinsp;/&thinsp;06</span>
+          <span class="slate-name">Get in touch</span>
+          <span class="slate-rule" aria-hidden="true"></span>
+          <span class="slate-tc">TC&nbsp;00:06</span>
+        </div>
+        <h2 class="slate-title" id="contact-title" aria-label="Let's make something worth watching.">
+          <span class="word-clip"><span class="word" style="--i:0">Let&rsquo;s</span></span>
+          <span class="word-clip"><span class="word" style="--i:1">make</span></span>
+          <span class="word-clip"><span class="word" style="--i:2">something</span></span>
+          <span class="word-clip"><span class="word contact-em" style="--i:3">worth</span></span>
+          <span class="word-clip"><span class="word contact-em" style="--i:4">watching.</span></span>
+        </h2>
+      </header>
 
-      <div class="contact-actions reveal-group" data-reveal>
-        <a class="contact-email" href="mailto:hello@recroc.studio" style="--i: 0;">hello@recroc.studio <span aria-hidden="true">&rarr;</span></a>
-        <nav class="social-links" aria-label="Social links" style="--i: 1;">
-          <a href="#" aria-label="Instagram">Instagram <span aria-hidden="true">&nearr;</span></a>
-          <a href="#" aria-label="Vimeo">Vimeo <span aria-hidden="true">&nearr;</span></a>
-          <a href="#" aria-label="YouTube">YouTube <span aria-hidden="true">&nearr;</span></a>
-          <a href="#" aria-label="Behance">Behance <span aria-hidden="true">&nearr;</span></a>
+      <div class="contact-actions" data-reveal>
+        <a class="contact-email" href="mailto:hello@recroc.studio" style="--i:0">
+          hello@recroc.studio
+          <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
+        </a>
+        <nav class="social-links" aria-label="Social links" style="--i:1">
+          <a href="#">Instagram <span aria-hidden="true">&nearr;</span></a>
+          <a href="#">Vimeo <span aria-hidden="true">&nearr;</span></a>
+          <a href="#">YouTube <span aria-hidden="true">&nearr;</span></a>
+          <a href="#">Behance <span aria-hidden="true">&nearr;</span></a>
         </nav>
       </div>
 
       <footer class="footer-bar">
-        <span>&copy; RECROC STUDIO, 2026</span>
-        <span>MADE IN THE USA</span>
-        <span>V1.0</span>
+        <span>&copy; RecRoc Studio, 2026</span>
+        <span class="footer-mid">Shot &middot; Scored &middot; Shipped</span>
+        <span>Made in the USA</span>
       </footer>
     </div>
   </section>
 </main>
 
-<script src="script.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
+<script src="script.js" defer></script>
 </body>
 </html>

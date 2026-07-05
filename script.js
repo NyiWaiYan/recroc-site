@@ -1,71 +1,234 @@
-/* ============================================
-   RECROC STUDIO - Single Page Interactions
-   ============================================ */
+/* ==========================================================
+   RECROC STUDIO — interactions
+   Lenis smooth scroll · reveals · scrollspy · timecode
+   ========================================================== */
 
-const nav = document.querySelector('[data-nav]');
-const revealItems = document.querySelectorAll('[data-reveal]');
-const statBlocks = document.querySelectorAll('[data-count-stats]');
+(function () {
+  'use strict';
 
-function updateNav() {
-  if (!nav) return;
-  nav.classList.toggle('is-scrolled', window.scrollY > 80);
-}
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-function easeOutCubic(t) {
-  return 1 - Math.pow(1 - t, 3);
-}
+  var navShell = document.querySelector('[data-nav]');
+  var navToggle = document.querySelector('[data-nav-toggle]');
+  var mobileMenu = document.getElementById('mobile-menu');
+  var spyLinks = document.querySelectorAll('[data-spy]');
+  var revealItems = document.querySelectorAll('[data-reveal]');
+  var statBlocks = document.querySelectorAll('[data-count-stats]');
+  var viewfinder = document.querySelector('[data-viewfinder]');
+  var tcEl = document.querySelector('[data-timecode]');
 
-function animateNumber(el) {
-  if (el.dataset.done === 'true') return;
+  /* ----- Lenis smooth scroll ----- */
+  var lenis = null;
 
-  const target = Number(el.dataset.count || 0);
-  const suffix = el.dataset.suffix || '';
-  const duration = 1800;
-  const start = performance.now();
-  el.dataset.done = 'true';
+  if (!reduceMotion && typeof Lenis !== 'undefined') {
+    lenis = new Lenis({
+      duration: 1.15,
+      easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); },
+      smoothWheel: true
+    });
 
-  function frame(now) {
-    const progress = Math.min((now - start) / duration, 1);
-    const value = Math.round(target * easeOutCubic(progress));
-    el.textContent = progress === 1 ? `${target}${suffix}` : `${value}`;
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+    requestAnimationFrame(raf);
+  }
 
-    if (progress < 1) {
-      requestAnimationFrame(frame);
+  function scrollToTarget(target) {
+    var offset = -90;
+    if (lenis) {
+      lenis.scrollTo(target, { offset: offset, duration: 1.3 });
+    } else {
+      var top = target.getBoundingClientRect().top + window.scrollY + offset;
+      window.scrollTo({ top: top, behavior: reduceMotion ? 'auto' : 'smooth' });
     }
   }
 
-  requestAnimationFrame(frame);
-}
+  document.addEventListener('click', function (e) {
+    var link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    var id = link.getAttribute('href');
+    if (id.length < 2) return;
+    var target = document.querySelector(id);
+    if (!target) return;
 
-function animateStats(block) {
-  block.querySelectorAll('[data-count]').forEach(animateNumber);
-}
+    e.preventDefault();
+    closeMenu();
+    scrollToTarget(target);
+    history.replaceState(null, '', id);
+  });
 
-function reveal(el) {
-  el.classList.add('is-visible');
-  if (el.matches('[data-count-stats]')) {
-    animateStats(el);
+  /* ----- Nav: scrolled state + hide on scroll down ----- */
+  var lastY = window.scrollY;
+
+  function updateNav() {
+    if (!navShell) return;
+    var y = window.scrollY;
+
+    navShell.classList.toggle('is-scrolled', y > 40);
+
+    if (!menuOpen) {
+      if (y > 480 && y > lastY + 6) {
+        navShell.classList.add('is-hidden');
+      } else if (y < lastY - 6 || y < 480) {
+        navShell.classList.remove('is-hidden');
+      }
+    }
+    lastY = y;
   }
-}
 
-function setupReveal() {
-  if (!('IntersectionObserver' in window)) {
-    revealItems.forEach(reveal);
-    statBlocks.forEach(reveal);
-    return;
+  window.addEventListener('scroll', updateNav, { passive: true });
+  window.addEventListener('load', updateNav);
+
+  /* ----- Mobile menu ----- */
+  var menuOpen = false;
+
+  function closeMenu() {
+    if (!menuOpen || !navToggle || !mobileMenu) return;
+    menuOpen = false;
+    navToggle.setAttribute('aria-expanded', 'false');
+    navToggle.setAttribute('aria-label', 'Open menu');
+    mobileMenu.hidden = true;
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) return;
-      reveal(entry.target);
-      observer.unobserve(entry.target);
+  if (navToggle && mobileMenu) {
+    navToggle.addEventListener('click', function () {
+      menuOpen = !menuOpen;
+      navToggle.setAttribute('aria-expanded', String(menuOpen));
+      navToggle.setAttribute('aria-label', menuOpen ? 'Close menu' : 'Open menu');
+      mobileMenu.hidden = !menuOpen;
+      if (menuOpen) navShell.classList.remove('is-hidden');
     });
-  }, { threshold: 0.2 });
 
-  revealItems.forEach((el) => observer.observe(el));
-}
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+  }
 
-window.addEventListener('scroll', updateNav, { passive: true });
-window.addEventListener('load', updateNav);
-setupReveal();
+  /* ----- Scrollspy ----- */
+  if ('IntersectionObserver' in window && spyLinks.length) {
+    var spyObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        var id = entry.target.id;
+        spyLinks.forEach(function (link) {
+          var active = link.dataset.spy === id;
+          link.classList.toggle('is-active', active);
+          if (active) {
+            link.setAttribute('aria-current', 'true');
+          } else {
+            link.removeAttribute('aria-current');
+          }
+        });
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+
+    spyLinks.forEach(function (link) {
+      var section = document.getElementById(link.dataset.spy);
+      if (section) spyObserver.observe(section);
+    });
+  }
+
+  /* ----- Stat count-up ----- */
+  function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+  function animateNumber(el) {
+    if (el.dataset.done === 'true') return;
+    el.dataset.done = 'true';
+
+    var target = Number(el.dataset.count || 0);
+    var suffix = el.dataset.suffix || '';
+
+    if (reduceMotion) {
+      el.textContent = target + suffix;
+      return;
+    }
+
+    var duration = 1600;
+    var start = performance.now();
+
+    function frame(now) {
+      var progress = Math.min((now - start) / duration, 1);
+      var value = Math.round(target * easeOutCubic(progress));
+      el.textContent = progress === 1 ? target + suffix : String(value);
+      if (progress < 1) requestAnimationFrame(frame);
+    }
+    requestAnimationFrame(frame);
+  }
+
+  function animateStats(block) {
+    block.querySelectorAll('[data-count]').forEach(animateNumber);
+  }
+
+  /* ----- Reveal on scroll ----- */
+  function reveal(el) {
+    el.classList.add('is-visible');
+    if (el.matches('[data-count-stats]')) animateStats(el);
+  }
+
+  if (!('IntersectionObserver' in window) || reduceMotion) {
+    revealItems.forEach(reveal);
+    statBlocks.forEach(animateStats);
+  } else {
+    var revealObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        reveal(entry.target);
+        revealObserver.unobserve(entry.target);
+      });
+    }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
+
+    revealItems.forEach(function (el) { revealObserver.observe(el); });
+  }
+
+  /* Headline words inside slates reveal with their [data-reveal] parent;
+     the hero headline has no data-reveal parent, so kick it once painted. */
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () {
+      var heroTitle = document.querySelector('.hero-title');
+      if (heroTitle) heroTitle.classList.add('words-in');
+    });
+  });
+
+  /* ----- Ticking timecode (24fps) — only while hero is on screen ----- */
+  if (tcEl && !reduceMotion) {
+    var running = false;
+    var startTime = null;
+    var rafId = null;
+
+    function pad(n) { return n < 10 ? '0' + n : String(n); }
+
+    function tick(now) {
+      if (!running) return;
+      if (startTime === null) startTime = now;
+
+      var elapsed = (now - startTime) / 1000;
+      var totalFrames = Math.floor(elapsed * 24);
+      var f = totalFrames % 24;
+      var s = Math.floor(elapsed) % 60;
+      var m = Math.floor(elapsed / 60) % 60;
+      var h = Math.floor(elapsed / 3600);
+
+      tcEl.textContent = pad(h) + ':' + pad(m) + ':' + pad(s) + ':' + pad(f);
+      rafId = requestAnimationFrame(tick);
+    }
+
+    if ('IntersectionObserver' in window && viewfinder) {
+      var tcObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting && !running) {
+            running = true;
+            rafId = requestAnimationFrame(tick);
+          } else if (!entry.isIntersecting && running) {
+            running = false;
+            if (rafId) cancelAnimationFrame(rafId);
+          }
+        });
+      }, { threshold: 0.1 });
+      tcObserver.observe(viewfinder);
+    } else {
+      running = true;
+      requestAnimationFrame(tick);
+    }
+  }
+})();
