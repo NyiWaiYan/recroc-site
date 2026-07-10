@@ -190,15 +190,14 @@
 
   /* ----- Magnetic buttons (fine pointers only) ----- */
   if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
-    document.querySelectorAll('.button-red, .vf-play').forEach(function (el) {
-      var strength = el.classList.contains('vf-play') ? 14 : 8;
+    document.querySelectorAll('.button-red').forEach(function (el) {
+      var strength = 8;
 
       el.addEventListener('pointermove', function (e) {
         var r = el.getBoundingClientRect();
         var x = (e.clientX - r.left - r.width / 2) / (r.width / 2);
         var y = (e.clientY - r.top - r.height / 2) / (r.height / 2);
-        var scale = el.classList.contains('vf-play') ? ' scale(1.06)' : '';
-        el.style.transform = 'translate(' + (x * strength) + 'px,' + (y * strength) + 'px)' + scale;
+        el.style.transform = 'translate(' + (x * strength) + 'px,' + (y * strength) + 'px)';
       });
 
       el.addEventListener('pointerleave', function () {
