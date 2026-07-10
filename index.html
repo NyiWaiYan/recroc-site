@@ -84,7 +84,6 @@
 
     <nav class="primary-nav" aria-label="Primary navigation">
       <a href="#services" data-spy="services">What we do</a>
-      <a href="#work" data-spy="work">Work</a>
       <a href="#about" data-spy="about">About</a>
       <a href="#why" data-spy="why">Why us</a>
       <a href="#contact" data-spy="contact">Contact</a>
@@ -103,7 +102,6 @@
 
   <nav class="mobile-menu" id="mobile-menu" aria-label="Mobile navigation" hidden>
     <a href="#services">What we do</a>
-    <a href="#work">Work</a>
     <a href="#about">About</a>
     <a href="#why">Why us</a>
     <a href="#contact">Contact</a>
@@ -137,7 +135,7 @@
           <a class="button button-red" href="#contact">Start a project
             <svg class="ic" aria-hidden="true"><use href="#ic-arrow-right"/></svg>
           </a>
-          <a class="button button-ghost" href="#work">See the work
+          <a class="button button-ghost" href="#services">What we do
             <svg class="ic" aria-hidden="true"><use href="#ic-arrow-down"/></svg>
           </a>
         </div>
@@ -145,11 +143,8 @@
 
       <!-- Viewfinder: swap the inner placeholder for a <video> showreel when ready -->
       <figure class="viewfinder" data-reveal style="--i:2" data-viewfinder>
-        <span class="vf-corner vf-tl" aria-hidden="true"></span>
-        <span class="vf-corner vf-tr" aria-hidden="true"></span>
-        <span class="vf-corner vf-bl" aria-hidden="true"></span>
-        <span class="vf-corner vf-br" aria-hidden="true"></span>
 
+        <img class="vf-photo" src="images/bts-interview.jpg" alt="RecRoc crew filming a seated interview with cinema camera and boom mic, North Dakota" width="1920" height="1280">
         <div class="vf-center">
           <span class="vf-play" aria-hidden="true">
             <svg class="ic" ><use href="#ic-play"/></svg>
@@ -229,9 +224,9 @@
   </section>
 
   <!-- ============ WORK (dark film index) ============ -->
-  <section class="section work-section" id="work" aria-labelledby="work-title">
+  <section class="section work-section" id="work" aria-labelledby="work-title" hidden>
     <div class="container">
-      <header class="slate slate-invert" data-reveal>
+      <header class="slate" data-reveal>
         <p class="slate-eyebrow">Selected work</p>
         <h2 class="slate-title" id="work-title" aria-label="Straight from the timeline.">
           <span class="word-clip"><span class="word" style="--i:0">Straight</span></span>
@@ -241,58 +236,72 @@
         </h2>
       </header>
 
-      <!-- Placeholder index: replace titles/links with real projects -->
-      <div class="work-index" data-reveal>
-        <div class="work-head" aria-hidden="true">
-          <span>No</span><span>Project</span><span>Type</span><span>Runtime</span><span>Year</span>
-        </div>
-        <a class="work-row" href="#contact" style="--i:0">
-          <span class="work-no">01</span>
-          <span class="work-name">Prairie Roast Co.</span>
-          <span class="work-type">Brand film</span>
-          <span class="work-runtime">01:24</span>
-          <span class="work-year">2026</span>
-          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+      <!-- Placeholder posters: swap each .work-thumb for a real still or video frame -->
+      <div class="work-grid">
+        <a class="work-card" href="#contact" data-reveal style="--i:0">
+          <div class="work-thumb thumb-roast" aria-hidden="true">
+            <span class="poster-word">roast.</span>
+            <span class="work-go"><svg class="ic"><use href="#ic-arrow-right"/></svg></span>
+          </div>
+          <div class="work-meta">
+            <h3>Prairie Roast Co.</h3>
+            <span>Brand film &middot; 2026</span>
+          </div>
         </a>
-        <a class="work-row" href="#contact" style="--i:1">
-          <span class="work-no">02</span>
-          <span class="work-name">Fargo Winter Market</span>
-          <span class="work-type">Event recap</span>
-          <span class="work-runtime">02:10</span>
-          <span class="work-year">2025</span>
-          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+
+        <a class="work-card" href="#contact" data-reveal style="--i:1">
+          <div class="work-thumb thumb-fargo" aria-hidden="true">
+            <span class="poster-stack"><i>FARGO</i><i>FARGO</i><i>FARGO</i></span>
+            <span class="work-go"><svg class="ic"><use href="#ic-arrow-right"/></svg></span>
+          </div>
+          <div class="work-meta">
+            <h3>Fargo Winter Market</h3>
+            <span>Event recap &middot; 2025</span>
+          </div>
         </a>
-        <a class="work-row" href="#contact" style="--i:2">
-          <span class="work-no">03</span>
-          <span class="work-name">Northline Outfitters</span>
-          <span class="work-type">Commercial</span>
-          <span class="work-runtime">00:45</span>
-          <span class="work-year">2025</span>
-          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+
+        <a class="work-card" href="#contact" data-reveal style="--i:2">
+          <div class="work-thumb thumb-north" aria-hidden="true">
+            <span class="poster-word">NORTH<br>LINE</span>
+            <span class="work-go"><svg class="ic"><use href="#ic-arrow-right"/></svg></span>
+          </div>
+          <div class="work-meta">
+            <h3>Northline Outfitters</h3>
+            <span>Commercial &middot; 2025</span>
+          </div>
         </a>
-        <a class="work-row" href="#contact" style="--i:3">
-          <span class="work-no">04</span>
-          <span class="work-name">Red River Sessions</span>
-          <span class="work-type">Music video</span>
-          <span class="work-runtime">03:32</span>
-          <span class="work-year">2025</span>
-          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+
+        <a class="work-card" href="#contact" data-reveal style="--i:3">
+          <div class="work-thumb thumb-river" aria-hidden="true">
+            <span class="poster-word">River</span>
+            <span class="work-go"><svg class="ic"><use href="#ic-arrow-right"/></svg></span>
+          </div>
+          <div class="work-meta">
+            <h3>Red River Sessions</h3>
+            <span>Music video &middot; 2025</span>
+          </div>
         </a>
-        <a class="work-row" href="#contact" style="--i:4">
-          <span class="work-no">05</span>
-          <span class="work-name">Bison Ridge Realty</span>
-          <span class="work-type">Photography</span>
-          <span class="work-runtime">24 stills</span>
-          <span class="work-year">2024</span>
-          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+
+        <a class="work-card" href="#contact" data-reveal style="--i:4">
+          <div class="work-thumb thumb-bison" aria-hidden="true">
+            <span class="poster-word">BISON</span>
+            <span class="work-go"><svg class="ic"><use href="#ic-arrow-right"/></svg></span>
+          </div>
+          <div class="work-meta">
+            <h3>Bison Ridge Realty</h3>
+            <span>Photography &middot; 2024</span>
+          </div>
         </a>
-        <a class="work-row" href="#contact" style="--i:5">
-          <span class="work-no">06</span>
-          <span class="work-name">Static Bloom Live</span>
-          <span class="work-type">DJ set</span>
-          <span class="work-runtime">58:00</span>
-          <span class="work-year">2024</span>
-          <span class="work-play" aria-hidden="true"><svg class="ic"><use href="#ic-play"/></svg></span>
+
+        <a class="work-card" href="#contact" data-reveal style="--i:5">
+          <div class="work-thumb thumb-bloom" aria-hidden="true">
+            <span class="poster-word">bloom.</span>
+            <span class="work-go"><svg class="ic"><use href="#ic-arrow-right"/></svg></span>
+          </div>
+          <div class="work-meta">
+            <h3>Static Bloom Live</h3>
+            <span>DJ set &middot; 2024</span>
+          </div>
         </a>
       </div>
 
