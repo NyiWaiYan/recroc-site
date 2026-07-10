@@ -155,8 +155,12 @@ section[hidden] { display: none !important; }
 /* Compact content-hugging pill on desktop */
 @media (min-width: 1025px) {
   .nav-shell { width: fit-content; }
+  .primary-nav { gap: 4px; }
+}
 
-  .site-nav {
+.nav-shell.is-hidden { transform: translateY(calc(-100% - 20px)); }
+
+.site-nav {
   height: var(--nav-h);
   display: grid;
   grid-template-columns: auto 1fr auto;
