@@ -188,23 +188,6 @@
     });
   });
 
-  /* ----- Magnetic buttons (fine pointers only) ----- */
-  if (!reduceMotion && window.matchMedia('(pointer: fine)').matches) {
-    document.querySelectorAll('.button-red').forEach(function (el) {
-      var strength = 8;
-
-      el.addEventListener('pointermove', function (e) {
-        var r = el.getBoundingClientRect();
-        var x = (e.clientX - r.left - r.width / 2) / (r.width / 2);
-        var y = (e.clientY - r.top - r.height / 2) / (r.height / 2);
-        el.style.transform = 'translate(' + (x * strength) + 'px,' + (y * strength) + 'px)';
-      });
-
-      el.addEventListener('pointerleave', function () {
-        el.style.transform = '';
-      });
-    });
-  }
 
   /* ----- Contact form: submit feedback ----- */
   var contactForm = document.querySelector('[data-contact-form]');
@@ -217,4 +200,59 @@
       }
     });
   }
+
+  /* ----- Accordion: services + FAQ ----- */
+  document.querySelectorAll('.acc-head').forEach(function (head) {
+    var panel = document.getElementById(head.getAttribute('aria-controls'));
+    if (!panel) return;
+
+    head.addEventListener('click', function () {
+      var isOpen = head.getAttribute('aria-expanded') === 'true';
+
+      if (isOpen) {
+        // collapse: fix current height, then animate to 0
+        panel.style.height = panel.scrollHeight + 'px';
+        panel.classList.remove('is-open');
+        requestAnimationFrame(function () {
+          panel.style.transition = 'height 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
+          panel.style.height = '0px';
+        });
+        head.setAttribute('aria-expanded', 'false');
+        window.setTimeout(function () {
+          panel.hidden = true;
+          panel.style.transition = '';
+          panel.style.height = '';
+        }, 450);
+      } else {
+        // close siblings within the same accordion group
+        var group = head.closest('.acc');
+        if (group) {
+          group.querySelectorAll('.acc-head[aria-expanded="true"]').forEach(function (other) {
+            if (other === head) return;
+            var op = document.getElementById(other.getAttribute('aria-controls'));
+            other.setAttribute('aria-expanded', 'false');
+            if (op) {
+              op.classList.remove('is-open');
+              op.hidden = true;
+              op.style.height = '';
+            }
+          });
+        }
+
+        panel.hidden = false;
+        var target = panel.scrollHeight;
+        panel.style.height = '0px';
+        head.setAttribute('aria-expanded', 'true');
+        requestAnimationFrame(function () {
+          panel.style.transition = 'height 0.45s cubic-bezier(0.22, 1, 0.36, 1)';
+          panel.style.height = target + 'px';
+          panel.classList.add('is-open');
+        });
+        window.setTimeout(function () {
+          panel.style.transition = '';
+          panel.style.height = 'auto';
+        }, 460);
+      }
+    });
+  });
 })();
