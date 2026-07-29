@@ -205,4 +205,16 @@
       });
     });
   }
+
+  /* ----- Contact form: submit feedback ----- */
+  var contactForm = document.querySelector('[data-contact-form]');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function () {
+      var btn = contactForm.querySelector('.contact-submit');
+      if (btn) {
+        btn.classList.add('is-sent');
+        btn.firstChild && (btn.childNodes[0].nodeValue = 'Opening your email\u2026 ');
+      }
+    });
+  }
 })();
