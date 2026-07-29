@@ -858,7 +858,7 @@ section[hidden] { display: none !important; }
 .proof-visual {
   border-radius: 24px;
   overflow: hidden;
-  background: var(--red);
+  background: #FCFCFC;
   aspect-ratio: 1 / 1;
 }
 
