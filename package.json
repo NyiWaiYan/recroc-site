@@ -1,0 +1,8 @@
+{
+  "name": "recroc-site",
+  "private": true,
+  "description": "RecRoc studio site. Static HTML output, generated locally from content/*.json.",
+  "scripts": {
+    "build": "node tools/build.js"
+  }
+}
