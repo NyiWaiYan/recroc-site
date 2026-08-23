@@ -462,7 +462,7 @@ html:not(.js) .rule { transform: scaleX(1); }
   content: "";
   position: absolute;
   width: 22px; height: 22px;
-  border: 0 solid rgba(255,255,255,.9);
+  border: 0 solid rgba(255,255,255,.92);
   mix-blend-mode: difference;
   z-index: 3;
   pointer-events: none;
@@ -472,39 +472,36 @@ html:not(.js) .rule { transform: scaleX(1); }
 .monitor > .mk-a { bottom: 16px; left: 16px; border-bottom-width: 1.5px; border-left-width: 1.5px; }
 .monitor > .mk-b { bottom: 16px; right: 16px; border-bottom-width: 1.5px; border-right-width: 1.5px; }
 
-.monitor-osd {
+/* OSD chips sit above the blend group so the REC dot stays red and the
+   labels stay legible over both photography and light placeholders. */
+.monitor-osd, .monitor-tc {
   position: absolute;
-  z-index: 4;
-  top: 16px; left: 50%;
+  z-index: 5;
+  left: 50%;
   transform: translateX(-50%);
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-family: var(--mono);
-  font-size: 10.5px;
-  letter-spacing: .1em;
-  color: #fff;
-  mix-blend-mode: difference;
-  pointer-events: none;
-}
-.monitor-osd .rec-dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--red);
-  mix-blend-mode: normal;
-  animation: rec 2.4s var(--ease) infinite;
-}
-.monitor-tc {
-  position: absolute;
-  z-index: 4;
-  bottom: 16px; left: 50%;
-  transform: translateX(-50%);
+  gap: 7px;
   font-family: var(--mono);
   font-size: 10.5px;
   letter-spacing: .12em;
   color: #fff;
-  mix-blend-mode: difference;
+  background: rgba(20, 19, 17, .58);
+  backdrop-filter: blur(6px) saturate(1.4);
+  -webkit-backdrop-filter: blur(6px) saturate(1.4);
+  padding: 5px 11px;
+  border-radius: 999px;
   pointer-events: none;
-  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+.monitor-osd { top: 14px; }
+.monitor-tc { bottom: 14px; font-variant-numeric: tabular-nums; }
+.monitor-osd .rec-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--red);
+  flex: none;
+  animation: rec 2.4s var(--ease) infinite;
 }
 
 /* placeholder blocks */
