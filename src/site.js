@@ -13,8 +13,12 @@
 
   var lenis = null;
   if (!reduce && typeof Lenis !== 'undefined') {
-    lenis = new Lenis({ duration: 1.05, smoothWheel: true,
-      easing: function (t) { return Math.min(1, 1.001 - Math.pow(2, -10 * t)); } });
+    lenis = new Lenis({
+      lerp: 0.085,          // frame-rate independent easing, smoother than a fixed duration
+      smoothWheel: true,
+      wheelMultiplier: 0.95,
+      touchMultiplier: 1.6
+    });
     (function raf(t) { lenis.raf(t); requestAnimationFrame(raf); })(0);
   }
 
@@ -28,7 +32,7 @@
     e.preventDefault();
     closeSheet();
     var off = -(parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-h'), 10) || 60) - 12;
-    if (lenis) lenis.scrollTo(el, { offset: off, duration: 1.1 });
+    if (lenis) lenis.scrollTo(el, { offset: off, duration: 1.0 });
     else window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY + off, behavior: reduce ? 'auto' : 'smooth' });
   });
 

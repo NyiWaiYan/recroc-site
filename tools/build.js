@@ -40,10 +40,22 @@ const ICONS = {
   menu: '<path d="M4 8h16M4 16h16"/>',
   close: '<path d="m7 7 10 10M17 7 7 17"/>'
 };
+/* Filled geometric marks, one per discipline. Solid shapes rather than outlined
+   icons: they read as index marks, stay legible at 13px, and carry the brand
+   red through the page as a system instead of a single button. */
+const MARKS = {
+  video: '<path d="M5.2 3 13.4 8 5.2 13z"/>',
+  photography: '<circle cx="8" cy="8" r="4.7"/>',
+  brand: '<path d="M8 2.6 13.4 8 8 13.4 2.6 8z"/>',
+  dj: '<rect x="2.8" y="4" width="10.4" height="2.4" rx="1.2"/><rect x="2.8" y="9.6" width="10.4" height="2.4" rx="1.2"/>',
+  audio: '<rect x="2.6" y="9.2" width="2.4" height="3.9" rx="1.2"/><rect x="6.8" y="6.1" width="2.4" height="7" rx="1.2"/><rect x="11" y="2.9" width="2.4" height="10.2" rx="1.2"/>'
+};
 const sprite = () => `<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">` +
   Object.keys(ICONS).map(k => `<symbol id="i-${k}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICONS[k]}</symbol>`).join('') +
+  Object.keys(MARKS).map(k => `<symbol id="m-${k}" viewBox="0 0 16 16" fill="currentColor">${MARKS[k]}</symbol>`).join('') +
   `</svg>`;
 const ic = n => `<svg aria-hidden="true"><use href="#i-${n}"/></svg>`;
+const mk = n => `<svg class="mk" aria-hidden="true"><use href="#m-${n}"/></svg>`;
 
 /* colour fields, assigned per group so the palette stays deliberate */
 const FIELD = { video: 'f-ink', photography: 'f-steel', brand: 'f-sand', dj: 'f-red', audio: 'f-stone' };
@@ -68,6 +80,7 @@ ${faqs.map(([q, a], i) => `  <div class="acc-i">
 
 const nav = active => `
   <a class="skip" href="#top">Skip to content</a>
+  <div class="prog" aria-hidden="true"></div>
   <header class="nav" data-nav>
     <div class="col nav-in">
       <a class="brand" href="/">RecRoc</a>
@@ -76,7 +89,7 @@ const nav = active => `
         <a href="/process/"${active === 'process' ? ' class="here"' : ''}>Process</a>
         <a href="/about/"${active === 'about' ? ' class="here"' : ''}>About</a>
       </nav>
-      <a class="btn btn-ink nav-cta" href="/contact/">Start a project</a>
+      <a class="btn btn-quiet nav-cta" href="/contact/">Start a project</a>
       <button class="burger" type="button" data-burger aria-expanded="false" aria-label="Open menu" aria-controls="sheet">
         <svg class="m" aria-hidden="true"><use href="#i-menu"/></svg><svg class="x" aria-hidden="true"><use href="#i-close"/></svg>
       </button>
@@ -174,6 +187,6 @@ const write = (rel, html) => {
   fs.writeFileSync(full, html);
 };
 
-module.exports = { site, services, esc, byGroup, find, url, groupName, ic, words, label, field, acc, page, write, FIELD };
+module.exports = { site, services, esc, byGroup, find, url, groupName, ic, mk, words, label, field, acc, page, write, FIELD };
 
 if (require.main === module) require('./pages.js');

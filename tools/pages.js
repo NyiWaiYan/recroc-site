@@ -1,5 +1,5 @@
 const B = require('./build.js');
-const { site, services, esc, byGroup, find, url, groupName, ic, words, label, field, acc, page, write, FIELD } = B;
+const { site, services, esc, byGroup, find, url, groupName, ic, mk, words, label, field, acc, page, write, FIELD } = B;
 
 const FIELDS = ['f-ink', 'f-steel', 'f-red', 'f-sand', 'f-stone', 'f-mist'];
 
@@ -30,9 +30,9 @@ ${h.meta.map(([k, v]) => `      <span>${esc(k)} <b>${esc(v)}</b></span>`).join('
       ${label('Recent work')}
       <h2 class="d3">Film and photography for people with something to say.</h2>
     </div>
-    <div class="strip" data-rv data-lenis-prevent>
-${[['f-ink','Commercial','Brand film'],['f-steel','Event coverage','Conference'],['f-red','Live DJ set','Campus formal'],['f-sand','Brand identity','Full system'],['f-mist','Product','Studio'],['f-stone','Artist portrait','Single release']].map(function(x){
-  return `      <a class="shot" href="/services/">
+    <div class="strip" data-lenis-prevent>
+${[['f-ink','Commercial','Brand film'],['f-steel','Event coverage','Conference'],['f-red','Live DJ set','Campus formal'],['f-sand','Brand identity','Full system'],['f-mist','Product','Studio'],['f-stone','Artist portrait','Single release']].map(function(x, i){
+  return `      <a class="shot" href="/services/" data-rv style="--i:${i}">
         <p class="shot-cap">${x[1]} <span style="color:var(--faint)">/ ${x[2]}</span></p>
         ${field(x[0], 'r-tall', '')}
       </a>`;
@@ -50,7 +50,7 @@ ${[['f-ink','Commercial','Brand film'],['f-steel','Event coverage','Conference']
     <div class="list">
 ${site.groups.map((g, i) => `      <a class="item" href="/services/#${g.id}" data-rv style="--i:${i}">
         <span class="item-top">
-          <span class="item-name">${esc(g.name)}</span>
+          <span class="item-name">${mk(g.id)}${esc(g.name)}</span>
           <span class="item-go">${ic('arrow')}</span>
         </span>
         <span class="item-note">${esc(g.blurb)}</span>
@@ -117,7 +117,7 @@ ${site.groups.map(g => {
     const list = byGroup(g.id);
     const auds = ['business', 'artist', 'personal'].filter(a => list.some(s => s.audience === a));
     return `    <div id="${g.id}" data-grp="${g.id}" style="scroll-margin-top:calc(var(--nav-h) + 16px)">
-      <div class="group-h"><h2>${esc(g.name)}</h2><span>${list.length} ${list.length === 1 ? 'service' : 'services'}</span></div>
+      <div class="group-h"><h2>${mk(g.id)}${esc(g.name)}</h2><span>${list.length} ${list.length === 1 ? 'service' : 'services'}</span></div>
       <div class="list">
 ${auds.map(a => `        <p class="sub-h">${esc(site.audiences[a])}</p>
 ${list.filter(s => s.audience === a).map(s => { n++; return `        <a class="item" href="${url(s)}">

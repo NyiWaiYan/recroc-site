@@ -129,7 +129,7 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
   font-weight: 500;
   color: var(--muted);
   letter-spacing: -.008em;
-  margin-bottom: var(--s4);
+  margin-bottom: var(--s5);
 }
 .label sup {
   font-size: .68em;
@@ -139,9 +139,16 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
   top: -.5em;
 }
 
-.head { margin-bottom: var(--s6); }
+.head { margin-bottom: var(--s7); }
 .head .d2, .head .d3 { max-width: 20ch; }
-.head p { margin-top: var(--s4); max-width: 54ch; }
+.head p { margin-top: var(--s5); max-width: 56ch; }
+
+/* Solid geometric marks. Filled, not outlined, so they read as index marks
+   rather than icons, and they carry the red through as a system. */
+.mk { width: 13px; height: 13px; flex: none; color: var(--red); }
+.item-name, .group-h h2 { display: inline-flex; align-items: center; gap: 10px; }
+.item-name .mk, .group-h h2 .mk { transition: transform .4s var(--ease); }
+.item:hover .item-name .mk { transform: rotate(90deg); }
 
 /* ---------- controls ---------- */
 
@@ -160,6 +167,10 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
 .btn-ink:hover { background: var(--red); }
 .btn-soft { background: var(--wash); color: var(--ink); }
 .btn-soft:hover { background: var(--ink); color: #fff; }
+/* nav CTA is chrome, not the page's primary action, so it does not compete
+   with the red button in the same screen */
+.btn-quiet { box-shadow: inset 0 0 0 1px var(--line-2); color: var(--ink); }
+.btn-quiet:hover { box-shadow: inset 0 0 0 1px var(--ink); background: var(--ink); color: #fff; }
 .btn-light { background: #fff; color: var(--ink); }
 .btn-light:hover { background: var(--red); color: #fff; }
 
@@ -300,12 +311,18 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
 
 /* ---------- hero ---------- */
 
-.hero { padding-top: clamp(40px, 5.5vw, 68px); padding-bottom: clamp(30px, 4vw, 44px); }
+.hero { padding-top: clamp(52px, 7vw, 92px); padding-bottom: clamp(34px, 4.5vw, 52px); }
 .hero .d1 { max-width: 15ch; }
-.hero .lede { margin-top: var(--s4); max-width: 44ch; }
-.hero .row-actions { margin-top: var(--s5); }
+.hero .lede { margin-top: var(--s6); max-width: 48ch; }
+.hero .row-actions { margin-top: var(--s6); }
 
-.facts { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); margin-top: var(--s6); }
+.facts {
+  display: flex; flex-wrap: wrap;
+  gap: var(--s3) var(--s7);
+  margin-top: var(--s8);
+  padding-top: var(--s5);
+  border-top: 1px solid var(--line);
+}
 .facts span { font-size: var(--t-note); color: var(--muted); }
 .facts b { font-weight: 500; color: var(--ink); }
 
@@ -321,7 +338,7 @@ html:not(.js) .w, .in .w { transform: none; }
 .list { border-top: 1px solid var(--line); }
 .item {
   display: block;
-  padding: var(--s5) 0;
+  padding: var(--s5) 0 calc(var(--s5) + 2px);
   border-bottom: 1px solid var(--line);
   position: relative;
 }
@@ -493,9 +510,9 @@ html:not(.js) .w, .in .w { transform: none; }
 /* ---------- motion ---------- */
 
 [data-rv] {
-  opacity: 0; transform: translateY(14px);
-  transition: opacity .7s var(--ease), transform .7s var(--ease);
-  transition-delay: calc(var(--i, 0) * 70ms);
+  opacity: 0; transform: translateY(18px);
+  transition: opacity .82s var(--ease), transform .82s var(--ease);
+  transition-delay: calc(var(--i, 0) * 65ms);
 }
 [data-rv].in { opacity: 1; transform: none; }
 html:not(.js) [data-rv] { opacity: 1; transform: none; }
@@ -503,6 +520,31 @@ html:not(.js) [data-rv] { opacity: 1; transform: none; }
 [data-rvf] { clip-path: inset(0 0 12% 0); opacity: .001; transition: clip-path 1s var(--ease), opacity .5s var(--ease); }
 [data-rvf].in { clip-path: inset(0 0 0 0); opacity: 1; }
 html:not(.js) [data-rvf] { clip-path: none; opacity: 1; }
+
+/* scroll progress, CSS driven, no JS */
+.prog {
+  position: fixed; inset: 0 0 auto 0;
+  height: 2px; z-index: 95;
+  background: var(--red);
+  transform: scaleX(0); transform-origin: left;
+  pointer-events: none;
+}
+@supports (animation-timeline: scroll()) {
+  .prog { animation: prog linear both; animation-timeline: scroll(root block); }
+  @keyframes prog { to { transform: scaleX(1); } }
+}
+
+/* scroll-driven settle on image frames, replacing a JS parallax */
+@supports (animation-timeline: view()) {
+  .field img, .field figcaption { will-change: transform; }
+  .field img {
+    animation: settle linear both;
+    animation-timeline: view();
+    animation-range: entry 8% cover 46%;
+  }
+  @keyframes settle { from { transform: scale(1.07); } to { transform: scale(1); } }
+  .strip .field img { animation: none; }
+}
 
 /* ---------- responsive ---------- */
 
@@ -531,4 +573,6 @@ html:not(.js) [data-rvf] { clip-path: none; opacity: 1; }
   [data-rv], [data-rvf] { opacity: 1; transform: none; clip-path: none; }
   .w { transform: none; }
   .step { opacity: 1; }
+  .prog { display: none; }
+  .field img { animation: none !important; transform: none !important; }
 }
