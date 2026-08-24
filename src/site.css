@@ -33,6 +33,7 @@
   --t-sm: 21px;
   --t-lede: 18px;
   --t-base: 16px;
+  --t-read: 17px;
   --t-note: 14px;
   --t-tiny: 12.5px;
 
@@ -368,30 +369,27 @@ html:not(.js) .w, .in .w { transform: none; }
 .group-h span { font-size: var(--t-tiny); color: var(--faint); }
 .sub-h { font-size: var(--t-tiny); color: var(--faint); padding: var(--s5) 0 var(--s2); }
 
-/* The page's one structural pattern: a narrow meta column and the content
-   beside it. Used for points and process steps so the eye learns one shape. */
-.duo { display: grid; grid-template-columns: 148px minmax(0, 1fr); gap: var(--s6); }
-
-.points { border-top: 1px solid var(--line); }
-.pt { padding-block: var(--s7); border-bottom: 1px solid var(--line); }
-.pt-meta { display: grid; gap: 7px; align-content: start; padding-top: 5px; }
+/* Read straight down. A side column left the eye jumping across a dead gap,
+   so the index and label sit on one line above the heading instead. */
+.points { display: grid; gap: clamp(44px, 5.4vw, 68px); }
+.pt-meta { display: flex; align-items: baseline; gap: 10px; margin-bottom: var(--s3); }
 .pt-n {
-  font-family: var(--display); font-weight: 500;
-  font-size: 13px; letter-spacing: .01em;
-  color: var(--faint); font-variant-numeric: tabular-nums;
+  font-size: var(--t-note); color: var(--faint);
+  font-variant-numeric: tabular-nums; letter-spacing: .01em;
 }
-.pt-k { font-size: var(--t-note); font-weight: 500; color: var(--red); line-height: 1.35; }
+.pt-k { font-size: var(--t-note); font-weight: 500; color: var(--red); }
 .pt h3 {
   font-family: var(--display); font-weight: 500;
-  font-size: var(--t-md); letter-spacing: -.028em; line-height: 1.1;
+  font-size: var(--t-md); letter-spacing: -.028em; line-height: 1.12;
   margin-bottom: var(--s4);
 }
-.pt p { color: var(--ink-2); max-width: 52ch; line-height: 1.58; }
+.pt p { font-size: var(--t-read); line-height: 1.66; color: var(--ink-2); max-width: 62ch; }
 
 /* ---------- notes / prose ---------- */
 
 .prose { max-width: 60ch; }
-.prose p + p { margin-top: var(--s4); }
+.prose p { font-size: var(--t-read); line-height: 1.66; }
+.prose p + p { margin-top: var(--s5); }
 .prose .lede + p { margin-top: var(--s5); }
 
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7) var(--s6); }
@@ -400,7 +398,7 @@ html:not(.js) .w, .in .w { transform: none; }
 .defs { border-top: 1px solid var(--line); }
 .def { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
 .def b { display: block; font-family: var(--display); font-weight: 500; font-size: 17px; letter-spacing: -.02em; margin-bottom: 7px; }
-.def span { font-size: 15px; color: var(--muted); line-height: 1.55; }
+.def span { font-size: var(--t-base); color: var(--ink-2); line-height: 1.62; max-width: 62ch; display: block; }
 
 .pull {
   font-family: var(--display); font-weight: 500;
@@ -432,7 +430,7 @@ html:not(.js) .w, .in .w { transform: none; }
 .acc-h[aria-expanded="true"] .sign { color: var(--red); }
 .acc-h[aria-expanded="true"] .sign::after { transform: rotate(90deg); opacity: 0; }
 .acc-p { overflow: hidden; height: 0; }
-.acc-b { padding-bottom: var(--s6); max-width: 62ch; color: var(--ink-2); font-size: 15px; line-height: 1.6; }
+.acc-b { padding-bottom: var(--s6); max-width: 62ch; color: var(--ink-2); font-size: var(--t-base); line-height: 1.66; }
 
 /* ---------- process ---------- */
 
@@ -441,9 +439,6 @@ html:not(.js) .w, .in .w { transform: none; }
    the sequence instead. */
 .steps { border-bottom: 1px solid var(--line); }
 .step {
-  display: grid;
-  grid-template-columns: 148px minmax(0, 1fr);
-  gap: var(--s6);
   padding-block: var(--s7);
   border-top: 1px solid var(--line);
   position: relative;
@@ -462,7 +457,7 @@ html:not(.js) .w, .in .w { transform: none; }
   font-size: var(--t-note); letter-spacing: .01em;
   color: var(--red);
   font-variant-numeric: tabular-nums;
-  padding-top: 6px;
+  margin-bottom: var(--s3);
 }
 .step h2 {
   font-family: var(--display); font-weight: 500;
@@ -470,7 +465,7 @@ html:not(.js) .w, .in .w { transform: none; }
   line-height: 1.04;
   margin-bottom: var(--s4);
 }
-.step p { font-size: var(--t-lede); line-height: 1.52; color: var(--ink-2); max-width: 50ch; letter-spacing: -.014em; }
+.step p { font-size: var(--t-read); line-height: 1.66; color: var(--ink-2); max-width: 62ch; }
 
 .flow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3); }
 .flow span { font-size: 15px; color: var(--ink-2); }
@@ -563,8 +558,7 @@ html:not(.js) [data-rvf] { clip-path: none; opacity: 1; }
   .nav-links, .nav-cta { display: none; }
   .burger { display: inline-flex; }
   .two, .grid-3 { grid-template-columns: 1fr; }
-  .duo, .step { grid-template-columns: 1fr; gap: var(--s3); }
-  .pt-meta { display: flex; align-items: baseline; gap: var(--s3); padding-top: 0; }
+
   .foot-nav { gap: var(--s6) var(--s7); }
   .step { padding-block: var(--s8); }
 }
