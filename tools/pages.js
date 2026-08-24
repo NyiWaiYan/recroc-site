@@ -20,7 +20,7 @@ ${h.meta.map(([k, v]) => `      <span>${esc(k)} <b>${esc(v)}</b></span>`).join('
   </section>
 
   <section class="col s-xs t-0">
-    <figure class="field r-cine bleed" data-rvf>
+    <figure class="field r-cine" data-rvf>
       <img src="/images/bts-interview.jpg" alt="RecRoc crew filming a seated interview with a cinema camera and boom microphone" width="1920" height="1280" fetchpriority="high">
     </figure>
   </section>
@@ -157,7 +157,7 @@ services.forEach((s, idx) => {
   </section>
 
   <section class="col s-xs t-0">
-    ${field(FIELD[s.group] || FIELDS[idx % 6], 'r-cine bleed', s.name, true)}
+    ${field(FIELD[s.group] || FIELDS[idx % 6], 'r-cine', s.name, true)}
   </section>
 
   <section class="col s-md">
@@ -222,7 +222,7 @@ ${rel.map((r, i) => `      <a class="item" href="${url(r)}" data-rv style="--i:$
   </section>
 
   <section class="col s-xs t-0">
-    <div class="grid-3 bleed" data-rv>
+    <div class="grid-3" data-rv>
       ${field('f-ink', 'r-box', 'On set')}
       ${field('f-steel', 'r-box', 'The room')}
       ${field('f-sand', 'r-box', 'The kit')}

@@ -27,11 +27,11 @@
   --body: "Inter", system-ui, -apple-system, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --t-xl: clamp(40px, 6.2vw, 68px);
-  --t-lg: clamp(28px, 3.4vw, 40px);
-  --t-md: clamp(22px, 2.2vw, 30px);
-  --t-sm: 25px;
-  --t-lede: 19px;
+  --t-xl: clamp(34px, 5.2vw, 56px);
+  --t-lg: clamp(25px, 3vw, 34px);
+  --t-md: clamp(20px, 2.1vw, 26px);
+  --t-sm: 21px;
+  --t-lede: 18px;
   --t-base: 16px;
   --t-note: 14px;
   --t-tiny: 12.5px;
@@ -41,9 +41,8 @@
   --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px; --s10: 128px;
 
   /* narrow measure, wide margins */
-  --page: 1140px;
-  --measure: 700px;
-  --pad: clamp(24px, 7vw, 96px);
+  --page: 820px;
+  --pad: clamp(22px, 4vw, 40px);
   --nav-h: 60px;
 
   --ease: cubic-bezier(.22, 1, .36, 1);
@@ -91,18 +90,15 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
   margin-inline: auto;
   padding-inline: var(--pad);
 }
-/* Text is capped by measure but shares the container's left edge, so prose and
-   imagery align on one grid instead of sitting in two centred columns. */
-.head, .prose, .list, .acc, .defs, .form, .stack, .flow, .facts { max-width: var(--measure); }
-
-/* run to the viewport's right edge, keep the left edge on the grid */
-.bleed { margin-right: calc(50% - 50vw); }
+/* Frames, rules and lists span the column. Only running prose is capped, by
+   character count, so every left edge on the page is the same one. */
+.prose, .form { max-width: 62ch; }
 
 /* deliberate rhythm variation — not one uniform section padding */
-.s-lg { padding-block: var(--s10); }
-.s-md { padding-block: var(--s9); }
-.s-sm { padding-block: var(--s8); }
-.s-xs { padding-block: var(--s7); }
+.s-lg { padding-block: clamp(64px, 8vw, 104px); }
+.s-md { padding-block: clamp(52px, 6.4vw, 80px); }
+.s-sm { padding-block: clamp(40px, 5vw, 56px); }
+.s-xs { padding-block: clamp(26px, 3.4vw, 40px); }
 .t-0 { padding-top: 0; }
 .b-0 { padding-bottom: 0; }
 
@@ -143,7 +139,7 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
   top: -.5em;
 }
 
-.head { margin-bottom: var(--s7); }
+.head { margin-bottom: var(--s6); }
 .head .d2, .head .d3 { max-width: 20ch; }
 .head p { margin-top: var(--s4); max-width: 54ch; }
 
@@ -278,13 +274,11 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
   overflow-x: auto;
   scroll-snap-type: x proximity;
   scrollbar-width: none;
-  margin-right: calc(50% - 50vw);
-  padding-right: var(--pad);
   padding-bottom: var(--s2);
 }
 .strip::-webkit-scrollbar { display: none; }
 .strip > * {
-  flex: 0 0 clamp(200px, 24vw, 290px);
+  flex: 0 0 clamp(150px, 21vw, 200px);
   scroll-snap-align: start;
 }
 .shot { display: block; }
@@ -306,12 +300,12 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
 
 /* ---------- hero ---------- */
 
-.hero { padding-top: var(--s9); padding-bottom: var(--s7); }
-.hero .d1 { max-width: 14ch; }
-.hero .lede { margin-top: var(--s5); max-width: 46ch; }
-.hero .row-actions { margin-top: var(--s6); }
+.hero { padding-top: clamp(40px, 5.5vw, 68px); padding-bottom: clamp(30px, 4vw, 44px); }
+.hero .d1 { max-width: 15ch; }
+.hero .lede { margin-top: var(--s4); max-width: 44ch; }
+.hero .row-actions { margin-top: var(--s5); }
 
-.facts { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); margin-top: var(--s7); }
+.facts { display: flex; flex-wrap: wrap; gap: var(--s2) var(--s5); margin-top: var(--s6); }
 .facts span { font-size: var(--t-note); color: var(--muted); }
 .facts b { font-weight: 500; color: var(--ink); }
 
@@ -359,7 +353,7 @@ html:not(.js) .w, .in .w { transform: none; }
 .prose p + p { margin-top: var(--s4); }
 .prose .lede + p { margin-top: var(--s5); }
 
-.stack { display: grid; gap: var(--s7); }
+.stack { display: grid; gap: var(--s6); }
 .two { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s7) var(--s6); }
 
 .point { display: grid; gap: var(--s2); }
@@ -466,7 +460,7 @@ html:not(.js) .w, .in .w { transform: none; }
 
 /* ---------- one footer, CTA folded in ---------- */
 
-.foot { background: var(--ink); color: #EFEDE9; padding-top: var(--s9); padding-bottom: var(--s6); }
+.foot { background: var(--ink); color: #EFEDE9; padding-top: clamp(52px, 6.4vw, 80px); padding-bottom: var(--s5); }
 .foot-c a, .foot-base a, .foot-mail {
   color: rgba(239,237,233,.62);
   transition: color .24s var(--ease);
@@ -474,7 +468,7 @@ html:not(.js) .w, .in .w { transform: none; }
 .foot-c a:hover, .foot-base a:hover, .foot-mail:hover { color: #fff; }
 .foot-mail { font-size: 15px; }
 
-.foot-cta { padding-bottom: var(--s9); border-bottom: 1px solid rgba(239,237,233,.14); }
+.foot-cta { padding-bottom: clamp(44px, 5.5vw, 68px); border-bottom: 1px solid rgba(239,237,233,.14); }
 .foot-cta h2 {
   font-family: var(--display); font-weight: 500;
   font-size: var(--t-lg); letter-spacing: -.034em; line-height: 1.05;
@@ -483,7 +477,7 @@ html:not(.js) .w, .in .w { transform: none; }
 .foot-cta p { margin-top: var(--s4); max-width: 44ch; color: rgba(239,237,233,.62); font-size: 15px; }
 .foot-cta .row-actions { margin-top: var(--s6); }
 
-.foot-nav { display: flex; flex-wrap: wrap; gap: var(--s7) var(--s8); padding-block: var(--s7); }
+.foot-nav { display: flex; flex-wrap: wrap; gap: var(--s6) var(--s7); padding-block: var(--s6); }
 .foot-c { display: grid; gap: 9px; align-content: start; min-width: 130px; }
 .foot-c p { font-size: var(--t-tiny); color: rgba(239,237,233,.4); margin-bottom: 2px; }
 .foot-c a { font-size: var(--t-note); }
