@@ -9,6 +9,24 @@ const ROOT = path.join(__dirname, '..');
 const site = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/site.json'), 'utf8'));
 const services = JSON.parse(fs.readFileSync(path.join(ROOT, 'content/services.json'), 'utf8'));
 
+/* Fingerprint the assets. Netlify serves /assets/* as immutable for a year,
+   which is only safe when the filename changes with the content. Sources live
+   in src/ and are emitted here with a content hash. */
+const crypto = require('crypto');
+const stamp = (srcRel, outDir, ext) => {
+  const body = fs.readFileSync(path.join(ROOT, srcRel), 'utf8');
+  const hash = crypto.createHash('sha256').update(body).digest('hex').slice(0, 10);
+  const dir = path.join(ROOT, outDir);
+  fs.mkdirSync(dir, { recursive: true });
+  // drop stale fingerprints so old files do not pile up in the repo
+  fs.readdirSync(dir).filter(f => f.startsWith('site.') && f.endsWith(ext) && f !== `site.${hash}${ext}`)
+    .forEach(f => fs.unlinkSync(path.join(dir, f)));
+  fs.writeFileSync(path.join(dir, `site.${hash}${ext}`), body);
+  return `/${outDir}/site.${hash}${ext}`;
+};
+const CSS = stamp('src/site.css', 'assets/css', '.css');
+const JS = stamp('src/site.js', 'assets/js', '.js');
+
 const esc = s => String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
 const byGroup = id => services.filter(s => s.group === id);
 const find = slug => services.find(s => s.slug === slug);
@@ -134,7 +152,7 @@ const page = ({ title, desc, canonical, active, body, ld, ctaH, ctaP }) => `<!DO
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400&family=Inter:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css">
+<link rel="stylesheet" href="${CSS}">
 ${ld ? `<script type="application/ld+json">${JSON.stringify(ld)}</script>` : ''}
 </head>
 <body>
@@ -145,7 +163,7 @@ ${body}
 </main>
 ${foot(ctaH, ctaP)}
 <script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js" defer></script>
-<script src="/assets/js/site.js" defer></script>
+<script src="${JS}" defer></script>
 </body>
 </html>
 `;

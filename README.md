@@ -22,15 +22,25 @@ JSON instead.
 ## Structure
 
     content/          copy (edit this)
+    src/              stylesheet and script SOURCES (edit these)
     tools/            generator (build.js + pages.js)
-    assets/css/       design system
-    assets/js/        interactions
-    images/           photography and placeholders
+    assets/           GENERATED, fingerprinted assets. Do not edit.
+    images/           photography
     services/<slug>/  generated service pages
+
+## Asset caching
+
+Netlify serves `/assets/*` with a one year immutable cache. That is only safe
+because the build fingerprints the filenames: `src/site.css` is emitted as
+`assets/css/site.<hash>.css`, and a content change produces a new hash, so
+browsers fetch the new file instead of holding the old one.
+
+Never edit anything in `assets/` and never reference an unhashed asset path.
+Edit `src/site.css` or `src/site.js`, then run `npm run build`.
 
 ## Design system
 
-Tokens are in `assets/css/site.css` under `:root`. Always use the variables.
+Tokens are in `src/site.css` under `:root`. Always use the variables.
 Type scale is 88 / 68 / 30 / 25 / 19 / 16. No shadows, no stroke text.
 Icons are an inline SVG sprite drawn on a 24px grid at 1.5 stroke, defined in
 `tools/build.js`.

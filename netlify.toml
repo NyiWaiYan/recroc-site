@@ -1,10 +1,25 @@
 [build]
   publish = "."
 
+# Fingerprinted filenames (site.<hash>.css) make a long immutable cache safe.
+# A content change produces a new filename, so browsers fetch it rather than
+# serving a stale copy for a year.
 [[headers]]
   for = "/assets/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
+
+# HTML must always revalidate, otherwise a new build's markup can be served
+# from cache against a previous stylesheet.
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+[[headers]]
+  for = "/"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/images/*"
