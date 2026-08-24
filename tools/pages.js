@@ -19,22 +19,26 @@ ${h.meta.map(([k, v]) => `      <span>${esc(k)} <b>${esc(v)}</b></span>`).join('
     </div>
   </section>
 
-  <section class="col-wide s-xs t-0">
-    <figure class="field r-cine" data-rvf>
+  <section class="col s-xs t-0">
+    <figure class="field r-cine bleed" data-rvf>
       <img src="/images/bts-interview.jpg" alt="RecRoc crew filming a seated interview with a cinema camera and boom microphone" width="1920" height="1280" fetchpriority="high">
     </figure>
   </section>
 
-  <section class="col-wide s-md">
+  <section class="col s-md">
     <div class="head" data-rv>
       ${label('Recent work')}
-      <h2 class="d3">Photography and film for people who have something to say.</h2>
+      <h2 class="d3">Film and photography for people with something to say.</h2>
     </div>
-    <div class="grid-3" data-rv>
-${['f-ink', 'f-steel', 'f-red', 'f-sand', 'f-mist', 'f-stone'].map((f, i) =>
-    `      <a href="/services/">${field(f, 'r-box', ['Commercial', 'Event coverage', 'Live DJ set', 'Brand identity', 'Product', 'Artist portrait'][i])}</a>`).join('\n')}
+    <div class="strip" data-rv data-lenis-prevent>
+${[['f-ink','Commercial','Brand film'],['f-steel','Event coverage','Conference'],['f-red','Live DJ set','Campus formal'],['f-sand','Brand identity','Full system'],['f-mist','Product','Studio'],['f-stone','Artist portrait','Single release']].map(function(x){
+  return `      <a class="shot" href="/services/">
+        <p class="shot-cap">${x[1]} <span style="color:var(--faint)">/ ${x[2]}</span></p>
+        ${field(x[0], 'r-tall', '')}
+      </a>`;
+}).join('\n')}
     </div>
-    <p class="note" style="margin-top:var(--s5)">Client work goes here as projects wrap.</p>
+    <p class="note" style="margin-top:var(--s5)">Client work replaces these as projects wrap.</p>
   </section>
 
   <section class="col s-md t-0">
@@ -152,8 +156,8 @@ services.forEach((s, idx) => {
     </div>
   </section>
 
-  <section class="col-wide s-xs t-0">
-    ${field(FIELD[s.group] || FIELDS[idx % 6], 'r-cine', s.name, true)}
+  <section class="col s-xs t-0">
+    ${field(FIELD[s.group] || FIELDS[idx % 6], 'r-cine bleed', s.name, true)}
   </section>
 
   <section class="col s-md">
@@ -217,10 +221,11 @@ ${rel.map((r, i) => `      <a class="item" href="${url(r)}" data-rv style="--i:$
     <p class="lede" data-rv style="--i:1">${esc(a.sub)}</p>
   </section>
 
-  <section class="col-wide s-xs t-0">
-    <div class="grid-2" data-rv>
+  <section class="col s-xs t-0">
+    <div class="grid-3 bleed" data-rv>
       ${field('f-ink', 'r-box', 'On set')}
       ${field('f-steel', 'r-box', 'The room')}
+      ${field('f-sand', 'r-box', 'The kit')}
     </div>
   </section>
 

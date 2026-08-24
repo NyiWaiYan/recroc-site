@@ -69,7 +69,7 @@ ${faqs.map(([q, a], i) => `  <div class="acc-i">
 const nav = active => `
   <a class="skip" href="#top">Skip to content</a>
   <header class="nav" data-nav>
-    <div class="col-wide nav-in">
+    <div class="col nav-in">
       <a class="brand" href="/">RecRoc</a>
       <nav class="nav-links" aria-label="Primary">
         <a href="/services/"${active === 'services' ? ' class="here"' : ''}>Services</a>
@@ -83,7 +83,7 @@ const nav = active => `
     </div>
   </header>
   <div class="sheet" id="sheet" data-sheet>
-    <div class="col-wide">
+    <div class="col">
       <a href="/services/">Services</a>
 ${site.groups.map(g => `      <p class="grp">${esc(g.name)}</p>
 ${byGroup(g.id).map(s => `      <a class="sub" href="${url(s)}">${esc(s.name)}</a>`).join('\n')}`).join('\n')}
@@ -98,13 +98,13 @@ ${byGroup(g.id).map(s => `      <a class="sub" href="${url(s)}">${esc(s.name)}</
    stack a red band and a dark footer on top of each other. */
 const foot = (h, p) => `
   <footer class="foot on-dark">
-    <div class="col-wide">
+    <div class="col">
       <div class="foot-cta">
         <h2>${esc(h || 'Tell us what you are making.')}</h2>
         <p>${esc(p || 'You will hear back from the person who would actually run the project, usually within a working day.')}</p>
         <div class="row-actions">
           <a class="btn btn-light" href="/contact/">Start a project ${ic('arrow')}</a>
-          <a class="btn" style="color:rgba(239,237,233,.62)" href="mailto:${site.email}">${site.email}</a>
+          <a class="foot-mail" href="mailto:${site.email}">${site.email}</a>
         </div>
       </div>
       <div class="foot-nav">

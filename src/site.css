@@ -41,8 +41,8 @@
   --s6: 32px; --s7: 48px; --s8: 64px; --s9: 96px; --s10: 128px;
 
   /* narrow measure, wide margins */
-  --col: 760px;
-  --col-wide: 1080px;
+  --page: 1140px;
+  --measure: 700px;
   --pad: clamp(24px, 7vw, 96px);
   --nav-h: 60px;
 
@@ -86,8 +86,17 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* ---------- measure ---------- */
 
-.col { width: min(100%, var(--col)); margin-inline: auto; padding-inline: var(--pad); }
-.col-wide { width: min(100%, var(--col-wide)); margin-inline: auto; padding-inline: var(--pad); }
+.col {
+  width: min(100%, var(--page));
+  margin-inline: auto;
+  padding-inline: var(--pad);
+}
+/* Text is capped by measure but shares the container's left edge, so prose and
+   imagery align on one grid instead of sitting in two centred columns. */
+.head, .prose, .list, .acc, .defs, .form, .stack, .flow, .facts { max-width: var(--measure); }
+
+/* run to the viewport's right edge, keep the left edge on the grid */
+.bleed { margin-right: calc(50% - 50vw); }
 
 /* deliberate rhythm variation — not one uniform section padding */
 .s-lg { padding-block: var(--s10); }
@@ -262,6 +271,33 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
 .f-mist { --fc: var(--f-mist); }
 .f-sand { --fc: var(--f-sand); }
 
+/* horizontal strip that runs off the right edge */
+.strip {
+  display: flex;
+  gap: var(--s4);
+  overflow-x: auto;
+  scroll-snap-type: x proximity;
+  scrollbar-width: none;
+  margin-right: calc(50% - 50vw);
+  padding-right: var(--pad);
+  padding-bottom: var(--s2);
+}
+.strip::-webkit-scrollbar { display: none; }
+.strip > * {
+  flex: 0 0 clamp(200px, 24vw, 290px);
+  scroll-snap-align: start;
+}
+.shot { display: block; }
+.shot-cap {
+  font-size: var(--t-tiny);
+  color: var(--muted);
+  margin-bottom: var(--s3);
+  transition: color .26s var(--ease);
+}
+.shot:hover .shot-cap { color: var(--ink); }
+.shot .field { transition: opacity .4s var(--ease); }
+.shot:hover .field { opacity: .88; }
+
 /* work / moodboard grid */
 .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s4); }
 .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--s4); }
@@ -270,7 +306,7 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
 
 /* ---------- hero ---------- */
 
-.hero { padding-top: var(--s9); padding-bottom: var(--s8); }
+.hero { padding-top: var(--s9); padding-bottom: var(--s7); }
 .hero .d1 { max-width: 14ch; }
 .hero .lede { margin-top: var(--s5); max-width: 46ch; }
 .hero .row-actions { margin-top: var(--s6); }
@@ -431,8 +467,12 @@ html:not(.js) .w, .in .w { transform: none; }
 /* ---------- one footer, CTA folded in ---------- */
 
 .foot { background: var(--ink); color: #EFEDE9; padding-top: var(--s9); padding-bottom: var(--s6); }
-.foot a { color: rgba(239,237,233,.62); transition: color .24s var(--ease); }
-.foot a:hover { color: #fff; }
+.foot-c a, .foot-base a, .foot-mail {
+  color: rgba(239,237,233,.62);
+  transition: color .24s var(--ease);
+}
+.foot-c a:hover, .foot-base a:hover, .foot-mail:hover { color: #fff; }
+.foot-mail { font-size: 15px; }
 
 .foot-cta { padding-bottom: var(--s9); border-bottom: 1px solid rgba(239,237,233,.14); }
 .foot-cta h2 {
