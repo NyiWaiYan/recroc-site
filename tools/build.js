@@ -155,6 +155,9 @@ const page = ({ title, desc, canonical, active, body, ld, ctaH, ctaP }) => `<!DO
 <title>${esc(title)}</title>
 <meta name="description" content="${esc(desc)}">
 <link rel="canonical" href="${site.domain}${canonical}">
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="RecRoc">
 <meta property="og:title" content="${esc(title)}">

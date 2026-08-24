@@ -60,11 +60,16 @@ ${site.groups.map((g, i) => `      <a class="item" href="/services/#${g.id}" dat
 
   <section class="col s-md t-0">
     <div class="head" data-rv>${label('Why us')}<h2 class="d3">Three things most studios cannot say.</h2></div>
-    <div class="stack">
-${h.pillars.map((p, i) => `      <div class="point" data-rv style="--i:${i}">
-        <span class="k">${esc(p.k)}</span>
-        <h3>${esc(p.t)}</h3>
-        <p>${esc(p.d)}</p>
+    <div class="points">
+${h.pillars.map((p, i) => `      <div class="pt duo" data-rv style="--i:${i}">
+        <div class="pt-meta">
+          <span class="pt-n">0${i + 1}</span>
+          <span class="pt-k">${esc(p.k)}</span>
+        </div>
+        <div>
+          <h3>${esc(p.t)}</h3>
+          <p>${esc(p.d)}</p>
+        </div>
       </div>`).join('\n')}
     </div>
   </section>
@@ -241,8 +246,11 @@ ${a.body.map((p, i) => `      <p class="${i === 0 ? 'lede' : ''}">${esc(p)}</p>`
 
   <section class="col s-md t-0">
     <div class="head" data-rv>${label('Why RecRoc', '3')}<h2 class="d3">Direct access to the makers.</h2></div>
-    <div class="stack">
-${a.why.map((w, i) => `      <div class="point" data-rv style="--i:${i}"><h3>${esc(w.t)}</h3><p>${esc(w.d)}</p></div>`).join('\n')}
+    <div class="points">
+${a.why.map((w, i) => `      <div class="pt duo" data-rv style="--i:${i}">
+        <div class="pt-meta"><span class="pt-n">0${i + 1}</span></div>
+        <div><h3>${esc(w.t)}</h3><p>${esc(w.d)}</p></div>
+      </div>`).join('\n')}
     </div>
   </section>
 
@@ -270,7 +278,7 @@ ${a.values.map((v, i) => `      <div class="def" data-rv style="--i:${i}"><b>${e
   <section class="col s-xs t-0">
     <ol class="steps">
 ${p.steps.map((s, i) => `      <li class="step" data-rv style="--i:${i}">
-        <p class="step-n">${s.n}</p>
+        <p class="step-n">Step ${s.n}</p>
         <div>
           <h2>${esc(s.t)}</h2>
           <p>${esc(s.d)}</p>
