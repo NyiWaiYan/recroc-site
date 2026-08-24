@@ -62,7 +62,7 @@ ${site.groups.map((g, i) => `      <a class="item" href="/services/#${g.id}" dat
     <div class="head" data-rv>${label('Why us')}<h2 class="d3">Three things most studios cannot say.</h2></div>
     <div class="points">
 ${h.pillars.map((p, i) => `      <div class="pt" data-rv style="--i:${i}">
-        <p class="pt-meta"><span class="pt-n">0${i + 1}</span><span class="pt-k">${esc(p.k)}</span></p>
+        <p class="pt-meta"><span class="pt-k">${esc(p.k)}</span></p>
         <h3>${esc(p.t)}</h3>
         <p>${esc(p.d)}</p>
       </div>`).join('\n')}
@@ -240,10 +240,9 @@ ${a.body.map((p, i) => `      <p class="${i === 0 ? 'lede' : ''}">${esc(p)}</p>`
   </section>
 
   <section class="col s-md t-0">
-    <div class="head" data-rv>${label('Why RecRoc', '3')}<h2 class="d3">Direct access to the makers.</h2></div>
+    <div class="head" data-rv>${label('Why RecRoc')}<h2 class="d3">Why work with us.</h2></div>
     <div class="points">
 ${a.why.map((w, i) => `      <div class="pt" data-rv style="--i:${i}">
-        <p class="pt-meta"><span class="pt-n">0${i + 1}</span></p>
         <h3>${esc(w.t)}</h3>
         <p>${esc(w.d)}</p>
       </div>`).join('\n')}

@@ -97,10 +97,10 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 .prose, .form { max-width: 62ch; }
 
 /* deliberate rhythm variation — not one uniform section padding */
-.s-lg { padding-block: clamp(64px, 8vw, 104px); }
-.s-md { padding-block: clamp(56px, 7vw, 88px); }
-.s-sm { padding-block: clamp(44px, 5.4vw, 64px); }
-.s-xs { padding-block: clamp(26px, 3.4vw, 40px); }
+.s-lg { padding-block: clamp(56px, 6.4vw, 88px); }
+.s-md { padding-block: clamp(48px, 5.4vw, 72px); }
+.s-sm { padding-block: clamp(38px, 4.2vw, 56px); }
+.s-xs { padding-block: clamp(24px, 2.8vw, 36px); }
 .t-0 { padding-top: 0; }
 .b-0 { padding-bottom: 0; }
 
@@ -131,7 +131,7 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
   font-weight: 500;
   color: var(--muted);
   letter-spacing: -.008em;
-  margin-bottom: var(--s5);
+  margin-bottom: var(--s4);
 }
 .label sup {
   font-size: .68em;
@@ -141,9 +141,9 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
   top: -.5em;
 }
 
-.head { margin-bottom: var(--s8); }
+.head { margin-bottom: var(--s7); }
 .head .d2, .head .d3 { max-width: 20ch; }
-.head p { margin-top: var(--s5); max-width: 56ch; }
+.head p { margin-top: var(--s4); max-width: 58ch; }
 
 /* Solid geometric marks. Filled, not outlined, so they read as index marks
    rather than icons, and they carry the red through as a system. */
@@ -316,15 +316,15 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
 
 /* ---------- hero ---------- */
 
-.hero { padding-top: clamp(52px, 7vw, 92px); padding-bottom: clamp(34px, 4.5vw, 52px); }
+.hero { padding-top: clamp(46px, 6vw, 76px); padding-bottom: clamp(30px, 4vw, 44px); }
 .hero .d1 { max-width: 15ch; }
-.hero .lede { margin-top: var(--s6); max-width: 48ch; }
+.hero .lede { margin-top: var(--s5); max-width: 50ch; }
 .hero .row-actions { margin-top: var(--s6); }
 
 .facts {
   display: flex; flex-wrap: wrap;
-  gap: var(--s3) var(--s7);
-  margin-top: var(--s8);
+  gap: var(--s3) var(--s6);
+  margin-top: var(--s7);
   padding-top: var(--s5);
   border-top: 1px solid var(--line);
 }
@@ -343,7 +343,7 @@ html:not(.js) .w, .in .w { transform: none; }
 .list { border-top: 1px solid var(--line); }
 .item {
   display: block;
-  padding: var(--s5) 0 calc(var(--s5) + 4px);
+  padding: var(--s5) 0 calc(var(--s5) + 2px);
   border-bottom: 1px solid var(--line);
   position: relative;
 }
@@ -371,17 +371,13 @@ html:not(.js) .w, .in .w { transform: none; }
 
 /* Read straight down. A side column left the eye jumping across a dead gap,
    so the index and label sit on one line above the heading instead. */
-.points { display: grid; gap: clamp(44px, 5.4vw, 68px); }
-.pt-meta { display: flex; align-items: baseline; gap: 10px; margin-bottom: var(--s3); }
-.pt-n {
-  font-size: var(--t-note); color: var(--faint);
-  font-variant-numeric: tabular-nums; letter-spacing: .01em;
-}
+.points { display: grid; gap: clamp(34px, 4vw, 48px); }
+.pt-meta { margin-bottom: 10px; }
 .pt-k { font-size: var(--t-note); font-weight: 500; color: var(--red); }
 .pt h3 {
   font-family: var(--display); font-weight: 500;
-  font-size: var(--t-md); letter-spacing: -.028em; line-height: 1.12;
-  margin-bottom: var(--s4);
+  font-size: 21px; letter-spacing: -.024em; line-height: 1.18;
+  margin-bottom: var(--s3);
 }
 .pt p { font-size: var(--t-read); line-height: 1.66; color: var(--ink-2); max-width: 62ch; }
 
@@ -396,7 +392,7 @@ html:not(.js) .w, .in .w { transform: none; }
 
 
 .defs { border-top: 1px solid var(--line); }
-.def { padding: var(--s6) 0; border-bottom: 1px solid var(--line); }
+.def { padding: var(--s5) 0 calc(var(--s5) + 4px); border-bottom: 1px solid var(--line); }
 .def b { display: block; font-family: var(--display); font-weight: 500; font-size: 17px; letter-spacing: -.02em; margin-bottom: 7px; }
 .def span { font-size: var(--t-base); color: var(--ink-2); line-height: 1.62; max-width: 62ch; display: block; }
 
@@ -439,7 +435,7 @@ html:not(.js) .w, .in .w { transform: none; }
    the sequence instead. */
 .steps { border-bottom: 1px solid var(--line); }
 .step {
-  padding-block: var(--s7);
+  padding-block: var(--s6) calc(var(--s6) + 8px);
   border-top: 1px solid var(--line);
   position: relative;
 }
