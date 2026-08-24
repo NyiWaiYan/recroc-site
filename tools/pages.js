@@ -273,7 +273,7 @@ ${a.values.map((v, i) => `      <div class="def" data-rv style="--i:${i}"><b>${e
   <section class="col s-xs t-0">
     <ol class="steps">
 ${p.steps.map((s, i) => `      <li class="step" data-rv style="--i:${i}">
-        <p class="step-n">Step ${s.n}</p>
+        <p class="step-n">${s.n}</p>
         <div>
           <h2>${esc(s.t)}</h2>
           <p>${esc(s.d)}</p>

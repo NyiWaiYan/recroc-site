@@ -430,36 +430,34 @@ html:not(.js) .w, .in .w { transform: none; }
 
 /* ---------- process ---------- */
 
-/* Steps stay at full opacity. Dimming inactive ones made them unreadable and
-   the sticky track read as a loading bar. The rule wiping red on entry gives
-   the sequence instead. */
+/* A grey rule separates. A short red tick draws in at its left as the step
+   enters, so the scroll is felt without painting five red lines down the page. */
 .steps { border-bottom: 1px solid var(--line); }
 .step {
-  padding-block: var(--s6) calc(var(--s6) + 8px);
+  padding-block: var(--s6) calc(var(--s6) + 6px);
   border-top: 1px solid var(--line);
   position: relative;
 }
 .step::before {
   content: "";
   position: absolute; top: -1px; left: 0;
-  height: 1px; width: 0;
+  height: 2px; width: 0;
   background: var(--red);
-  transition: width 1s var(--ease);
-  transition-delay: calc(var(--i, 0) * 60ms);
+  transition: width .75s var(--ease);
+  transition-delay: calc(var(--i, 0) * 70ms);
 }
-.step.in::before { width: 100%; }
+.step.in::before { width: 40px; }
 .step-n {
-  font-family: var(--display); font-weight: 500;
-  font-size: var(--t-note); letter-spacing: .01em;
+  font-size: var(--t-note); font-weight: 500;
   color: var(--red);
-  font-variant-numeric: tabular-nums;
+  font-variant-numeric: tabular-nums; letter-spacing: .01em;
   margin-bottom: var(--s3);
 }
 .step h2 {
   font-family: var(--display); font-weight: 500;
-  font-size: var(--t-lg); letter-spacing: -.032em;
-  line-height: 1.04;
-  margin-bottom: var(--s4);
+  font-size: clamp(23px, 2.4vw, 28px);
+  letter-spacing: -.028em; line-height: 1.14;
+  margin-bottom: var(--s3);
 }
 .step p { font-size: var(--t-read); line-height: 1.66; color: var(--ink-2); max-width: 62ch; }
 
