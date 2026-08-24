@@ -6,9 +6,9 @@
 :root {
   --bg: #FFFFFF;
   --ink: #131211;
-  --ink-2: #45423D;
-  --muted: #6E6A64;
-  --faint: #7A756D;
+  --ink-2: #3B3833;
+  --muted: #5C5852;
+  --faint: #6E6A63;
   --line: #E8E5E0;
   --line-2: #D2CEC7;
   --red: #D6301D;
@@ -96,7 +96,7 @@ button { font: inherit; color: inherit; background: none; border: 0; cursor: poi
 
 /* deliberate rhythm variation — not one uniform section padding */
 .s-lg { padding-block: clamp(64px, 8vw, 104px); }
-.s-md { padding-block: clamp(52px, 6.4vw, 80px); }
+.s-md { padding-block: clamp(48px, 5.8vw, 72px); }
 .s-sm { padding-block: clamp(40px, 5vw, 56px); }
 .s-xs { padding-block: clamp(26px, 3.4vw, 40px); }
 .t-0 { padding-top: 0; }
@@ -145,10 +145,8 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
 
 /* Solid geometric marks. Filled, not outlined, so they read as index marks
    rather than icons, and they carry the red through as a system. */
-.mk { width: 13px; height: 13px; flex: none; color: var(--red); }
-.item-name, .group-h h2 { display: inline-flex; align-items: center; gap: 10px; }
-.item-name .mk, .group-h h2 .mk { transition: transform .4s var(--ease); }
-.item:hover .item-name .mk { transform: rotate(90deg); }
+.mk { width: 18px; height: 18px; flex: none; color: var(--red); }
+.item-name, .group-h h2 { display: inline-flex; align-items: center; gap: 11px; }
 
 /* ---------- controls ---------- */
 
@@ -163,14 +161,18 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
 .btn:hover svg { transform: translateX(3px); }
 .btn-red { background: var(--red); color: #fff; }
 .btn-red:hover { background: var(--red-deep); }
-.btn-ink { background: var(--ink); color: #fff; }
-.btn-ink:hover { background: var(--red); }
 .btn-soft { background: var(--wash); color: var(--ink); }
-.btn-soft:hover { background: var(--ink); color: #fff; }
-/* nav CTA is chrome, not the page's primary action, so it does not compete
-   with the red button in the same screen */
-.btn-quiet { box-shadow: inset 0 0 0 1px var(--line-2); color: var(--ink); }
-.btn-quiet:hover { box-shadow: inset 0 0 0 1px var(--ink); background: var(--ink); color: #fff; }
+.btn-soft:hover { background: var(--line); }
+
+/* nav CTA is a link, not a second button competing with the red one */
+.nav-cta {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: var(--t-note); font-weight: 500;
+  color: var(--red);
+  letter-spacing: -.01em;
+}
+.nav-cta svg { width: 14px; height: 14px; transition: transform .32s var(--ease); }
+.nav-cta:hover svg { transform: translateX(3px); }
 .btn-light { background: #fff; color: var(--ink); }
 .btn-light:hover { background: var(--red); color: #fff; }
 
@@ -195,7 +197,7 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
   transition: background .26s var(--ease), color .26s var(--ease);
 }
 .pill:hover { background: var(--line); }
-.pill[aria-pressed="true"] { background: var(--ink); color: #fff; }
+.pill[aria-pressed="true"] { background: var(--red); color: #fff; }
 .pill span { color: var(--faint); margin-left: 5px; font-weight: 400; }
 .pill[aria-pressed="true"] span { color: rgba(255,255,255,.5); }
 
@@ -338,7 +340,7 @@ html:not(.js) .w, .in .w { transform: none; }
 .list { border-top: 1px solid var(--line); }
 .item {
   display: block;
-  padding: var(--s5) 0 calc(var(--s5) + 2px);
+  padding: var(--s5) 0 calc(var(--s5) + 4px);
   border-bottom: 1px solid var(--line);
   position: relative;
 }
@@ -349,7 +351,7 @@ html:not(.js) .w, .in .w { transform: none; }
   transition: color .26s var(--ease);
 }
 .item:hover .item-name { color: var(--red); }
-.item-note { font-size: var(--t-note); color: var(--muted); margin-top: var(--s1); max-width: 58ch; }
+.item-note { font-size: var(--t-note); color: var(--muted); margin-top: 6px; max-width: 58ch; line-height: 1.55; }
 .item-go { color: var(--line-2); flex: none; transition: transform .34s var(--ease), color .26s var(--ease); }
 .item-go svg { width: 15px; height: 15px; }
 .item:hover .item-go { color: var(--red); transform: translateX(4px); }
@@ -379,7 +381,7 @@ html:not(.js) .w, .in .w { transform: none; }
 .point .k { font-size: var(--t-tiny); color: var(--red); }
 
 .defs { border-top: 1px solid var(--line); }
-.def { padding: var(--s5) 0; border-bottom: 1px solid var(--line); }
+.def { padding: var(--s5) 0 calc(var(--s5) + 2px); border-bottom: 1px solid var(--line); }
 .def b { display: block; font-family: var(--display); font-weight: 500; font-size: 17px; letter-spacing: -.02em; margin-bottom: var(--s1); }
 .def span { font-size: 15px; color: var(--muted); line-height: 1.55; }
 
@@ -413,41 +415,45 @@ html:not(.js) .w, .in .w { transform: none; }
 .acc-h[aria-expanded="true"] .sign { color: var(--red); }
 .acc-h[aria-expanded="true"] .sign::after { transform: rotate(90deg); opacity: 0; }
 .acc-p { overflow: hidden; height: 0; }
-.acc-b { padding-bottom: var(--s5); max-width: 62ch; color: var(--ink-2); font-size: 15px; line-height: 1.6; }
+.acc-b { padding-bottom: var(--s6); max-width: 62ch; color: var(--ink-2); font-size: 15px; line-height: 1.6; }
 
 /* ---------- process ---------- */
 
-.proc { position: relative; }
-.proc-bar {
-  position: sticky; top: var(--nav-h); z-index: 5;
-  display: flex; align-items: center; gap: var(--s4);
-  padding: var(--s4) 0;
-  background: rgba(255,255,255,.9);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--line);
-}
-.proc-n {
-  font-family: var(--display); font-weight: 500;
-  font-size: 22px; letter-spacing: -.03em;
-  font-variant-numeric: tabular-nums;
-  min-width: 2.4ch;
-}
-.proc-track { position: relative; flex: 1; height: 2px; background: var(--line); }
-.proc-fill { position: absolute; inset: 0 auto 0 0; width: 20%; background: var(--red); transition: width .4s var(--ease); }
-.proc-lab { font-size: var(--t-note); color: var(--muted); font-variant-numeric: tabular-nums; }
-
+/* Steps stay at full opacity. Dimming inactive ones made them unreadable and
+   the sticky track read as a loading bar. The rule wiping red on entry gives
+   the sequence instead. */
+.steps { border-bottom: 1px solid var(--line); }
 .step {
-  padding-block: var(--s9);
-  border-bottom: 1px solid var(--line);
-  opacity: .3;
-  transition: opacity .5s var(--ease);
+  display: grid;
+  grid-template-columns: 66px minmax(0, 1fr);
+  gap: var(--s5);
+  padding-block: var(--s6) var(--s7);
+  border-top: 1px solid var(--line);
+  position: relative;
 }
-.step:last-child { border-bottom: 0; }
-.step.on { opacity: 1; }
-.step-k { font-size: var(--t-tiny); color: var(--red); margin-bottom: var(--s3); }
-.step h2 { font-family: var(--display); font-weight: 500; font-size: var(--t-lg); letter-spacing: -.034em; margin-bottom: var(--s4); }
-.step p { font-size: var(--t-lede); line-height: 1.5; color: var(--ink-2); max-width: 48ch; letter-spacing: -.014em; }
+.step::before {
+  content: "";
+  position: absolute; top: -1px; left: 0;
+  height: 1px; width: 0;
+  background: var(--red);
+  transition: width 1s var(--ease);
+  transition-delay: calc(var(--i, 0) * 60ms);
+}
+.step.in::before { width: 100%; }
+.step-n {
+  font-family: var(--display); font-weight: 500;
+  font-size: 15px; letter-spacing: -.02em;
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
+  padding-top: 7px;
+}
+.step h2 {
+  font-family: var(--display); font-weight: 500;
+  font-size: var(--t-lg); letter-spacing: -.032em;
+  line-height: 1.04;
+  margin-bottom: var(--s4);
+}
+.step p { font-size: var(--t-lede); line-height: 1.52; color: var(--ink-2); max-width: 50ch; letter-spacing: -.014em; }
 
 .flow { display: flex; flex-wrap: wrap; align-items: center; gap: var(--s3); }
 .flow span { font-size: 15px; color: var(--ink-2); }
@@ -521,19 +527,6 @@ html:not(.js) [data-rv] { opacity: 1; transform: none; }
 [data-rvf].in { clip-path: inset(0 0 0 0); opacity: 1; }
 html:not(.js) [data-rvf] { clip-path: none; opacity: 1; }
 
-/* scroll progress, CSS driven, no JS */
-.prog {
-  position: fixed; inset: 0 0 auto 0;
-  height: 2px; z-index: 95;
-  background: var(--red);
-  transform: scaleX(0); transform-origin: left;
-  pointer-events: none;
-}
-@supports (animation-timeline: scroll()) {
-  .prog { animation: prog linear both; animation-timeline: scroll(root block); }
-  @keyframes prog { to { transform: scaleX(1); } }
-}
-
 /* scroll-driven settle on image frames, replacing a JS parallax */
 @supports (animation-timeline: view()) {
   .field img, .field figcaption { will-change: transform; }
@@ -573,6 +566,5 @@ html:not(.js) [data-rvf] { clip-path: none; opacity: 1; }
   [data-rv], [data-rvf] { opacity: 1; transform: none; clip-path: none; }
   .w { transform: none; }
   .step { opacity: 1; }
-  .prog { display: none; }
   .field img { animation: none !important; transform: none !important; }
 }

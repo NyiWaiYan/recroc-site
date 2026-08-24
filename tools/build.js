@@ -33,26 +33,26 @@ const find = slug => services.find(s => s.slug === slug);
 const url = s => `/services/${s.slug}/`;
 const groupName = id => (site.groups.find(g => g.id === id) || {}).name || '';
 
-/* only functional icons remain — no decorative strokes */
+/* Obra Icons (MIT, Obra Studio BV) — https://icons.obra.studio
+   Real paths from obra-icons-react, drawn on a 24px frame. Rendered at 1.5
+   stroke, which at 16-18px display reads as roughly a 1px line. */
 const ICONS = {
-  arrow: '<path d="M4.5 12h14M13.2 6.6 18.8 12l-5.6 5.4"/>',
-  chev: '<path d="m6.5 9.5 5.5 5.4 5.5-5.4"/>',
-  menu: '<path d="M4 8h16M4 16h16"/>',
-  close: '<path d="m7 7 10 10M17 7 7 17"/>'
+  arrow: '<path d="M19 12L5 12"/><path d="M13 6L19 12L13 18"/>',
+  chev: '<path d="M18 10L12 16L6 10"/>',
+  menu: '<path d="M19 12H5"/><path d="M19 7H5"/><path d="M19 17H5"/>',
+  close: '<path d="M18.0001 6L6.00012 18"/><path d="M6.00012 6L18.0001 18"/>'
 };
-/* Filled geometric marks, one per discipline. Solid shapes rather than outlined
-   icons: they read as index marks, stay legible at 13px, and carry the brand
-   red through the page as a system instead of a single button. */
 const MARKS = {
-  video: '<path d="M5.2 3 13.4 8 5.2 13z"/>',
-  photography: '<circle cx="8" cy="8" r="4.7"/>',
-  brand: '<path d="M8 2.6 13.4 8 8 13.4 2.6 8z"/>',
-  dj: '<rect x="2.8" y="4" width="10.4" height="2.4" rx="1.2"/><rect x="2.8" y="9.6" width="10.4" height="2.4" rx="1.2"/>',
-  audio: '<rect x="2.6" y="9.2" width="2.4" height="3.9" rx="1.2"/><rect x="6.8" y="6.1" width="2.4" height="7" rx="1.2"/><rect x="11" y="2.9" width="2.4" height="10.2" rx="1.2"/>'
+  video: '<path d="M20.4672 8.15137L15.079 12.0001L20.4672 15.8489V8.15137Z"/><path d="M13.5395 6.61169H5.07222C4.22197 6.61169 3.53271 7.30095 3.53271 8.1512V15.8487C3.53271 16.699 4.22197 17.3882 5.07222 17.3882H13.5395C14.3897 17.3882 15.079 16.699 15.079 15.8487V8.1512C15.079 7.30095 14.3897 6.61169 13.5395 6.61169Z"/>',
+  photography: '<path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"/><path d="M10 4L8 6.5H4C3.44772 6.5 3 6.94772 3 7.5V18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18V7.5C21 6.94772 20.5523 6.5 20 6.5H16.0909L14 4H10Z"/>',
+  brand: '<path d="M8 15H8.012"/><path d="M8 9.5H8.012"/><path d="M12 7H12.012"/><path d="M15.5 9.5H15.512"/><path d="M21 12C21 14.4797 15.2325 11.9604 13.6103 13.5882C11.9807 15.2234 14.4909 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/>',
+  dj: '<path d="M20.0614 16.7897L19.8026 17.7556C19.3738 19.356 17.7288 20.3057 16.1284 19.8769L15.1624 19.6181L16.9742 12.8566L17.9401 13.1154C19.5405 13.5443 20.4902 15.1893 20.0614 16.7897ZM20.0614 16.7897C20.0614 16.7897 21.1667 15.0002 21 12.0002C20.8334 9.00017 18.9 3.00017 12.5 3.00017L11.4585 3.00017C5.05848 3.00017 3.12515 9.00017 2.95848 12.0002C2.79182 15.0002 3.89712 16.7897 3.89712 16.7897M3.89712 16.7897L4.15594 17.7556C4.58476 19.356 6.22977 20.3057 7.83017 19.8769L8.7961 19.6181L6.98436 12.8566L6.01844 13.1154C4.41804 13.5443 3.46829 15.1893 3.89712 16.7897Z"/>',
+  audio: '<path d="M5 18.1401L6.1995 18.1056"/><path d="M12 18.1401L19.2 18.0859"/><circle cx="9.00006" cy="18.14" r="2"/><path d="M5 11.9714L13.2 11.9369"/><path d="M17.9956 12.0001H19.2045"/><path d="M5 6.00012L6.1995 5.96562"/><path d="M12 6.00012L19.2 5.94588"/><circle cx="9" cy="6" r="2"/><circle cx="15.2" cy="12.1368" r="2"/>'
 };
+const sym = (p, id) => `<symbol id="${id}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${p}</symbol>`;
 const sprite = () => `<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">` +
-  Object.keys(ICONS).map(k => `<symbol id="i-${k}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${ICONS[k]}</symbol>`).join('') +
-  Object.keys(MARKS).map(k => `<symbol id="m-${k}" viewBox="0 0 16 16" fill="currentColor">${MARKS[k]}</symbol>`).join('') +
+  Object.keys(ICONS).map(k => sym(ICONS[k], 'i-' + k)).join('') +
+  Object.keys(MARKS).map(k => sym(MARKS[k], 'm-' + k)).join('') +
   `</svg>`;
 const ic = n => `<svg aria-hidden="true"><use href="#i-${n}"/></svg>`;
 const mk = n => `<svg class="mk" aria-hidden="true"><use href="#m-${n}"/></svg>`;
@@ -80,7 +80,6 @@ ${faqs.map(([q, a], i) => `  <div class="acc-i">
 
 const nav = active => `
   <a class="skip" href="#top">Skip to content</a>
-  <div class="prog" aria-hidden="true"></div>
   <header class="nav" data-nav>
     <div class="col nav-in">
       <a class="brand" href="/">RecRoc</a>
@@ -89,7 +88,7 @@ const nav = active => `
         <a href="/process/"${active === 'process' ? ' class="here"' : ''}>Process</a>
         <a href="/about/"${active === 'about' ? ' class="here"' : ''}>About</a>
       </nav>
-      <a class="btn btn-quiet nav-cta" href="/contact/">Start a project</a>
+      <a class="nav-cta" href="/contact/">Start a project ${ic('arrow')}</a>
       <button class="burger" type="button" data-burger aria-expanded="false" aria-label="Open menu" aria-controls="sheet">
         <svg class="m" aria-hidden="true"><use href="#i-menu"/></svg><svg class="x" aria-hidden="true"><use href="#i-close"/></svg>
       </button>

@@ -123,30 +123,6 @@
     });
   }
 
-  /* process */
-  var proc = $('[data-proc]');
-  if (proc) {
-    var steps = $$('[data-step]', proc);
-    var numEl = $('[data-proc-n]', proc), labEl = $('[data-proc-lab]', proc), fillEl = $('[data-proc-fill]', proc);
-    var cur = -1;
-    function setStep(i) {
-      if (i === cur || i < 0) return;
-      cur = i;
-      steps.forEach(function (s, n) { s.classList.toggle('on', n === i); });
-      if (numEl) numEl.textContent = steps[i].getAttribute('data-n');
-      if (labEl) labEl.textContent = steps[i].getAttribute('data-t');
-      if (fillEl) fillEl.style.width = ((i + 1) / steps.length * 100) + '%';
-    }
-    if (!('IntersectionObserver' in window)) steps.forEach(function (s) { s.classList.add('on'); });
-    else {
-      var pio = new IntersectionObserver(function (es) {
-        es.forEach(function (en) { if (en.isIntersecting) setStep(steps.indexOf(en.target)); });
-      }, { rootMargin: '-42% 0px -42% 0px' });
-      steps.forEach(function (s) { pio.observe(s); });
-      setStep(0);
-    }
-  }
-
   /* contact form: preselect topic from ?s= */
   var sel = $('[data-preselect]');
   if (sel) {

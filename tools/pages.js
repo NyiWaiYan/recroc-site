@@ -267,17 +267,16 @@ ${a.values.map((v, i) => `      <div class="def" data-rv style="--i:${i}"><b>${e
     <p class="lede" data-rv style="--i:1">${esc(p.sub)}</p>
   </section>
 
-  <section class="col proc" data-proc>
-    <div class="proc-bar">
-      <span class="proc-n" data-proc-n>01</span>
-      <span class="proc-track"><i class="proc-fill" data-proc-fill></i></span>
-      <span class="proc-lab" data-proc-lab>Listen</span>
-    </div>
-${p.steps.map((s, i) => `    <article class="step${i === 0 ? ' on' : ''}" data-step data-n="${s.n}" data-t="${esc(s.t)}">
-      <p class="step-k">Step ${s.n}</p>
-      <h2>${esc(s.t)}</h2>
-      <p>${esc(s.d)}</p>
-    </article>`).join('\n')}
+  <section class="col s-xs t-0">
+    <ol class="steps">
+${p.steps.map((s, i) => `      <li class="step" data-rv style="--i:${i}">
+        <p class="step-n">${s.n}</p>
+        <div>
+          <h2>${esc(s.t)}</h2>
+          <p>${esc(s.d)}</p>
+        </div>
+      </li>`).join('\n')}
+    </ol>
   </section>
 
   <section class="col s-sm">

@@ -42,8 +42,19 @@ Edit `src/site.css` or `src/site.js`, then run `npm run build`.
 
 Tokens are in `src/site.css` under `:root`. Always use the variables.
 Type scale is 88 / 68 / 30 / 25 / 19 / 16. No shadows, no stroke text.
-Icons are an inline SVG sprite drawn on a 24px grid at 1.5 stroke, defined in
-`tools/build.js`.
+## Icons
+
+Obra Icons, MIT licensed, by Obra Studio BV: https://icons.obra.studio
+
+Paths were extracted from the `obra-icons-react` package and inlined as an SVG
+sprite in `tools/build.js`, so the site ships no icon dependency. They are
+rendered at 1.5 stroke on a 24px frame, which reads as roughly a 1px line at
+the 16 to 18px sizes used here.
+
+    The MIT License (MIT) Copyright 2025 Obra Studio BV
+
+To add an icon, copy its SVG from icons.obra.studio and add the inner paths to
+the ICONS or MARKS object in `tools/build.js`.
 
 ## Forms
 
