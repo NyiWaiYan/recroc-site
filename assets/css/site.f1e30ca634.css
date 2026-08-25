@@ -16,12 +16,10 @@
   --wash: #F6F4F1;
 
   /* image fields — a real palette, not pastel filler */
-  --f-ink: #1C1B19;
+  --f-ink: #171614;
   --f-red: #D6301D;
-  --f-steel: #647588;
-  --f-stone: #B3ADA3;
-  --f-mist: #CED4D7;
-  --f-sand: #DCD6CC;
+  --f-slate: #24313C;
+  --f-moss: #2A3A31;
 
   --display: "Space Grotesk", "Helvetica Neue", system-ui, sans-serif;
   --body: "Inter", system-ui, -apple-system, sans-serif;
@@ -278,10 +276,29 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
 
 .f-ink { --fc: var(--f-ink); }
 .f-red { --fc: var(--f-red); }
-.f-steel { --fc: var(--f-steel); }
-.f-stone { --fc: var(--f-stone); }
-.f-mist { --fc: var(--f-mist); }
-.f-sand { --fc: var(--f-sand); }
+.f-slate { --fc: var(--f-slate); }
+.f-moss { --fc: var(--f-moss); }
+
+/* illustration frames */
+.art-field { display: grid; place-items: center; color: rgba(255,255,255,.9); }
+.art { width: min(72%, 300px); height: auto; overflow: visible; }
+.art-field figcaption { color: rgba(255,255,255,.62); }
+
+/* process chips */
+.chip {
+  display: grid; place-items: center;
+  width: 62px; height: 62px;
+  border-radius: 14px;
+  background: var(--fc, var(--f-ink));
+  color: rgba(255,255,255,.92);
+  margin-bottom: var(--s4);
+  transform: scale(.94);
+  opacity: 0;
+  transition: transform .7s var(--ease), opacity .55s var(--ease);
+}
+.chip svg { width: 32px; height: 32px; }
+.step.in .chip { transform: none; opacity: 1; }
+html:not(.js) .chip { transform: none; opacity: 1; }
 
 /* horizontal strip that runs off the right edge */
 .strip {
@@ -430,28 +447,14 @@ html:not(.js) .w, .in .w { transform: none; }
 
 /* ---------- process ---------- */
 
-/* A grey rule separates. A short red tick draws in at its left as the step
-   enters, so the scroll is felt without painting five red lines down the page. */
-.steps { border-bottom: 1px solid var(--line); }
-.step {
-  padding-block: var(--s6) calc(var(--s6) + 6px);
-  border-top: 1px solid var(--line);
-  position: relative;
-}
-.step::before {
-  content: "";
-  position: absolute; top: -1px; left: 0;
-  height: 2px; width: 0;
-  background: var(--red);
-  transition: width .75s var(--ease);
-  transition-delay: calc(var(--i, 0) * 70ms);
-}
-.step.in::before { width: 40px; }
+/* No rule between steps. The coloured chip marks each one. */
+.steps { display: grid; gap: clamp(40px, 4.8vw, 64px); }
+.step { position: relative; }
 .step-n {
   font-size: var(--t-note); font-weight: 500;
-  color: var(--red);
+  color: var(--faint);
   font-variant-numeric: tabular-nums; letter-spacing: .01em;
-  margin-bottom: var(--s3);
+  margin-bottom: 6px;
 }
 .step h2 {
   font-family: var(--display); font-weight: 500;

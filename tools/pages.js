@@ -1,5 +1,5 @@
 const B = require('./build.js');
-const { site, services, esc, byGroup, find, url, groupName, ic, mk, words, label, field, acc, page, write, FIELD } = B;
+const { site, services, esc, byGroup, find, url, groupName, ic, mk, illus, stepArt, STEP_FIELD, STEP_KEY, words, label, field, acc, page, write, FIELD } = B;
 
 const FIELDS = ['f-ink', 'f-steel', 'f-red', 'f-sand', 'f-stone', 'f-mist'];
 
@@ -31,10 +31,10 @@ ${h.meta.map(([k, v]) => `      <span>${esc(k)} <b>${esc(v)}</b></span>`).join('
       <h2 class="d3">Film and photography for people with something to say.</h2>
     </div>
     <div class="strip" data-lenis-prevent>
-${[['f-ink','Commercial','Brand film'],['f-steel','Event coverage','Conference'],['f-red','Live DJ set','Campus formal'],['f-sand','Brand identity','Full system'],['f-mist','Product','Studio'],['f-stone','Artist portrait','Single release']].map(function(x, i){
-  return `      <a class="shot" href="/services/" data-rv style="--i:${i}">
-        <p class="shot-cap">${x[1]} <span style="color:var(--faint)">/ ${x[2]}</span></p>
-        ${field(x[0], 'r-tall', '')}
+${[['video','f-ink','Video','Commercial and corporate'],['photography','f-slate','Photography','Brand and event'],['dj','f-red','DJ','Live performance'],['brand','f-moss','Brand identity','Full system'],['audio','f-slate','Audio','Original scores']].map(function(x, i){
+  return `      <a class="shot" href="/services/#${x[0]}" data-rv style="--i:${i}">
+        <p class="shot-cap">${x[2]} <span style="color:var(--faint)">/ ${x[3]}</span></p>
+        ${illus(x[0], x[1], 'r-box')}
       </a>`;
 }).join('\n')}
     </div>
@@ -157,7 +157,7 @@ services.forEach((s, idx) => {
   </section>
 
   <section class="col s-xs t-0">
-    ${field(FIELD[s.group] || FIELDS[idx % 6], 'r-cine', s.name, true)}
+    ${illus(s.group, FIELD[s.group], 'r-cine', true)}
   </section>
 
   <section class="col s-md">
@@ -223,9 +223,9 @@ ${rel.map((r, i) => `      <a class="item" href="${url(r)}" data-rv style="--i:$
 
   <section class="col s-xs t-0">
     <div class="grid-3" data-rv>
-      ${field('f-ink', 'r-box', 'On set')}
-      ${field('f-steel', 'r-box', 'The room')}
-      ${field('f-sand', 'r-box', 'The kit')}
+      ${illus('video', 'f-ink', 'r-box')}
+      ${illus('photography', 'f-slate', 'r-box')}
+      ${illus('audio', 'f-moss', 'r-box')}
     </div>
   </section>
 
@@ -273,11 +273,10 @@ ${a.values.map((v, i) => `      <div class="def" data-rv style="--i:${i}"><b>${e
   <section class="col s-xs t-0">
     <ol class="steps">
 ${p.steps.map((s, i) => `      <li class="step" data-rv style="--i:${i}">
+        ${stepArt(STEP_KEY[i], STEP_FIELD[i])}
         <p class="step-n">${s.n}</p>
-        <div>
-          <h2>${esc(s.t)}</h2>
-          <p>${esc(s.d)}</p>
-        </div>
+        <h2>${esc(s.t)}</h2>
+        <p>${esc(s.d)}</p>
       </li>`).join('\n')}
     </ol>
   </section>
