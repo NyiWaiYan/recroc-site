@@ -43,11 +43,11 @@ const ICONS = {
   close: '<path d="M18.0001 6L6.00012 18"/><path d="M6.00012 6L18.0001 18"/>'
 };
 const MARKS = {
-  video: '<rect x="42" y="56" width="92" height="62" rx="8"/><path d="M134 76l38-16v58l-38-16z"/><circle cx="66" cy="42" r="15"/><circle cx="106" cy="42" r="15"/><path d="M88 118v16"/><path d="M88 134l-26 26M88 134l26 26M88 134v26"/><path d="M56 88h20"/>',
-  photography: '<rect x="34" y="54" width="172" height="106" rx="14"/><path d="M92 54l9-16h38l9 16"/><circle cx="120" cy="108" r="34"/><circle cx="120" cy="108" r="17"/><circle cx="60" cy="76" r="5"/><path d="M168 76h18"/>',
-  brand: '<circle cx="57" cy="90" r="28"/><rect x="93" y="62" width="56" height="56" rx="6"/><path d="M185 62l26 56h-52z"/>',
-  dj: '<rect x="26" y="38" width="188" height="118" rx="12"/><circle cx="98" cy="98" r="42"/><circle cx="98" cy="98" r="12"/><circle cx="98" cy="98" r="2.5"/><path d="M186 56l-12 14-46 40"/><rect x="168" y="104" width="12" height="40" rx="4"/><path d="M174 118h.01"/>',
-  audio: '<path d="M40 75v30M60 54v72M80 31v118M100 63v54M120 42v96M140 23v134M160 59v62M180 38v104M200 73v34"/>'
+  video: '<path d="M20.4672 8.15137L15.079 12.0001L20.4672 15.8489V8.15137Z"/><path d="M13.5395 6.61169H5.07222C4.22197 6.61169 3.53271 7.30095 3.53271 8.1512V15.8487C3.53271 16.699 4.22197 17.3882 5.07222 17.3882H13.5395C14.3897 17.3882 15.079 16.699 15.079 15.8487V8.1512C15.079 7.30095 14.3897 6.61169 13.5395 6.61169Z"/>',
+  photography: '<path d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"/><path d="M10 4L8 6.5H4C3.44772 6.5 3 6.94772 3 7.5V18C3 18.5523 3.44772 19 4 19H20C20.5523 19 21 18.5523 21 18V7.5C21 6.94772 20.5523 6.5 20 6.5H16.0909L14 4H10Z"/>',
+  brand: '<path d="M8 15H8.012"/><path d="M8 9.5H8.012"/><path d="M12 7H12.012"/><path d="M15.5 9.5H15.512"/><path d="M21 12C21 14.4797 15.2325 11.9604 13.6103 13.5882C11.9807 15.2234 14.4909 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"/>',
+  dj: '<path d="M20.0614 16.7897L19.8026 17.7556C19.3738 19.356 17.7288 20.3057 16.1284 19.8769L15.1624 19.6181L16.9742 12.8566L17.9401 13.1154C19.5405 13.5443 20.4902 15.1893 20.0614 16.7897ZM20.0614 16.7897C20.0614 16.7897 21.1667 15.0002 21 12.0002C20.8334 9.00017 18.9 3.00017 12.5 3.00017L11.4585 3.00017C5.05848 3.00017 3.12515 9.00017 2.95848 12.0002C2.79182 15.0002 3.89712 16.7897 3.89712 16.7897M3.89712 16.7897L4.15594 17.7556C4.58476 19.356 6.22977 20.3057 7.83017 19.8769L8.7961 19.6181L6.98436 12.8566L6.01844 13.1154C4.41804 13.5443 3.46829 15.1893 3.89712 16.7897Z"/>',
+  audio: '<path d="M5 18.1401L6.1995 18.1056"/><path d="M12 18.1401L19.2 18.0859"/><circle cx="9.00006" cy="18.14" r="2"/><path d="M5 11.9714L13.2 11.9369"/><path d="M17.9956 12.0001H19.2045"/><path d="M5 6.00012L6.1995 5.96562"/><path d="M12 6.00012L19.2 5.94588"/><circle cx="9" cy="6" r="2"/><circle cx="15.2" cy="12.1368" r="2"/>'
 };
 const sym = (p, id) => `<symbol id="${id}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${p}</symbol>`;
 const sprite = () => `<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">` +
@@ -67,11 +67,11 @@ const LIGHT = new Set(['f-sand', 'f-mist', 'f-stone']);
 /* Line-art illustrations, drawn for RecRoc. White strokes on a bold ground,
    240x180 for the discipline frames and 120x120 for the process chips. */
 const ILLUS = {
-  video: '<rect x="42" y="56" width="92" height="62" rx="8"/><path d="M134 76l38-16v58l-38-16z"/><circle cx="66" cy="42" r="15"/><circle cx="106" cy="42" r="15"/><path d="M88 118v16"/><path d="M88 134l-26 26M88 134l26 26M88 134v26"/><path d="M56 88h20"/>',
-  photography: '<rect x="34" y="54" width="172" height="106" rx="14"/><path d="M92 54l9-16h38l9 16"/><circle cx="120" cy="108" r="34"/><circle cx="120" cy="108" r="17"/><circle cx="60" cy="76" r="5"/><path d="M168 76h18"/>',
-  brand: '<circle cx="57" cy="90" r="28"/><rect x="93" y="62" width="56" height="56" rx="6"/><path d="M185 62l26 56h-52z"/>',
-  dj: '<rect x="26" y="38" width="188" height="118" rx="12"/><circle cx="98" cy="98" r="42"/><circle cx="98" cy="98" r="12"/><circle cx="98" cy="98" r="2.5"/><path d="M186 56l-12 14-46 40"/><rect x="168" y="104" width="12" height="40" rx="4"/><path d="M174 118h.01"/>',
-  audio: '<path d="M40 75v30M60 54v72M80 31v118M100 63v54M120 42v96M140 23v134M160 59v62M180 38v104M200 73v34"/>'
+  art_video: '<rect x="42" y="56" width="92" height="62" rx="8"/><path d="M134 76l38-16v58l-38-16z"/><circle cx="66" cy="42" r="15"/><circle cx="106" cy="42" r="15"/><path d="M88 118v16"/><path d="M88 134l-26 26M88 134l26 26M88 134v26"/><path d="M56 88h20"/>',
+  art_photography: '<rect x="34" y="54" width="172" height="106" rx="14"/><path d="M92 54l9-16h38l9 16"/><circle cx="120" cy="108" r="34"/><circle cx="120" cy="108" r="17"/><circle cx="60" cy="76" r="5"/><path d="M168 76h18"/>',
+  art_brand: '<circle cx="57" cy="90" r="28"/><rect x="93" y="62" width="56" height="56" rx="6"/><path d="M185 62l26 56h-52z"/>',
+  art_dj: '<rect x="26" y="38" width="188" height="118" rx="12"/><circle cx="98" cy="98" r="42"/><circle cx="98" cy="98" r="12"/><circle cx="98" cy="98" r="2.5"/><path d="M186 56l-12 14-46 40"/><rect x="168" y="104" width="12" height="40" rx="4"/><path d="M174 118h.01"/>',
+  art_audio: '<path d="M40 75v30M60 54v72M80 31v118M100 63v54M120 42v96M140 23v134M160 59v62M180 38v104M200 73v34"/>'
 };
 const STEP_ART = {
   listen: '<circle cx="48" cy="60" r="20"/><path d="M48 40v40M40 50v20M56 50v20"/><path d="M80 40c8 12 8 28 0 40M94 30c14 18 14 42 0 60"/>',
@@ -82,7 +82,7 @@ const STEP_ART = {
 };
 const illus = (key, cls, ratio, rv) =>
   `<figure class="field art-field ${cls} ${ratio}"${rv ? ' data-rvf' : ''}>` +
-  `<svg class="art" viewBox="0 0 240 180" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ILLUS[key] || ''}</svg>` +
+  `<svg class="art" viewBox="0 0 240 180" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${ILLUS['art_' + key] || ''}</svg>` +
   `</figure>`;
 const stepArt = (key, cls) =>
   `<span class="chip ${cls}"><svg viewBox="0 0 120 120" fill="none" stroke="currentColor" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${STEP_ART[key] || ''}</svg></span>`;
