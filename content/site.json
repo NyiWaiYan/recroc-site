@@ -7,149 +7,173 @@
   "phoneHref": "+17015167913",
   "region": "North Dakota",
   "home": {
-    "title": "RecRoc | Media Production and DJ Services in North Dakota",
-    "description": "RecRoc is a production studio and creative agency in North Dakota. Video, photography, brand identity, DJ services and original music, made by the people who shoot, score and mix it.",
-    "headline": ["Press", "record", "on", "your", "brand."],
-    "accentIndex": 1,
-    "sub": "Video, photography, brand identity, live DJ and original music for businesses, organisations and events. You work with the people who actually shoot, score and mix it.",
-    "meta": [
-      ["Based", "North Dakota"],
-      ["Working", "Nationwide, international"],
-      ["Services", "23 across visual and audio"]
+    "title": "RecRoc | Full-Suite Media Production & DJ Services in North Dakota",
+    "description": "RecRoc is a full-suite media production and DJ studio in North Dakota. Video, photography, brand identity, live DJ and original music for businesses, organizations and events.",
+    "headline": [
+      "Full-Suite",
+      "Media",
+      "Production",
+      "&",
+      "DJ",
+      "Services",
+      "for",
+      "Businesses,",
+      "Organizations",
+      "&",
+      "Events."
     ],
-    "caption": ["Interview setup", "Behind the scenes"],
-    "pillars": [
-      {
-        "k": "No account managers",
-        "t": "You talk to the maker",
-        "d": "We are a production company and a creative agency in one, so there is no layer of account handlers between you and the work. The person on the call is the person on set."
-      },
-      {
-        "k": "Human made",
-        "t": "Nothing generated, nothing leased",
-        "d": "Every score is composed for you. Stock libraries and AI tracks put the same music behind your competitor's advert, and we will not do that to a client."
-      },
-      {
-        "k": "Live, not pressed play",
-        "t": "Our DJs perform",
-        "d": "Industry controllers, live mixing, real-time reading of the room. Not a laptop playlist with a microphone next to it."
-      }
+    "accentIndex": 1,
+    "sub": "We help businesses and organizations build stronger brands through creative media that earns trust, strengthens reputation, and helps them grow. We make it easier to bring your vision to life from the first idea to the final product.",
+    "meta": [
+      [
+        "Based",
+        "North Dakota"
+      ],
+      [
+        "Working",
+        "Nationwide, international"
+      ],
+      [
+        "Services",
+        "23 across visual and audio"
+      ]
+    ],
+    "caption": [
+      "Interview setup",
+      "Behind the scenes"
     ]
   },
   "servicesPage": {
     "title": "Services | RecRoc",
     "description": "23 services across video, photography, brand identity, DJ and audio production. One studio, visual and audio under one roof.",
-    "headline": ["Visual", "and", "audio,", "one", "roof."],
+    "headline": [
+      "Everything",
+      "We",
+      "Make"
+    ],
     "accentIndex": 3,
     "sub": "A full-suite creative studio. Pick the service you came for, or start a conversation and we will work out the shape of it together."
   },
   "about": {
     "title": "About | RecRoc",
     "description": "RecRoc is a hybrid production company and creative agency in North Dakota, led by filmmakers, DJs and composers.",
-    "headline": ["People", "who", "genuinely", "care."],
-    "accentIndex": 2,
-    "sub": "Decide for yourself whether our values line up with what you need. If we were the client, we would want a team that cares about the exact service we are buying.",
-    "body": [
-      "Our production teams are made of people who understand the craft behind the work. The filmmakers have contributed to professional movie productions. The DJs are performing artists with advanced mixing skills, live mash-ups, scratching, and EDM festival level sets behind them.",
-      "We work with local businesses, corporations, organisations and artists. Launching a brand, promoting an organisation, producing an event, making something for an audience: the job is to get your idea into a finished piece without the usual friction.",
-      "The work goes past the client list. We want local businesses and organisations to grow, because that strengthens the communities and creates opportunities in the cities we work in."
+    "headline": [
+      "People",
+      "who",
+      "Genuinely",
+      "Care."
     ],
-    "mission": "RecRoc exists to help businesses and organisations build media identities that strengthen their reputation, earn trust, and drive profitable growth.",
+    "accentIndex": 2,
+    "sub": "This is where you can learn who we are and decide whether our values, passion, and commitment align with your needs. We believe that great results come from working with people who genuinely care about what they do. If we were the client, we would want to work with a team that is passionate about the service we need.",
+    "body": [
+      "Our production teams are made up of people who genuinely understand the craft behind what they do. For our video production projects, our filmmakers have contributed to professional movie productions. For our DJ services, our DJs are experienced performers with advanced mixing skills, including live mash-ups, scratching, and professional EDM festival-level performance.",
+      "We proudly serve local businesses, corporations, organizations, and artists. Whether you are launching a brand, promoting an organization, producing an event, or creating content for your audience, our goal is to bring your vision to life through creative, high quality solutions tailored to your needs.",
+      "We are committed to delivering exceptional quality, professional service, and outstanding value in every project we undertake. But our work goes beyond serving our clients. We are passionate about supporting local businesses and organizations, helping them grow, strengthen their communities, and create new opportunities within the cities we serve.",
+      "At the heart of RECROC, it is simple: we want to do great work with people who care about what they do, help our clients achieve what they are trying to achieve, and create opportunities for the people and communities around us."
+    ],
+    "mission": "RecRoc exists to help businesses and organizations build media identities that strengthen their reputation, earn trust, and drive profitable growth.",
     "why": [
       {
-        "t": "Direct access to the makers",
-        "d": "Instead of putting account managers between you and the production team, you work with the people who understand the cameras, the computers, the scripts, the music. Led by filmmakers, DJs and composers who know their craft firsthand."
+        "t": "",
+        "d": "As a hybrid production company and creative agency, RECROC gives you direct access to the people who are actually involved in the creative work. You work with people who understand the cameras, computers, scripts, music, and creative process behind your project."
       },
       {
-        "t": "Nothing one size fits all",
-        "d": "Your project gets its own identity, built around your goals, your audience, and what makes your organisation different. Fresh thinking on every brief, whether it is a brand, a commercial, an event or something we have not built before."
+        "t": "",
+        "d": "Our team is led by filmmakers, DJs, composers, and other creative professionals who understand their craft firsthand. We don't believe creative work should be one-size fits all. Your project should have its own identity, built around your goals, your audience, and what makes your organization different. That's why we approach every project with fresh ideas, strategic thinking, and a genuine commitment to the work."
       },
       {
-        "t": "Easy to work with",
-        "d": "We take the time to understand what you need, communicate clearly through the process, deliver on time, and take responsibility for the quality of what we produce. The goal is not to complete your project. It is to make something that holds up."
+        "t": "",
+        "d": "We believe every project deserves fresh thinking. Whether we're building a brand, producing a commercial, creating an event experience, or developing something entirely new, we approach the work with creativity, strategic thinking, and attention to detail."
+      },
+      {
+        "t": "",
+        "d": "Most importantly, we want RECROC to be easy to work with. We take the time to understand what you need, communicate clearly throughout the process, deliver on time, and take responsibility for the quality of the work we produce. Our goal isn't simply to complete your project. It's to create work that strengthens your image, builds trust, and creates lasting value for your organization."
       }
     ],
     "values": [
       {
         "n": "01",
-        "t": "Real creativity with soul",
-        "d": "We do not settle for soulless work when we have the ability to make something meaningful."
+        "t": "Real Creativity With Soul",
+        "d": "We don't settle for soulless work when we have the ability to create something meaningful."
       },
       {
         "n": "02",
-        "t": "People first",
-        "d": "Great work starts with great people. Relationships built on respect, trust, communication and genuine care. Clients supported, creators valued, employees given room to do their best work."
+        "t": "People First",
+        "d": "We believe great work starts with great people. We build relationships based on respect, trust, communication, and genuine care for the people we work with. We want our clients to feel supported, our creators to feel valued, and our employees to have an environment where they can do their best work and grow."
       },
       {
         "n": "03",
-        "t": "Shared success",
-        "d": "Our success is tied to the success of the people we work with. When clients grow, RecRoc grows. The people who build RecRoc grow with it."
+        "t": "Shared Success",
+        "d": "We believe our success is connected to the success of the people we work with. When our clients grow and achieve their goals, RECROC grows with them. We also want the people who build RECROC to grow alongside the company, giving our employees and creators opportunities to develop their skills, take on greater responsibilities, and build their careers."
       },
       {
         "n": "04",
-        "t": "Open opportunity",
-        "d": "Knowledge should not be hidden and opportunity should not be reserved for people who already have the connections. Ask questions, learn from each other, take on new roles. Effort and talent still decide, but everyone deserves the chance to find their path."
+        "t": "Open Opportunity",
+        "d": "We believe talent should have the opportunity to learn, grow, and contribute. We don't believe knowledge should be unnecessarily hidden or opportunities reserved only for people who already have connections or experience. We encourage our people to ask questions, learn from one another, explore new roles, and build the skills they need to pursue the careers they want. Opportunity still requires effort and talent, but everyone deserves a chance to find their path."
       }
-    ]
+    ],
+    "whyTitle": "Why RECROC?",
+    "vision": "RECROC vision is to become a leading media company that makes professional media, creative talent, and opportunities accessible to businesses, organizations, and creators across the United States. We envision RECROC becoming a trusted destination where businesses can build powerful brands, organizations can bring their ideas to life, and creators can find the resources, people, and opportunities they need to pursue their ambitions. At the same time, we aim to build a company where passionate creatives can develop their skills, build meaningful careers, and grow without being limited by traditional industry gatekeeping. Ultimately, we want RECROC to create lasting value not only for our clients, but also for the people who build the company and the creative work behind it.",
+    "ctaH": "Work with the people who make it.",
+    "ctaP": "You'll hear back from the person who will actually work on your project, usually within one business day."
   },
   "process": {
     "title": "Our Process | RecRoc",
     "description": "Five steps from first conversation to final delivery. Organised, efficient, and built to keep your project moving.",
-    "headline": ["Simple", "from", "start", "to", "finish."],
+    "headline": [
+      "Simple",
+      "from",
+      "start",
+      "to",
+      "finish."
+    ],
     "accentIndex": 4,
     "sub": "From the first conversation to final delivery, every step is organised, efficient, and built to make the experience as smooth as possible.",
     "steps": [
       {
         "n": "01",
-        "tc": "00:00",
         "t": "Listen",
-        "d": "We start by listening. Every project begins with understanding your goals, your ideas and your expectations, so the creative direction gets built with you rather than handed to you."
+        "d": "We start by listening. Every project begins with understanding your goals, ideas, and expectations so we can build the right creative direction together."
       },
       {
         "n": "02",
-        "tc": "01:24",
         "t": "Strategize",
-        "d": "Once we understand the vision, we write a clear plan before production begins. Everyone stays aligned, nobody guesses, and the project keeps moving."
+        "d": "Once we understand your vision, we create a clear plan before production begins. This helps everyone stay aligned and keeps the project moving efficiently."
       },
       {
         "n": "03",
-        "tc": "04:11",
         "t": "Create",
-        "d": "Production. Our team handles it with attention to detail, making sure every shot, every sound and every design decision is doing a job."
+        "d": "Now it's time to create. Our team handles the production process with attention to detail, making sure every shot, sound, and design serves a purpose."
       },
       {
         "n": "04",
-        "tc": "09:38",
         "t": "Refine",
-        "d": "The most important part. We review every detail, then you review the project and request revisions. Delivering exactly what you asked for is the priority, so this stage takes as long as it takes."
+        "d": "This is one of the most important parts of our process. We carefully review every detail because delivering exactly what our clients want is our top priority. Before final delivery, you'll have the fully opportunity to review the project and request revisions."
       },
       {
         "n": "05",
-        "tc": "12:02",
         "t": "Deliver",
-        "d": "Once approved, your project arrives in high quality formats, ready for websites, social media, advertising, print, or wherever you need it."
+        "d": "Once everything is approved, we deliver your project in high-quality formats, ready for websites, social media, advertising, print, or wherever you need it."
       }
     ]
   },
   "contact": {
     "title": "Start a project | RecRoc",
     "description": "Tell us what you are building. Email contact@recroc.co or call 701-516-7913.",
-    "headline": ["Ready", "to", "act", "on", "your", "vision?"],
+    "headline": [
+      "Let's",
+      "Make",
+      "Your",
+      "Vision",
+      "Happen."
+    ],
     "accentIndex": 5,
-    "sub": "Tell us what you are building and roughly when you need it. You will hear back from the person who would actually run the project."
+    "sub": ""
   },
   "globalFaqs": [
     {
       "q": "Do you travel for projects?",
       "a": "Yes. We work throughout North Dakota, nationwide and internationally. Travel and accommodation costs are discussed openly during planning, never added afterwards."
-    },
-    {
-      "q": "Do you use stock or AI generated music?",
-      "a": "No. Subscription libraries and AI tracks mean the same music can end up behind your competitor's advert. Every score we deliver is composed by a human, exclusively for the project."
-    },
-    {
-      "q": "Who will I actually be working with?",
-      "a": "The people making the work. No account managers sitting between you and the production team, which means fewer translation errors and faster decisions."
     },
     {
       "q": "Do you provide drone footage?",
@@ -165,14 +189,39 @@
     }
   ],
   "groups": [
-    { "id": "video", "name": "Video Production", "icon": "video", "blurb": "Commercial, corporate, educational and narrative film work for brands, organisations and artists." },
-    { "id": "photography", "name": "Photography", "icon": "camera", "blurb": "Branding, product, property, event and artist photography, plus personal milestones." },
-    { "id": "brand", "name": "Brand Identity", "icon": "identity", "blurb": "The visual system behind everything else you publish." },
-    { "id": "dj", "name": "DJ and Live Events", "icon": "deck", "blurb": "Live performance DJs for corporate, campus and private celebrations." },
-    { "id": "audio", "name": "Audio Production", "icon": "wave", "blurb": "Original composition and beat production, written for one client only." }
+    {
+      "id": "video",
+      "name": "Video Production",
+      "icon": "video",
+      "blurb": "Commercial, corporate, educational and narrative film work for brands, organizations and artists."
+    },
+    {
+      "id": "photography",
+      "name": "Photography",
+      "icon": "camera",
+      "blurb": "Branding, product, property, event and artist photography, plus personal milestones."
+    },
+    {
+      "id": "brand",
+      "name": "Brand Identity",
+      "icon": "identity",
+      "blurb": "The visual system behind everything else you publish."
+    },
+    {
+      "id": "dj",
+      "name": "DJ and Live Events",
+      "icon": "deck",
+      "blurb": "Live performance DJs for corporate, campus and private celebrations."
+    },
+    {
+      "id": "audio",
+      "name": "Audio Production",
+      "icon": "wave",
+      "blurb": "Original composition and beat production, written for one client only."
+    }
   ],
   "audiences": {
-    "business": "For businesses and organisations",
+    "business": "For businesses and organizations",
     "artist": "For artists and entertainment",
     "personal": "Personal"
   }

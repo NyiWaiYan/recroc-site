@@ -25,61 +25,8 @@ ${h.meta.map(([k, v]) => `      <span>${esc(k)} <b>${esc(v)}</b></span>`).join('
     </figure>
   </section>
 
-  <section class="col s-md">
-    <div class="head" data-rv>
-      ${label('Recent work')}
-      <h2 class="d3">Film and photography for people with something to say.</h2>
-    </div>
-    <div class="strip" data-lenis-prevent>
-${[['video','f-ink','Video','Commercial and corporate'],['photography','f-slate','Photography','Brand and event'],['dj','f-red','DJ','Live performance'],['brand','f-moss','Brand identity','Full system'],['audio','f-slate','Audio','Original scores']].map(function(x, i){
-  return `      <a class="shot" href="/services/#${x[0]}" data-rv style="--i:${i}">
-        <p class="shot-cap">${x[2]} <span style="color:var(--faint)">/ ${x[3]}</span></p>
-        ${illus(x[0], x[1], 'r-box')}
-      </a>`;
-}).join('\n')}
-    </div>
-    <p class="note" style="margin-top:var(--s5)">Client work replaces these as projects wrap.</p>
-  </section>
-
-  <section class="col s-md t-0">
-    <div class="head" data-rv>
-      ${label('What we do', '23')}
-      <h2 class="d3">Visual and audio, one studio.</h2>
-      <p class="soft">${esc(site.servicesPage.sub)}</p>
-    </div>
-    <div class="list">
-${site.groups.map((g, i) => `      <a class="item" href="/services/#${g.id}" data-rv style="--i:${i}">
-        <span class="item-top">
-          <span class="item-name">${mk(g.id)}${esc(g.name)}</span>
-          <span class="item-go">${ic('arrow')}</span>
-        </span>
-        <span class="item-note">${esc(g.blurb)}</span>
-      </a>`).join('\n')}
-    </div>
-  </section>
-
-  <section class="col s-md t-0">
-    <div class="head" data-rv>${label('Why us')}<h2 class="d3">Three things most studios cannot say.</h2></div>
-    <div class="points">
-${h.pillars.map((p, i) => `      <div class="pt" data-rv style="--i:${i}">
-        <p class="pt-meta"><span class="pt-k">${esc(p.k)}</span></p>
-        <h3>${esc(p.t)}</h3>
-        <p>${esc(p.d)}</p>
-      </div>`).join('\n')}
-    </div>
-  </section>
-
-  <section class="col s-sm t-0">
-    <div class="head" data-rv>${label('How it goes', '5 steps')}<h2 class="d3">Simple from start to finish.</h2></div>
-    <div class="flow" data-rv>
-${site.process.steps.map((s, i) => `      <span>${esc(s.t)}</span>${i < 4 ? '<i>/</i>' : ''}`).join('\n')}
-    </div>
-    <p style="margin-top:var(--s6)" data-rv><a class="lnk" href="/process/">Walk through the process ${ic('arrow')}</a></p>
-  </section>
-
-  <section class="col s-md t-0">
-    <div class="head" data-rv>${label('Questions')}<h2 class="d3">Things people ask first.</h2></div>
-    <div data-rv>${acc(site.globalFaqs.map(f => [f.q, f.a]), 'g')}</div>
+  <section class="col s-xs t-0">
+    <p class="note" data-rv>${esc(site.tagline)} <span style="color:var(--faint)">/ ${esc(site.region)}</span></p>
   </section>`;
 
   write('index.html', page({
@@ -101,7 +48,7 @@ ${site.process.steps.map((s, i) => `      <span>${esc(s.t)}</span>${i < 4 ? '<i>
   let n = 0;
   const body = `
   <section class="col hero">
-    <h1 class="d1 in">${words(['Everything', 'we', 'make.'])}</h1>
+    <h1 class="d1 in">${words(sp.headline)}</h1>
     <p class="lede" data-rv style="--i:1">${esc(sp.sub)}</p>
   </section>
 
@@ -140,12 +87,6 @@ ${list.filter(s => s.audience === a).map(s => { n++; return `        <a class="i
 /* ========================== SERVICE DETAIL x23 ======================== */
 services.forEach((s, idx) => {
   const rel = (s.related || []).map(find).filter(Boolean);
-  const claim = s.group === 'audio'
-    ? ['Human made', 'Every note is written for one client. Stock libraries and AI tracks put <b>the same music behind your competitor</b>, and we will not do that to you.']
-    : s.group === 'dj'
-      ? ['Live, not pressed play', 'Our DJs perform on industry controllers, <b>mixing and reading the room</b> in real time. A different job from running a playlist.']
-      : ['Direct access', 'No account managers between you and the crew. <b>The person on the call</b> is the person on set.'];
-
   const body = `
   <section class="col hero">
     <p class="label"><a href="/services/">Services</a> <span style="color:var(--faint)">/</span> ${esc(groupName(s.group))}</p>
@@ -170,13 +111,6 @@ ${s.overview.map((p, i) => `      <p class="${i === 0 ? 'lede' : ''}">${esc(p)}<
     <div class="head" data-rv>${label('What it covers', String(s.includes.length))}<h2 class="d3">${esc(s.short)}</h2></div>
     <div class="defs">
 ${s.includes.map(([t, d], i) => `      <div class="def" data-rv style="--i:${i}"><b>${esc(t)}</b><span>${esc(d)}</span></div>`).join('\n')}
-    </div>
-  </section>
-
-  <section class="col s-sm t-0">
-    <div data-rv>
-      <p class="label">${esc(claim[0])}</p>
-      <p class="pull">${claim[1]}</p>
     </div>
   </section>
 
@@ -231,8 +165,20 @@ ${rel.map((r, i) => `      <a class="item" href="${url(r)}" data-rv style="--i:$
 
   <section class="col s-md">
     <div class="prose" data-rv>
-${a.body.map((p, i) => `      <p class="${i === 0 ? 'lede' : ''}">${esc(p)}</p>`).join('\n')}
+${a.body.map(p => `      <p>${esc(p)}</p>`).join('\n')}
     </div>
+  </section>
+
+  <section class="col s-md t-0">
+    <div class="head" data-rv>${label('Why us')}<h2 class="d3">${esc(a.whyTitle)}</h2></div>
+    <div class="prose" data-rv>
+${a.why.map(w => `      <p>${esc(w.d)}</p>`).join('\n')}
+    </div>
+  </section>
+
+  <section class="col s-md t-0">
+    <div class="head" data-rv>${label('Vision')}<h2 class="d3">Where we are going.</h2></div>
+    <div class="prose" data-rv><p>${esc(a.vision)}</p></div>
   </section>
 
   <section class="col s-sm t-0">
@@ -240,24 +186,21 @@ ${a.body.map((p, i) => `      <p class="${i === 0 ? 'lede' : ''}">${esc(p)}</p>`
   </section>
 
   <section class="col s-md t-0">
-    <div class="head" data-rv>${label('Why RecRoc')}<h2 class="d3">Why work with us.</h2></div>
+    <div class="head" data-rv>${label('Values', '4')}<h2 class="d3">What we hold to.</h2></div>
     <div class="points">
-${a.why.map((w, i) => `      <div class="pt" data-rv style="--i:${i}">
-        <h3>${esc(w.t)}</h3>
-        <p>${esc(w.d)}</p>
+${a.values.map((v, i) => `      <div class="pt" data-rv style="--i:${i}">
+        <h3>${esc(v.t)}</h3>
+        <p>${esc(v.d)}</p>
       </div>`).join('\n')}
     </div>
   </section>
 
-  <section class="col s-md t-0">
-    <div class="head" data-rv>${label('Values', '4')}<h2 class="d3">What we hold to.</h2></div>
-    <div class="defs">
-${a.values.map((v, i) => `      <div class="def" data-rv style="--i:${i}"><b>${esc(v.t)}</b><span>${esc(v.d)}</span></div>`).join('\n')}
-    </div>
+  <section class="col s-sm t-0">
+    <p class="tag-line" data-rv>${esc(site.tagline)}</p>
   </section>`;
 
   write('about/index.html', page({ title: a.title, desc: a.description, canonical: '/about/', active: 'about', body,
-    ctaH: 'Work with the people who make it.',
+    ctaH: a.ctaH, ctaP: a.ctaP,
     ld: { '@context': 'https://schema.org', '@type': 'AboutPage', name: 'About RecRoc', url: site.domain + '/about/', description: a.description } }));
 }
 
@@ -271,8 +214,10 @@ ${a.values.map((v, i) => `      <div class="def" data-rv style="--i:${i}"><b>${e
   </section>
 
   <section class="col s-xs t-0">
-    <ol class="steps">
-${p.steps.map((s, i) => `      <li class="step" data-rv style="--i:${i}">
+    <ol class="steps" data-steps>
+      <span class="rail" aria-hidden="true"><span class="rail-fill" data-rail></span></span>
+${p.steps.map((s, i) => `      <li class="step" data-rv data-step style="--i:${i}">
+        <span class="dot" aria-hidden="true"></span>
         ${stepArt(STEP_KEY[i], STEP_FIELD[i])}
         <p class="step-n">${s.n}</p>
         <h2>${esc(s.t)}</h2>
@@ -296,9 +241,8 @@ ${p.steps.map((s, i) => `      <li class="step" data-rv style="--i:${i}">
   const c = site.contact;
   const body = `
   <section class="col hero">
-    <h1 class="d1 in">${words(['Tell', 'us', 'what', 'you', 'are', 'making.'])}</h1>
-    <p class="lede" data-rv style="--i:1">${esc(c.sub)}</p>
-    <div class="facts" data-rv style="--i:2">
+    <h1 class="d1 in">${words(c.headline)}</h1>
+    <div class="facts" data-rv style="--i:1">
       <span>Email <b><a href="mailto:${site.email}">${site.email}</a></b></span>
       <span>Phone <b><a href="tel:${site.phoneHref}">${site.phone}</a></b></span>
       <span>Based <b>${esc(site.region)}</b></span>
@@ -327,7 +271,7 @@ ${site.groups.map(g => `            <option>${esc(g.name)}</option>`).join('\n')
   </section>
 
   <section class="col s-md t-0">
-    <div class="head" data-rv>${label('Before you write', '6')}<h2 class="d3">Common questions.</h2></div>
+    <div class="head" data-rv>${label('Before you write', String(site.globalFaqs.length))}<h2 class="d3">Common questions.</h2></div>
     <div data-rv>${acc(site.globalFaqs.map(f => [f.q, f.a]), 'c')}</div>
   </section>`;
 

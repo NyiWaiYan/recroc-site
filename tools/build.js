@@ -89,7 +89,8 @@ const stepArt = (key, cls) =>
 
 const field = (cls, ratio, caption, rv) => `<figure class="field ${cls} ${ratio}${LIGHT.has(cls) ? ' on-light' : ''}"${rv ? ' data-rvf' : ''}>${caption ? `<figcaption>${esc(caption)}</figcaption>` : ''}</figure>`;
 
-const words = arr => arr.map((w, i) => `<span class="wc"><span class="w" style="--i:${i}">${esc(w)}</span></span>`).join('');
+// joined with a real space so screen readers and copy-paste get words, not one long string
+const words = arr => arr.map((w, i) => `<span class="wc"><span class="w" style="--i:${i}">${esc(w)}</span></span>`).join(' ');
 
 const label = (text, count) => `<p class="label">${esc(text)}${count ? `<sup>${esc(count)}</sup>` : ''}</p>`;
 
