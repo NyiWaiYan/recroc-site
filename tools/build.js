@@ -165,7 +165,7 @@ ${['commercial-advertising-video', 'corporate-event-video', 'business-branding-p
         </div>
       </div>
       <div class="foot-base">
-        <span>&copy; ${new Date().getFullYear()} RecRoc, ${esc(site.region)}</span>
+        <span>&copy;${new Date().getFullYear()} RecRoc LLC, All Rights Reserved.</span>
         <span>${esc(site.tagline)}</span>
       </div>
     </div>
