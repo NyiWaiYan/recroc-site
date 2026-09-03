@@ -123,29 +123,6 @@
     });
   }
 
-  /* process rail: fill tracks scroll, dots light as each step lands */
-  var stepsWrap = $('[data-steps]');
-  if (stepsWrap) {
-    var stepEls = $$('[data-step]', stepsWrap);
-    var rail = $('[data-rail]');
-    var ticking = false;
-    function drawRail() {
-      ticking = false;
-      var box = stepsWrap.getBoundingClientRect();
-      var mid = window.innerHeight * 0.5;
-      var pct = (mid - box.top) / box.height;
-      if (rail) rail.style.height = Math.max(0, Math.min(1, pct)) * 100 + '%';
-      stepEls.forEach(function (el) {
-        var r = el.getBoundingClientRect();
-        el.classList.toggle('on', r.top < mid && r.bottom > 0);
-      });
-    }
-    function onRail() { if (!ticking) { ticking = true; requestAnimationFrame(drawRail); } }
-    window.addEventListener('scroll', onRail, { passive: true });
-    window.addEventListener('resize', onRail, { passive: true });
-    drawRail();
-  }
-
   /* contact form: preselect topic from ?s= */
   var sel = $('[data-preselect]');
   if (sel) {

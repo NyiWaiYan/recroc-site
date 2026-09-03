@@ -244,9 +244,19 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
   transition: opacity .26s var(--ease), transform .26s var(--ease), visibility .26s;
 }
 .sheet.open { opacity: 1; visibility: visible; transform: none; }
-.sheet a { display: block; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 17px; letter-spacing: -.02em; }
-.sheet .sub { font-size: 15px; color: var(--ink-2); padding-left: var(--s4); }
-.sheet .grp { font-size: var(--t-tiny); color: var(--faint); padding: var(--s5) 0 var(--s2); }
+.sheet a {
+  display: flex; align-items: center; justify-content: space-between; gap: var(--s4);
+  padding: 16px 0; border-bottom: 1px solid var(--line);
+  font-family: var(--display); font-weight: 500;
+  font-size: 19px; letter-spacing: -.024em;
+}
+.sheet a svg { width: 15px; height: 15px; color: var(--line-2); flex: none; }
+.sheet .sub { font-family: var(--body); font-weight: 400; font-size: 16px; letter-spacing: -.01em; color: var(--ink-2); }
+.sheet .grp {
+  font-size: var(--t-note); color: var(--faint);
+  padding: var(--s6) 0 var(--s2);
+}
+.sheet-foot { padding-top: var(--s6); }
 
 /* ---------- image fields ---------- */
 
@@ -449,27 +459,8 @@ html:not(.js) .w, .in .w { transform: none; }
 
 /* A hairline rail runs beside the steps and fills as you scroll. Minimal,
    and it gives the sequence something to track without striping the page. */
-.steps { position: relative; display: grid; gap: clamp(40px, 4.8vw, 64px); padding-left: 34px; }
-.rail {
-  position: absolute; left: 5px; top: 8px; bottom: 8px;
-  width: 2px; border-radius: 2px;
-  background: var(--line);
-  overflow: hidden;
-}
-.rail-fill {
-  display: block; width: 100%; height: 0;
-  background: var(--red);
-  transition: height .18s linear;
-}
+.steps { display: grid; gap: clamp(40px, 4.8vw, 64px); }
 .step { position: relative; }
-.dot {
-  position: absolute; left: -34px; top: 26px;
-  width: 12px; height: 12px; border-radius: 50%;
-  background: #fff;
-  box-shadow: inset 0 0 0 2px var(--line-2);
-  transition: box-shadow .45s var(--ease), transform .45s var(--ease);
-}
-.step.on .dot { box-shadow: inset 0 0 0 6px var(--red); transform: scale(1.12); }
 
 .step-n {
   font-size: var(--t-note); font-weight: 500;
@@ -484,6 +475,23 @@ html:not(.js) .w, .in .w { transform: none; }
   margin-bottom: var(--s3);
 }
 .step p { font-size: var(--t-read); line-height: 1.66; color: var(--ink-2); max-width: 62ch; }
+
+.svc-lead {
+  font-family: var(--display); font-weight: 500;
+  font-size: clamp(21px, 2.1vw, 26px);
+  letter-spacing: -.028em; line-height: 1.16;
+  margin-top: var(--s5);
+  max-width: 24ch;
+}
+.svc-sub { font-size: var(--t-read); line-height: 1.66; color: var(--ink-2); max-width: 62ch; margin-top: var(--s4); }
+.svc-hero .lede { margin-top: var(--s4); }
+
+/* FAQ groups: a small divider when a service has more than one run */
+.acc-group-h {
+  font-size: var(--t-note); font-weight: 500;
+  color: var(--muted);
+  padding: var(--s6) 0 var(--s3);
+}
 
 .tag-line {
   font-family: var(--display); font-weight: 500;

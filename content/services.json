@@ -5,30 +5,11 @@
     "audience": "business",
     "name": "Commercial & Advertising Video",
     "short": "Commercial work built to be watched, remembered and acted on.",
-    "promise": "Commercial videos that build trust, strengthen your brand, and inspire action.",
     "meta": "Commercial and advertising video production in North Dakota. Cinematic storytelling built around your marketing objectives, delivered in every format you publish in.",
     "overview": [
       "In today's competitive market, first impressions matter. A professionally produced commercial video helps your business communicate its value, build trust, and connect with the right audience.",
       "At RecRoc, we don't just film beautiful visuals, we create videos with purpose. From creative concept development and scriptwriting to filming, editing, and final delivery, every project is tailored to reflect your brand identity and marketing objectives.",
       "Whether your video is for television, social media, your website, digital advertising, or presentations, we ensure every frame represents your business with professionalism and creativity."
-    ],
-    "includes": [
-      [
-        "Concept and script",
-        "Brainstorming, scripting, storyboarding, location scouting and production planning."
-      ],
-      [
-        "Cinematic production",
-        "Crew, camera and lighting matched to the ambition of the piece, not the other way round."
-      ],
-      [
-        "Multi format delivery",
-        "Horizontal, vertical and square cuts for YouTube, Instagram, Facebook, LinkedIn and TikTok."
-      ],
-      [
-        "Original score",
-        "Composed for the spot. No library music, no generated tracks."
-      ]
     ],
     "faqs": [
       [
@@ -52,6 +33,10 @@
       "business-branding-photography",
       "product-photography",
       "brand-identity"
+    ],
+    "hero": [
+      "Commercial videos that build trust, strengthen your brand, and inspire action.",
+      "Whether you're launching a product, promoting a service, or building brand awareness, our commercial video production combines cinematic storytelling with strategic marketing to create content that captures attention and delivers results."
     ]
   },
   {
@@ -60,30 +45,11 @@
     "audience": "business",
     "name": "Product & Program Introduction Video",
     "short": "Introduce a product, service or program so people actually understand it.",
-    "promise": "Introduce your products and programs with clarity, creativity, and confidence.",
     "meta": "Product and program introduction videos for businesses, institutions, nonprofits and government agencies. Complex offers explained simply.",
     "overview": [
       "Every new product, service, and program has a story to tell and a successful introduction starts with clear communication.",
       "At RecRoc, we produce professional introduction videos that help businesses, organizations, and institutions present their products and programs in a way that's informative, engaging, and easy to understand. Whether you're introducing a new offering, explaining how something works, or increasing awareness of an existing product or initiative, we create videos tailored to your audience and objectives.",
       "From concept development and production to editing and final delivery, every project is designed to communicate your message with clarity while reflecting your brand's identity."
-    ],
-    "includes": [
-      [
-        "Plain language scripting",
-        "Technical or complicated offers turned into something a non expert follows first time."
-      ],
-      [
-        "Interviews and demonstrations",
-        "Product demos, staff interviews, customer testimonials and real world use, wherever they help."
-      ],
-      [
-        "Motion graphics",
-        "Text animation, branded elements and diagrams when a camera cannot show the idea."
-      ],
-      [
-        "Launch ready cuts",
-        "Versions sized for the website, the pitch deck, the trade stand and the feed."
-      ]
     ],
     "faqs": [
       [
@@ -112,6 +78,10 @@
       "business-branding-photography",
       "brand-identity",
       "animation-motion-graphics"
+    ],
+    "hero": [
+      "Introduce your products and programs with clarity, creativity, and confidence.",
+      "Whether you're unveiling a new product, introducing a service, showcasing a program, or presenting an initiative, we create engaging videos that communicate your message clearly and leave a lasting impression."
     ]
   },
   {
@@ -120,31 +90,12 @@
     "audience": "business",
     "name": "Corporate & Organization Event Videography",
     "short": "Months of planning, captured as something you can use all year.",
-    "promise": "From conferences and fundraising galas to product launches and community events, we create professional event videos that showcase your organization, engage your audience, and strengthen your brand.",
     "meta": "Corporate and organization event videography in North Dakota. Conferences, galas, launches and community events filmed as reusable marketing content.",
     "overview": [
       "Every successful event represents months of planning, collaboration, and investment. Professional videography ensures those moments continue creating value long after the event is over.",
       "We provide professional event videography for corporations, government agencies, nonprofit organizations, universities, schools, churches, community organizations, and event planners. Whether you're hosting a conference, fundraising gala, networking event, product launch, awards banquet, training seminar, or community celebration, we capture the moments that matter most.",
       "Our team documents keynote speakers, audience engagement, networking opportunities, sponsor recognition, presentations, performances, and behind-the-scenes moments while preserving the energy and professionalism of your event.",
       "The final result is more than an event recap. It's valuable marketing content that can be used for future promotions, social media, recruitment, fundraising, internal communications, websites, and annual reports."
-    ],
-    "includes": [
-      [
-        "Full day coverage",
-        "Keynote speakers, panels, sponsor moments, networking and behind the scenes."
-      ],
-      [
-        "Multi camera where needed",
-        "Stage and room covered at once so nothing important is missed."
-      ],
-      [
-        "Highlight and long form",
-        "A short highlight cut for promotion plus full session recordings if you want them."
-      ],
-      [
-        "Works with your crew",
-        "We coordinate with planners, venue staff, audio engineers and lighting techs."
-      ]
     ],
     "faqs": [
       [
@@ -168,6 +119,11 @@
       "corporate-event-photography",
       "corporate-event-dj",
       "business-branding-photography"
+    ],
+    "hero": [
+      "Every Event Is an Investment. Make It Last.",
+      "From conferences and fundraising galas to product launches and community events, we create professional event videos that showcase your organization, engage your audience, and strengthen your brand.",
+      "The final result is more than an event recap. It's valuable marketing content that can be used for future promotions, social media, recruitment, fundraising, internal communications, websites, and annual reports."
     ]
   },
   {
@@ -176,7 +132,6 @@
     "audience": "business",
     "name": "Training & Educational Video",
     "short": "Training people remember, and can rewatch next year.",
-    "promise": "Empower your team with professional training videos that educate, engage, and inspire confidence.",
     "meta": "Training and educational video production for businesses, schools, healthcare providers and government agencies. Onboarding, safety, compliance and instruction.",
     "overview": [
       "Well-produced training videos make learning more engaging, consistent, and accessible, helping build stronger teams. Stronger teams produce stronger results.",
@@ -184,24 +139,6 @@
       "Great training isn't just about sharing information it's about making sure people understand, remember, and apply it. That's why we create engaging training videos that simplify complex topics, strengthen teams, and help organizations achieve better results.",
       "At RecRoc, we create professional training videos that simplify complex information into clear, easy-to-follow content. Whether you're onboarding new employees, teaching workplace procedures, demonstrating equipment, or delivering educational programs, we tailor every video to meet your organization's goals and audience.",
       "From planning and filming to editing and final delivery, we help businesses, schools, healthcare providers, government agencies, and organizations create training resources that can be used for years to come."
-    ],
-    "includes": [
-      [
-        "On location filming",
-        "Shot in your actual work environment so the training matches the room people work in."
-      ],
-      [
-        "Modular structure",
-        "Chaptered so individual sections can be updated later without a reshoot."
-      ],
-      [
-        "LMS ready files",
-        "Formats suited to internal systems, learning management platforms and public education sites."
-      ],
-      [
-        "Captions and graphics",
-        "On screen labels, callouts and captions where the detail matters."
-      ]
     ],
     "faqs": [
       [
@@ -226,6 +163,11 @@
       "animation-motion-graphics",
       "brand-identity",
       "corporate-event-photography"
+    ],
+    "hero": [
+      "Train Smarter. Communicate Better.",
+      "Empower your team with professional training videos that educate, engage, and inspire confidence.",
+      "Training shouldn't be boring. It should be engaging, memorable, and effective. We create professional training videos that help organizations educate with confidence, build stronger teams, and deliver consistent learning experiences."
     ]
   },
   {
@@ -234,30 +176,11 @@
     "audience": "business",
     "name": "Recruitment & Employer Branding Video",
     "short": "Show candidates the culture, not the job description.",
-    "promise": "Hero",
     "meta": "Recruitment and employer branding video production. Show candidates your workplace, culture and people before they apply.",
     "overview": [
       "Hiring great people starts with making a great first impression.",
       "A professionally produced recruitment video gives potential candidates an authentic look at your workplace, company culture, and the people who make your organization successful. It allows future employees to see your mission, values, and work environment before they ever submit an application.",
       "Whether you're hiring for a single position or launching a large recruitment campaign, our videos help you connect with qualified candidates while building trust and credibility."
-    ],
-    "includes": [
-      [
-        "Employee interviews",
-        "Real staff on camera, which is the part candidates actually trust."
-      ],
-      [
-        "Workplace filming",
-        "Facilities, team and day to day environment shot on location."
-      ],
-      [
-        "Channel ready cuts",
-        "Sized for LinkedIn, Facebook, Instagram, YouTube, career pages and paid recruitment."
-      ],
-      [
-        "Campaign set",
-        "A main film plus short cutdowns so one shoot supplies months of posts."
-      ]
     ],
     "faqs": [
       [
@@ -285,6 +208,12 @@
       "business-branding-photography",
       "corporate-event-photography",
       "brand-identity"
+    ],
+    "hero": [
+      "Build a Team That Builds Your Future",
+      "Show candidates what makes your organization unique and attract people who share your mission, values, and vision.",
+      "Attract the right talent by showcasing what makes your organization a great place to work.",
+      "Today's candidates want more than a job description they want to understand your culture, values, and the people behind your organization. We create recruitment videos that help organizations attract the right candidates and strengthen their employer brand."
     ]
   },
   {
@@ -293,30 +222,11 @@
     "audience": "business",
     "name": "Real Estate Videography",
     "short": "One walkthrough, thousands of viewings, no scheduling.",
-    "promise": "One Video. Thousands of Potential Buyers",
     "meta": "Real estate videography for agents, brokers, developers and builders. Walkthroughs, drone and neighbourhood footage for listings, MLS and social.",
     "overview": [
       "Today's buyers often experience a property online before they ever schedule a showing. Professional videography helps create a powerful first impression by showcasing not only the property's features, but also its atmosphere, layout, and lifestyle.",
       "At RecRoc, we provide professional real estate videography for residential homes, luxury properties, commercial buildings, apartments, new developments, vacation rentals, and investment properties. Whether you're a real estate agent, broker, property developer, builder, architect, or business owner, we create professional marketing videos that help your property stand out across websites, MLS listings, social media, and digital advertising.",
       "From smooth interior walkthroughs and aerial drone footage to neighborhood highlights and architectural details, every video is crafted to present your property at its best and generate stronger buyer interest."
-    ],
-    "includes": [
-      [
-        "Interior walkthroughs",
-        "Smooth, stabilised movement that reads the layout the way a buyer would walk it."
-      ],
-      [
-        "Aerial drone footage",
-        "Scale, location and surroundings, flown by FAA Part 107 certified pilots."
-      ],
-      [
-        "Neighbourhood context",
-        "The street, the setting and the details that sell the lifestyle as well as the house."
-      ],
-      [
-        "Listing ready exports",
-        "Cut for MLS, your website, Instagram, Facebook, YouTube, TikTok and paid advertising."
-      ]
     ],
     "faqs": [
       [
@@ -341,6 +251,10 @@
       "brand-identity",
       "animation-motion-graphics",
       "commercial-advertising-video"
+    ],
+    "hero": [
+      "One Video. Thousands of Potential Buyers",
+      "You can only show your property to one client at a time. A professionally crafted video showcases your property through online reaching thousands of potential buyers simultaneously and generating interest before they ever schedule an in-person showing."
     ]
   },
   {
@@ -349,30 +263,11 @@
     "audience": "business",
     "name": "Documentary Films",
     "short": "Real stories, told properly, with time taken over them.",
-    "promise": "Real Stories. Genuine Impact.",
     "meta": "Documentary film production for nonprofits, corporations and individuals. Mission films, community initiatives, company culture and personal stories.",
     "overview": [
       "Documentaries are more than interviews and footage, they're about preserving stories that matter.",
       "Whether you're documenting your organization's mission, highlighting community initiatives, showcasing company culture, or telling a personal journey, we approach every documentary with thoughtful planning and professional film making.",
       "Our team works closely with every client to capture authentic moments, meaningful interviews, and compelling visuals that reflect the heart of each story. Every documentary is crafted to educate, inspire, and create a lasting impact on its audience."
-    ],
-    "includes": [
-      [
-        "Story development",
-        "Structure agreed before production so the film has a spine."
-      ],
-      [
-        "Multi location shooting",
-        "We travel to the people and places the story needs."
-      ],
-      [
-        "Aerial cinematography",
-        "FAA Part 107 certified pilots, compact cinematic drones through to larger professional platforms."
-      ],
-      [
-        "Any length",
-        "From short promotional pieces to feature length, decided by the story rather than a template."
-      ]
     ],
     "faqs": [
       [
@@ -395,6 +290,11 @@
     "related": [
       "brand-identity",
       "commercial-background-music"
+    ],
+    "hero": [
+      "Ready to Share Your Story?",
+      "Real Stories. Genuine Impact.",
+      "From nonprofit missions to corporate journeys and personal stories, we create documentary films that inform, inspire, and leave a lasting impact. Every story is worth watching when it's told the right way. Our documentary films capture meaningful moments, inspiring people, and powerful missions through compelling visual storytelling."
     ]
   },
   {
@@ -403,7 +303,6 @@
     "audience": "business",
     "name": "2D & 3D Animation & Motion Graphics",
     "short": "For the ideas a camera cannot reach.",
-    "promise": "Whether you're explaining a complex idea, promoting a product, or creating unforgettable visuals for your audience, we'll help transform your vision into professional animation.",
     "meta": "2D and 3D animation, motion graphics, logo animation, product visualisation and visual effects for businesses, organizations and artists.",
     "overview": [
       "Some ideas are difficult, or even impossible, to capture with a camera. That's where animation becomes one of the most powerful creative tools.",
@@ -411,32 +310,10 @@
       "Our animation services combine storytelling, motion design, and visual creativity to produce professional content that is informative, memorable, and visually compelling.",
       "From concept development to final delivery, we combine design, animation, and storytelling to create visuals that are engaging, informative, and memorable."
     ],
-    "includes": [
-      [
-        "2D animation and motion graphics",
-        "Flat illustration, type animation and diagrammatic explanation."
-      ],
-      [
-        "3D animation",
-        "Depth, movement and product visualisation, including products that do not exist yet."
-      ],
-      [
-        "Logo and brand assets",
-        "Custom logo animation and branded motion elements built from your existing identity."
-      ],
-      [
-        "Visual effects",
-        "Integrated into newly shot or existing live action footage."
-      ],
-      [
-        "Voice over and sound design",
-        "Recording, original music and sound design included as part of the project."
-      ]
-    ],
     "faqs": [
       [
         "What types of animation do you offer?",
-        "We provide 2D animation, 3D animation, motion graphics, logo animation, product visualization, animated explainers, and visual effects for businesses, organizations, artists, and entertainment projects. (FOR ARTISTS & ENTERTAINMENT)"
+        "We provide 2D animation, 3D animation, motion graphics, logo animation, product visualization, animated explainers, and visual effects for businesses, organizations, artists, and entertainment projects."
       ],
       [
         "What's the difference between 2D and 3D animation?",
@@ -468,6 +345,11 @@
       "training-educational-video",
       "brand-identity",
       "commercial-advertising-video"
+    ],
+    "hero": [
+      "Bring Your Vision to Life",
+      "Whether you're explaining a complex idea, promoting a product, or creating unforgettable visuals for your audience, we'll help transform your vision into professional animation.",
+      "Animation allows businesses and organizations to communicate ideas that are difficult, expensive, or impossible to capture through traditional video production."
     ]
   },
   {
@@ -476,30 +358,11 @@
     "audience": "artist",
     "name": "Music Videos",
     "short": "Made by people who work in music, not people who read about it.",
-    "promise": "Transform your music into a cinematic visual experience.",
     "meta": "Music video production for singers, EDM producers, DJs, bands and independent artists. Creative direction, cinematic production and visual effects.",
     "overview": [
       "We believe a music video is more than performance footage it's an extension of an artist's identity that reflects their current era and where they are in their artistic journey.",
       "Whether you're releasing your first single, promoting an entire album, or launching a new artistic era, RecRoc collaborates with artists to develop creative concepts that reflect their vision.",
       "From performance-based productions and narrative storytelling to cinematic visuals, 2D/3D animation, and visual effects, we create music videos that help artists stand out in today's competitive music industry."
-    ],
-    "includes": [
-      [
-        "Concept development",
-        "Built around the song, the genre and your artistic identity."
-      ],
-      [
-        "Cinematic production",
-        "Performance, narrative or both, with crew who have worked on professional productions."
-      ],
-      [
-        "Visual effects and animation",
-        "2D, 3D and motion graphics integrated to match the style of the record."
-      ],
-      [
-        "Multi location shoots",
-        "Planned during pre production, travel included where the concept needs it."
-      ]
     ],
     "faqs": [
       [
@@ -523,6 +386,11 @@
       "beat-production",
       "artist-branding-photography",
       "animation-motion-graphics"
+    ],
+    "hero": [
+      "Show your unique artistry vision to the world",
+      "Transform your music into a cinematic visual experience.",
+      "Since our founder is also an artist manager, we understand that every artist has a unique creative vision, artistic direction, and creative world. We believe every song tells a story, and we're committed to bringing that story to life through creative direction, cinematic production, and compelling visual storytelling."
     ]
   },
   {
@@ -531,30 +399,11 @@
     "audience": "business",
     "name": "Business & Branding Photography",
     "short": "Portraits, teams and workplace, shot to a single visual standard.",
-    "promise": "Build trust, strengthen your brand, and showcase your business with professional photography designed for websites, marketing, social media, and corporate communications.",
     "meta": "Business and branding photography in North Dakota. Executive portraits, team photography, workplace and branded content for websites, marketing and social.",
     "overview": [
       "First impressions matter, and professional photography plays a vital role in how customers perceive your business.",
       "At RecRoc, we create business and branding photography that helps companies present themselves with confidence and consistency. Whether you're updating your website, refreshing your social media, launching a new marketing campaign, or showcasing your team and workplace, we deliver images that reflect your brand's identity and professionalism.",
       "From executive portraits and team photos to office environments and branded content, every session is tailored to your business goals and visual style."
-    ],
-    "includes": [
-      [
-        "Executive portraits",
-        "Individual leadership headshots, shot consistently so the leadership page matches."
-      ],
-      [
-        "Team and group",
-        "Full team photography during the same session."
-      ],
-      [
-        "Workplace environment",
-        "Your actual space, which is what makes the images specific to you."
-      ],
-      [
-        "Full usage set",
-        "Images sized for website, social, brochures, presentations, annual reports and advertising."
-      ]
     ],
     "faqs": [
       [
@@ -581,6 +430,10 @@
     "related": [
       "brand-identity",
       "commercial-advertising-video"
+    ],
+    "hero": [
+      "Strengthen Your Brand Through Professional Photography",
+      "Build trust, strengthen your brand, and showcase your business with professional photography designed for websites, marketing, social media, and corporate communications."
     ]
   },
   {
@@ -589,30 +442,11 @@
     "audience": "business",
     "name": "Product Photography",
     "short": "Clean studio work and lifestyle imagery that closes the sale.",
-    "promise": "Showcase your products with professional photography that builds trust and drives sales.",
     "meta": "Product photography for e-commerce, catalogues and advertising. Studio and lifestyle imagery for consumer goods, food, clothing, electronics and more.",
     "overview": [
       "Great products deserve great presentation.",
       "Professional product photography helps customers see the quality, craftsmanship, and details that make your products stand out. Whether you're launching a new product, refreshing your online store, or creating content for marketing campaigns, high-quality images build confidence and encourage purchasing decisions.",
       "At RecRoc, we produce clean, consistent, and visually compelling product photography tailored to your brand. From simple studio-style images to creative lifestyle photography, we help businesses present their products professionally across every platform."
-    ],
-    "includes": [
-      [
-        "Studio images",
-        "Controlled lighting, clean backgrounds, consistent across the range."
-      ],
-      [
-        "Lifestyle photography",
-        "Products in real settings so customers can picture using them."
-      ],
-      [
-        "Detail and texture",
-        "Close work on the finish, materials and construction that justify the price."
-      ],
-      [
-        "E-commerce ready",
-        "Cropped and sized for your store, marketplace listings and paid social."
-      ]
     ],
     "faqs": [
       [
@@ -637,6 +471,11 @@
       "animation-motion-graphics",
       "brand-identity",
       "commercial-advertising-video"
+    ],
+    "hero": [
+      "Showcase Your Products with Confidence",
+      "Showcase your products with professional photography that builds trust and drives sales.",
+      "High-quality product photography helps customers understand your products, strengthens your brand, and creates a lasting first impression across websites, e-commerce stores, catalogs, and advertising."
     ]
   },
   {
@@ -645,30 +484,11 @@
     "audience": "business",
     "name": "Real Estate Photography",
     "short": "Bright, accurate interiors plus certified aerial work.",
-    "promise": "Capture every property at its best.",
     "meta": "Real estate photography for residential, commercial and rental properties. Interior, exterior and FAA certified drone photography for listings and MLS.",
     "overview": [
       "Every property has a story, and great photography helps tell it before a buyer ever walks through the door.",
       "Professional real estate photography creates powerful first impressions that attract more attention, generate stronger interest, and help buyers visualize themselves in the space. Whether you're marketing a residential home, commercial property, apartment, hotel, or vacation rental, high-quality imagery can make all the difference.",
       "At RecRoc, we combine thoughtful composition, professional lighting, and careful editing to showcase every property's character, functionality, and best features, helping your listing stand out in today's competitive market."
-    ],
-    "includes": [
-      [
-        "Interior and exterior",
-        "Whole property covered, lit properly rather than flashed flat."
-      ],
-      [
-        "Aerial photography",
-        "FAA Part 107 certified pilots, from agile FPV to professional cinematic drones."
-      ],
-      [
-        "Furnished or vacant",
-        "Composition and lighting used to make empty rooms read as space rather than absence."
-      ],
-      [
-        "Fast listing turnaround",
-        "Edited and delivered on a schedule that fits a live listing."
-      ]
     ],
     "faqs": [
       [
@@ -691,6 +511,10 @@
     "related": [
       "real-estate-video",
       "business-branding-photography"
+    ],
+    "hero": [
+      "Capture every property at its best.",
+      "Professional real estate photography helps properties stand out, attract more buyers, and create stronger first impressions through bright, detailed, and visually compelling imagery."
     ]
   },
   {
@@ -699,30 +523,11 @@
     "audience": "business",
     "name": "Corporate & Business Event Photography",
     "short": "Documented properly, without becoming part of the event.",
-    "promise": "Capture the moments that represent your organization at its best.",
     "meta": "Corporate event photography for conferences, seminars, award ceremonies, galas and company celebrations in North Dakota.",
     "overview": [
       "Every corporate event is an opportunity to strengthen your brand, celebrate achievements, and connect with your audience.",
       "Professional event photography captures the energy, people, and meaningful moments that define your organization. Whether you're hosting a conference, seminar, product launch, networking event, fundraising gala, company celebration, or awards ceremony, we create high-quality images that can be used for marketing, public relations, internal communications, and future promotions.",
       "At RecRoc, we work discreetly and professionally to document your event while allowing your guests to remain fully engaged in the experience."
-    ],
-    "includes": [
-      [
-        "Keynote and stage",
-        "Speakers, panels, presentations and award moments covered properly."
-      ],
-      [
-        "VIPs and sponsors",
-        "Executives, sponsors and important guests documented against the run of show."
-      ],
-      [
-        "Candid coverage",
-        "Networking, audience and atmosphere, shot without interrupting anyone."
-      ],
-      [
-        "Fast delivery",
-        "A selected set turned around quickly for same week publishing."
-      ]
     ],
     "faqs": [
       [
@@ -746,6 +551,10 @@
       "corporate-event-video",
       "corporate-event-dj",
       "business-branding-photography"
+    ],
+    "hero": [
+      "Capture the moments that represent your organization at its best.",
+      "From conferences and seminars to award ceremonies and company celebrations, we document your events with professional photography that preserves every important moment."
     ]
   },
   {
@@ -754,30 +563,11 @@
     "audience": "personal",
     "name": "Proposal, Engagement & Couple Photography",
     "short": "Real moments, including the ones you are not supposed to see coming.",
-    "promise": "Whether you're celebrating an engagement, anniversary, or simply your journey together, we create authentic photographs that capture your love and connection.",
     "meta": "Proposal, engagement and couples photography in North Dakota. Discreet proposal coverage and relaxed engagement sessions.",
     "overview": [
       "Every relationship has a story worth remembering.",
       "Our engagement and couple photography sessions are designed to capture genuine emotions, natural moments, and the unique connection between two people. Whether you prefer breathtaking outdoor scenery, an urban setting, or a location that's meaningful to your relationship, we'll create photographs that reflect your personalities and your journey together.",
       "Planning a surprise proposal? We also offer discreet proposal photography, capturing one of life's most unforgettable moments without revealing the surprise. Using long-range lenses and careful planning, our photographers blend into the surroundings to document the proposal naturally before joining you afterward for a celebratory engagement session."
-    ],
-    "includes": [
-      [
-        "Free consultation",
-        "Before the session we talk through your vision, locations, outfits and ideas."
-      ],
-      [
-        "Any location",
-        "A park, downtown, a lake, the mountains, your favourite cafe, your home."
-      ],
-      [
-        "Discreet proposal coverage",
-        "Photographed from a distance so the surprise survives, then a session together afterwards."
-      ],
-      [
-        "Optional highlight film",
-        "A cinematic highlight video can be added to any photography package."
-      ]
     ],
     "faqs": [
       [
@@ -802,12 +592,16 @@
       ],
       [
         "Do you travel for engagement sessions?",
-        "Yes. We proudly serve clients throughout North Dakota, nationwide, and internationally. Travel and accommodation costs may apply depending on the project location. ##"
+        "Yes. We proudly serve clients throughout North Dakota, nationwide, and internationally. Travel and accommodation costs may apply depending on the project location."
       ]
     ],
     "related": [
       "wedding-private-dj",
       "graduation-portraits"
+    ],
+    "hero": [
+      "Your Story Deserves to Be Remembered",
+      "Whether you're celebrating an engagement, anniversary, or simply your journey together, we create authentic photographs that capture your love and connection."
     ]
   },
   {
@@ -816,31 +610,12 @@
     "audience": "personal",
     "name": "Graduation Portraits",
     "short": "Years of work, marked properly.",
-    "promise": "The greatest milestones of your life deserve to be remembered.",
     "meta": "Graduation portrait photography for high school, college, graduate and professional programs in North Dakota.",
     "overview": [
       "Graduation is more than earning a diploma, it's the celebration of your hard work, determination, and the journey that brought you here.",
       "That's why we create graduation portraits that preserve your achievements with images you'll be proud to look back on for years to come.",
       "At RecRoc, we create graduation portraits that reflect your personality, accomplishments, and future ambitions. Whether you're graduating from high school, college, graduate school, or a professional program, every session is tailored to tell your story in a creative and meaningful way.",
       "From your campus and favorite local spots to places that hold special meaning, we'll work with you to create graduation portraits that celebrate your achievements, personality, and the exciting future ahead."
-    ],
-    "includes": [
-      [
-        "Multiple locations",
-        "Campus plus wherever else matters to you."
-      ],
-      [
-        "Outfit changes",
-        "Bring one or two extra outfits alongside the cap and gown for variety."
-      ],
-      [
-        "Family and friends",
-        "No limit on who joins. Parents, siblings, grandparents, classmates, pets."
-      ],
-      [
-        "Posing direction",
-        "Full guidance on posing and composition throughout the session."
-      ]
     ],
     "faqs": [
       [
@@ -857,12 +632,16 @@
       ],
       [
         "I've never had professional photos taken. Will you help with posing?",
-        "Absolutely. We'll guide you throughout the session with posing, composition, and creative direction so you can feel comfortable and confident in front of the camera. ## (For Artists & Entertainment)"
+        "Absolutely. We'll guide you throughout the session with posing, composition, and creative direction so you can feel comfortable and confident in front of the camera."
       ]
     ],
     "related": [
       "couples-engagement-photography",
       "wedding-private-dj"
+    ],
+    "hero": [
+      "The greatest milestones of your life deserve to be remembered.",
+      "Your graduation represents years of dedication, growth, and perseverance. Preserve this milestone with professional portraits you'll proudly look back on for years to come."
     ]
   },
   {
@@ -871,31 +650,12 @@
     "audience": "artist",
     "name": "Artist Branding & Song Release Photography",
     "short": "Press shots, covers and EPK images, shot by people in the industry.",
-    "promise": "Artist Branding & Song Release Photography",
     "meta": "Artist branding and song release photography for singers, EDM producers, DJs, bands and labels. Press shots, cover art and EPK imagery.",
     "overview": [
       "Before listeners press play, they see your brand.",
       "Professional artist photography plays a major role in how fans, record labels, promoters, playlist curators, and the media perceive you. Every image becomes part of your identity, helping tell your story long before the first note is heard.",
       "At RecRoc, we create promotional photography for singers, songwriters, DJs, EDM producers, bands, and recording artists who want to present themselves professionally. Whether you're releasing your first single, launching an album, announcing a tour, updating your artist profile, or building your electronic press kit (EPK), we create images that match your artistic vision and strengthen your personal brand.",
       "From cinematic portraits and album artwork to promotional campaigns and social media content, every session is designed to produce versatile images you can confidently use across every platform."
-    ],
-    "includes": [
-      [
-        "Press and profile images",
-        "Sized for Spotify, Apple Music, streaming profiles and press releases."
-      ],
-      [
-        "Cover artwork",
-        "Photography shot specifically for single covers, album art and promotional posters."
-      ],
-      [
-        "EPK set",
-        "A versatile spread of images for the electronic press kit."
-      ],
-      [
-        "Genre matched direction",
-        "Session planned around your sound, artistic identity and creative vision."
-      ]
     ],
     "faqs": [
       [
@@ -924,6 +684,10 @@
       "beat-production",
       "concert-live-photography",
       "animation-motion-graphics"
+    ],
+    "hero": [
+      "Bring your vision to life with photographers and creative directors who are part of the music industry.",
+      "From artist branding to first single and album releases, we create striking promotional photography that helps musicians stand out across streaming platforms, social media, press coverage, and marketing campaigns."
     ]
   },
   {
@@ -932,30 +696,11 @@
     "audience": "artist",
     "name": "Concert & Live Event Photography",
     "short": "Low light, fast movement, one chance.",
-    "promise": "Capture the energy, emotion, and unforgettable moments of every performance.",
     "meta": "Concert and live event photography for festivals, venues, promoters and artists. Low light performance coverage, crowd and backstage.",
     "overview": [
       "Live performances happen once, but great photography keeps those moments alive long after the final song.",
       "We partner with concert organizers, event production companies, music festivals, venues, entertainment organizations, promoters, and artists to professionally document live performances. Our goal is to capture not only what's happening on stage, but the complete experience from the crowd's energy and production quality to the moments that define your event.",
       "Whether you're organizing a concert, music festival, DJ performance, theater production, or live entertainment event, we create compelling imagery that helps promote future events, attract sponsors, strengthen your brand, and preserve the success of every production."
-    ],
-    "includes": [
-      [
-        "Stage performance",
-        "Fast lenses and proper settings for low light, smoke and moving stage lighting."
-      ],
-      [
-        "Crowd and atmosphere",
-        "The room, the reaction and the scale of the event."
-      ],
-      [
-        "Backstage",
-        "Preparation and behind the scenes, with approval from the artist or organiser."
-      ],
-      [
-        "Sponsor and report set",
-        "Images suited to sponsor reports, press releases and media kits."
-      ]
     ],
     "faqs": [
       [
@@ -976,13 +721,17 @@
       ],
       [
         "Do you travel for concerts and festivals?",
-        "Yes. We proudly serve clients throughout North Dakota, nationwide, and internationally. Travel and accommodation costs may apply depending on the project location. ##"
+        "Yes. We proudly serve clients throughout North Dakota, nationwide, and internationally. Travel and accommodation costs may apply depending on the project location."
       ]
     ],
     "related": [
       "artist-branding-photography",
       "corporate-event-dj",
       "corporate-event-video"
+    ],
+    "hero": [
+      "Capture the energy, emotion, and unforgettable moments of every performance.",
+      "From intimate live shows to large-scale festivals, we create powerful concert photography that preserves the atmosphere, excitement, and impact of every event."
     ]
   },
   {
@@ -991,31 +740,12 @@
     "audience": "business",
     "name": "Brand Identity Direction & Development",
     "short": "The visual system that stops every new piece being a fresh argument.",
-    "promise": "Your brand is more than a logo. It's the reason people choose you.",
     "meta": "Brand identity direction and development. Logo, color, typography, guidelines and creative direction for organizations and growing businesses.",
     "overview": [
       "Your brand is more than a logo, it's the visual identity people recognize, remember, and trust.",
       "We work with corporations, government agencies, nonprofit organizations, educational institutions, growing businesses, and entrepreneurs to build cohesive brand identities that create consistency across every customer touchpoint. Whether you're launching a new organization or refreshing an established brand, we help develop a professional visual identity that reflects your mission, values, and long-term vision.",
       "A strong brand identity is more than graphic design. It establishes the visual standards that guide every piece of communication, from your website and social media to presentations, advertisements, signage, merchandise, and printed materials. Instead of wondering which colors, fonts, or design style to use every time you create new content, your team has a clear and consistent visual system that keeps your brand recognizable and professional.",
       "From logo development and color palettes to typography, brand guidelines, and creative direction, we build identities designed to grow with your organization for years to come."
-    ],
-    "includes": [
-      [
-        "Logo development",
-        "A new mark, or refinement of the one you have without losing recognition."
-      ],
-      [
-        "Colour and typography",
-        "The visual standards that govern everything else."
-      ],
-      [
-        "Brand guidelines",
-        "Documented rules so your team stays consistent without asking."
-      ],
-      [
-        "Creative direction",
-        "An identity built to still work as the organization grows."
-      ]
     ],
     "faqs": [
       [
@@ -1032,13 +762,17 @@
       ],
       [
         "Will our brand work across digital and print?",
-        "Yes. Every brand identity is developed to maintain consistency across websites, social media, printed materials, presentations, signage, merchandise, and marketing campaigns. AUDIO (DJ Live services)"
+        "Yes. Every brand identity is developed to maintain consistency across websites, social media, printed materials, presentations, signage, merchandise, and marketing campaigns."
       ]
     ],
     "related": [
       "business-branding-photography",
       "commercial-advertising-video",
       "commercial-background-music"
+    ],
+    "hero": [
+      "Your brand is more than a logo. It's the reason people choose you.",
+      "Whether you're building a new brand or redefining an existing one, we help create a clear, memorable, and consistent identity that builds trust, recognition, and long-term value."
     ]
   },
   {
@@ -1047,31 +781,12 @@
     "audience": "business",
     "name": "Corporate & Organization Event DJ",
     "short": "Sound and atmosphere handled by someone who understands both.",
-    "promise": "Professional entertainment that brings people together.",
     "meta": "Corporate and organization event DJ services in North Dakota. Conferences, galas, fundraisers, banquets and community celebrations.",
     "overview": [
       "Every successful event deserves an atmosphere that reflects its purpose.",
       "We provide professional DJ services for corporations, government agencies, nonprofit organizations, universities, schools, churches, community organizations, and event planners. Whether you're hosting a conference, fundraising gala, networking event, holiday celebration, product launch, awards banquet, or community festival, we tailor every performance to match your event's goals, audience, and brand.",
       "Professional DJ entertainment is more than simply playing music. It creates energy, encourages engagement, fills transitional moments, and helps every part of your event flow naturally. Backed by our experience in audio engineering and live event production, we understand how music, sound, and audio balance influence the atmosphere of an event. Whether your goal is to create a relaxed networking environment, maintain a professional ambiance, or energize a celebration, every playlist and transition is thoughtfully planned to support the experience you want your guests to have.",
       "From the first guest's arrival to the final farewell, we work closely with your organizers, event planners, venue staff, and production teams to deliver a seamless, professional, and memorable event experience."
-    ],
-    "includes": [
-      [
-        "Custom playlist",
-        "Built around your audience, objectives, company culture and the atmosphere you want."
-      ],
-      [
-        "Wireless microphones",
-        "Professional mics and audio support for keynotes, panels, awards and announcements."
-      ],
-      [
-        "Full sound setup",
-        "System specified and balanced for your room, not carried in and switched on."
-      ],
-      [
-        "Run of show coordination",
-        "Timed with your planners, venue and AV team."
-      ]
     ],
     "faqs": [
       [
@@ -1100,6 +815,10 @@
       "corporate-event-photography",
       "concert-live-photography",
       "business-branding-photography"
+    ],
+    "hero": [
+      "Professional entertainment that brings people together.",
+      "From conferences and award ceremonies to fundraisers and community celebrations, we provide professional DJ entertainment tailored to your audience, event, and organization."
     ]
   },
   {
@@ -1108,7 +827,6 @@
     "audience": "business",
     "name": "School & Campus Events",
     "short": "Live mixing, read the room, keep it school appropriate.",
-    "promise": "Professional DJ entertainment that creates unforgettable campus experiences.",
     "meta": "School and campus event DJ services. Proms, homecoming, formals, welcome week, orientation and student events, with clean playlists.",
     "overview": [
       "Great school and campus events create lasting memories, strengthen school spirit, and bring communities together.",
@@ -1117,24 +835,6 @@
       "Unlike many event entertainment providers, we're more than someone showing up with a microphone and a pair of speakers. Our DJs perform live using professional, industry-standard DJ controllers not simply pre-made playlists. Every transition, song selection, and energy shift is mixed live and adapted in real time, creating an authentic performance that responds to the crowd throughout the event. Combined with our experience in audio engineering and live event production, we deliver entertainment that is both technically professional and genuinely engaging.",
       "From planning through the final song, we work closely with school administrators, student leaders, campus activity coordinators, and event organizers to deliver a safe, organized, professional, and memorable event experience."
     ],
-    "includes": [
-      [
-        "Live mixed sets",
-        "Industry standard controllers, live mash-ups and scratching, adapted to the room."
-      ],
-      [
-        "Clean, policy compliant playlists",
-        "Customised to school policy, age group and music guidelines."
-      ],
-      [
-        "Full sound and lighting options",
-        "Specified for gyms, halls and outdoor spaces."
-      ],
-      [
-        "Planning with student leaders",
-        "Run of show agreed with administrators and activity boards ahead of the night."
-      ]
-    ],
     "faqs": [
       [
         "What types of school and campus events do you provide DJ services for?",
@@ -1142,7 +842,7 @@
       ],
       [
         "Can you provide clean and school-appropriate music?",
-        "Absolutely. We take this responsibility very seriously. Every playlist is carefully customized to comply with your school's policies, age group, event objectives, and music guidelines, ensuring an enjoyable and appropriate experience for everyone. ###"
+        "Absolutely. We take this responsibility very seriously. Every playlist is carefully customized to comply with your school's policies, age group, event objectives, and music guidelines, ensuring an enjoyable and appropriate experience for everyone."
       ],
       [
         "Do you travel for school and university events?",
@@ -1153,6 +853,11 @@
       "corporate-event-video",
       "concert-live-photography",
       "business-branding-photography"
+    ],
+    "hero": [
+      "Professional DJ entertainment that creates unforgettable campus experiences.",
+      "At RecRoc, we believe DJing is a live performance not simply pressing play.",
+      "From school dances to university celebrations, we deliver live DJ performances using professional DJ controllers and live mixing to create unforgettable experiences."
     ]
   },
   {
@@ -1161,7 +866,6 @@
     "audience": "personal",
     "name": "Wedding & Private Celebrations",
     "short": "Your night, your music, mixed live and read in real time.",
-    "promise": "Life's biggest celebrations deserve more than just background music.",
     "meta": "Wedding and private celebration DJ services in North Dakota. Live mixed performance for weddings, anniversaries, birthdays and private parties.",
     "overview": [
       "Some celebrations only happen once, and they deserve to be remembered exactly the way you imagined them.",
@@ -1171,28 +875,14 @@
       "Unlike many event entertainment providers, we're more than someone showing up with a microphone and a pair of speakers. Our DJs perform live using professional, industry-standard DJ controllers, not simply pre-made playlists. Every transition, song selection, and energy shift is mixed live and adapted in real time, creating an authentic entertainment experience that keeps your guests engaged throughout the celebration.",
       "From your first dance to the final song of the night, our goal is simple: to help create a celebration you'll look back on with the same excitement years from now."
     ],
-    "includes": [
-      [
-        "Planning session",
-        "Musical preferences, traditions, must plays and a do not play list, agreed in advance."
-      ],
-      [
-        "Live performance",
-        "Industry standard controllers, mixed and adapted to the floor as the night moves."
-      ],
-      [
-        "Full evening coverage",
-        "Ceremony, dinner, speeches and dancing, each with its own sound."
-      ],
-      [
-        "Microphones and announcements",
-        "Wireless mics for speeches, toasts and the run of the evening."
-      ]
-    ],
     "faqs": [],
     "related": [
       "couples-engagement-photography",
       "graduation-portraits"
+    ],
+    "hero": [
+      "Life's biggest celebrations deserve more than just background music.",
+      "From once-in-a-lifetime weddings to unforgettable private parties, we deliver professional live DJ performances tailored to your vision, your guests, and the memories you'll cherish forever."
     ]
   },
   {
@@ -1201,31 +891,12 @@
     "audience": "business",
     "name": "Exclusive Commercial Background Music",
     "short": "Original music, composed for one client. You.",
-    "promise": "Original music that becomes part of your brand.",
     "meta": "Exclusive commercial background music composition for brands, agencies, filmmakers, restaurants, hotels and retail. Original, human composed, never leased.",
     "overview": [
       "Music is one of the most powerful ways people remember a brand.",
       "We compose exclusive commercial background music for businesses, brands, advertising agencies, filmmakers, content creators, restaurants, hotels, retail stores, and organizations looking for music that is truly their own. Instead of relying on generic stock libraries or AI-generated tracks, every composition is created from the ground up to reflect your brand's identity, message, and audience.",
       "Whether you need music for a commercial, promotional video, website, documentary, podcast, social media campaign, YouTube content, presentation, or in-store experience, we create original compositions designed specifically for your project.",
       "Every piece of music is composed exclusively for you. No recycled tracks, templates and AI-generated music. Just authentic, professionally produced music that helps your brand stand out and leaves a lasting impression."
-    ],
-    "includes": [
-      [
-        "Original composition",
-        "Written from scratch for your brand, never leased or resold."
-      ],
-      [
-        "Any genre",
-        "Producers and audio engineers across a wide range of styles, matched to your audience."
-      ],
-      [
-        "Clear licensing",
-        "Usage rights agreed and documented before production starts."
-      ],
-      [
-        "Remote workflow",
-        "Organised remote production for clients locally, nationally and internationally."
-      ]
     ],
     "faqs": [
       [
@@ -1246,6 +917,13 @@
       "brand-identity",
       "product-program-video",
       "animation-motion-graphics"
+    ],
+    "hero": [
+      "Original music that becomes part of your brand.",
+      "100% human-composed. Every track is created exclusively for your business, project, or creative vision.",
+      "Many production companies rely on subscription music libraries or AI-generated soundtracks because they're fast and convenient.",
+      "The reason we care so much about this is simple: when you use subscription music libraries or AI-generated soundtracks, your brand is no longer truly unique. Those same tracks can be used by countless other businesses, including your competitors.",
+      "We'll never let that happen to any RecRoc client."
     ]
   },
   {
@@ -1254,7 +932,6 @@
     "audience": "artist",
     "name": "Beat Production for Singers & Songwriters",
     "short": "Instrumentals built for your voice, not leased to four other artists.",
-    "promise": "Every great song begins with the right production.",
     "meta": "Custom beat production for singers, songwriters, independent artists and labels. Original instrumentals, exclusive, built around your voice and style.",
     "overview": [
       "Every artist has a unique sound. Your music should too.",
@@ -1262,24 +939,6 @@
       "Our producers work closely with you to understand your musical style, influences, references, and creative goals before producing a beat that complements your vocals and songwriting. Every melody, chord progression, drum pattern, and arrangement is intentionally crafted to support your performance and help your music stand out.",
       "Unlike leased beats that can be purchased by multiple artists, our productions are created specifically for your project, giving you a stronger artistic identity and a sound that's truly your own.",
       "Whether you're creating a pop ballad, hip-hop record, R&B track, EDM anthem, cinematic composition, or another genre, our goal is simple: to build the foundation for a song you'll be proud to release."
-    ],
-    "includes": [
-      [
-        "Consultation",
-        "Influences, artistic vision, vocal style, references and goals talked through first."
-      ],
-      [
-        "Original production",
-        "An instrumental written specifically for your songwriting and direction."
-      ],
-      [
-        "Revisions",
-        "You review, give feedback, and we refine until it matches the creative direction."
-      ],
-      [
-        "Mixed and delivered",
-        "Professionally mixed and prepared in high quality formats, ready to record and release."
-      ]
     ],
     "faqs": [
       [
@@ -1296,12 +955,16 @@
       ],
       [
         "Do you work with artists remotely?",
-        "Yes. We collaborate with artists locally, nationwide, and internationally through an organized remote production workflow. ##"
+        "Yes. We collaborate with artists locally, nationwide, and internationally through an organized remote production workflow."
       ]
     ],
     "related": [
       "music-videos",
       "artist-branding-photography"
+    ],
+    "hero": [
+      "Every great song begins with the right production.",
+      "From your first demo to your next release, we create original instrumentals tailored to your voice, style, and artistic vision."
     ]
   }
 ]

@@ -33,7 +33,7 @@ ${h.meta.map(([k, v]) => `      <span>${esc(k)} <b>${esc(v)}</b></span>`).join('
     title: h.title, desc: h.description, canonical: '/', active: 'home', body,
     ld: {
       '@context': 'https://schema.org', '@type': 'LocalBusiness', name: 'RecRoc',
-      description: h.description, url: site.domain, email: site.email, telephone: site.phone,
+      description: h.description, url: site.domain, email: site.email,
       slogan: site.tagline,
       address: { '@type': 'PostalAddress', addressRegion: 'ND', addressCountry: 'US' },
       areaServed: ['North Dakota', 'United States'],
@@ -91,8 +91,9 @@ services.forEach((s, idx) => {
   <section class="col hero">
     <p class="label"><a href="/services/">Services</a> <span style="color:var(--faint)">/</span> ${esc(groupName(s.group))}</p>
     <h1 class="d1 in">${words(s.name.split(' '))}</h1>
-    <p class="lede" data-rv style="--i:1">${esc(s.promise)}</p>
-    <div class="row-actions" data-rv style="--i:2">
+${s.hero.length ? `    <p class="svc-lead" data-rv>${esc(s.hero[0])}</p>` : ''}
+${s.hero.slice(1).map((h, i) => `    <p class="${i === 0 ? 'lede' : 'svc-sub'}" data-rv style="--i:${i + 1}">${esc(h)}</p>`).join('\n')}
+    <div class="row-actions" data-rv style="--i:3">
       <a class="btn btn-red" href="/contact/?s=${encodeURIComponent(groupName(s.group))}">Start a project ${ic('arrow')}</a>
     </div>
   </section>
@@ -104,13 +105,6 @@ services.forEach((s, idx) => {
   <section class="col s-md">
     <div class="prose" data-rv>
 ${s.overview.map((p, i) => `      <p class="${i === 0 ? 'lede' : ''}">${esc(p)}</p>`).join('\n')}
-    </div>
-  </section>
-
-  <section class="col s-md t-0">
-    <div class="head" data-rv>${label('What it covers', String(s.includes.length))}<h2 class="d3">${esc(s.short)}</h2></div>
-    <div class="defs">
-${s.includes.map(([t, d], i) => `      <div class="def" data-rv style="--i:${i}"><b>${esc(t)}</b><span>${esc(d)}</span></div>`).join('\n')}
     </div>
   </section>
 
@@ -136,7 +130,7 @@ ${rel.map((r, i) => `      <a class="item" href="${url(r)}" data-rv style="--i:$
     ld: {
       '@context': 'https://schema.org',
       '@graph': [
-        { '@type': 'Service', name: s.name, description: s.meta, serviceType: groupName(s.group), url: site.domain + url(s), provider: { '@type': 'LocalBusiness', name: 'RecRoc', url: site.domain, telephone: site.phone, email: site.email }, areaServed: ['North Dakota', 'United States'] },
+        { '@type': 'Service', name: s.name, description: s.meta, serviceType: groupName(s.group), url: site.domain + url(s), provider: { '@type': 'LocalBusiness', name: 'RecRoc', url: site.domain, email: site.email }, areaServed: ['North Dakota', 'United States'] },
         { '@type': 'BreadcrumbList', itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'RecRoc', item: site.domain + '/' },
           { '@type': 'ListItem', position: 2, name: 'Services', item: site.domain + '/services/' },
@@ -214,10 +208,8 @@ ${a.values.map((v, i) => `      <div class="pt" data-rv style="--i:${i}">
   </section>
 
   <section class="col s-xs t-0">
-    <ol class="steps" data-steps>
-      <span class="rail" aria-hidden="true"><span class="rail-fill" data-rail></span></span>
-${p.steps.map((s, i) => `      <li class="step" data-rv data-step style="--i:${i}">
-        <span class="dot" aria-hidden="true"></span>
+    <ol class="steps">
+${p.steps.map((s, i) => `      <li class="step" data-rv style="--i:${i}">
         ${stepArt(STEP_KEY[i], STEP_FIELD[i])}
         <p class="step-n">${s.n}</p>
         <h2>${esc(s.t)}</h2>
@@ -244,7 +236,6 @@ ${p.steps.map((s, i) => `      <li class="step" data-rv data-step style="--i:${i
     <h1 class="d1 in">${words(c.headline)}</h1>
     <div class="facts" data-rv style="--i:1">
       <span>Email <b><a href="mailto:${site.email}">${site.email}</a></b></span>
-      <span>Phone <b><a href="tel:${site.phoneHref}">${site.phone}</a></b></span>
       <span>Based <b>${esc(site.region)}</b></span>
     </div>
   </section>
@@ -276,8 +267,8 @@ ${site.groups.map(g => `            <option>${esc(g.name)}</option>`).join('\n')
   </section>`;
 
   write('contact/index.html', page({ title: c.title, desc: c.description, canonical: '/contact/', active: 'contact', body,
-    ctaH: 'Prefer to just call?',
-    ctaP: `Phone ${site.phone}. You get the studio, not a switchboard.`,
+    ctaH: 'Prefer email?',
+    ctaP: `Write to ${site.email} and it reaches the studio directly.`,
     ld: { '@context': 'https://schema.org', '@type': 'ContactPage', name: 'Start a project', url: site.domain + '/contact/' } }));
 }
 
@@ -292,7 +283,7 @@ ${site.groups.map(g => `            <option>${esc(g.name)}</option>`).join('\n')
       <a class="btn btn-soft" href="/process/">What happens next</a>
     </div>
   </section>`;
-  write('thanks/index.html', page({ title: 'Thank you | RecRoc', desc: 'Your message has been received.', canonical: '/thanks/', active: '', body, ctaH: 'Something urgent?', ctaP: `Call ${site.phone} and you will get the studio directly.` }));
+  write('thanks/index.html', page({ title: 'Thank you | RecRoc', desc: 'Your message has been received.', canonical: '/thanks/', active: '', body, ctaH: 'Anything to add?', ctaP: `Write to ${site.email} and it reaches the studio directly.` }));
 }
 
 /* ================================ 404 ================================ */

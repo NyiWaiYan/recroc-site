@@ -161,7 +161,6 @@ ${['commercial-advertising-video', 'corporate-event-video', 'business-branding-p
           <a href="/about/">About</a>
           <a href="/process/">Process</a>
           <a href="/contact/">Contact</a>
-          <a href="tel:${site.phoneHref}">${site.phone}</a>
         </div>
       </div>
       <div class="foot-base">
