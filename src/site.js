@@ -57,20 +57,27 @@
   onScroll();
 
   /* mobile sheet */
-  var burger = $('[data-burger]'), sheet = $('[data-sheet]');
+  var burgers = $$('[data-burger]'), sheet = $('[data-sheet]');
+  var burger = burgers[0];
   function closeSheet() {
-    if (!sheet || !burger) return;
+    if (!sheet) return;
     sheet.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-    burger.setAttribute('aria-label', 'Open menu');
+    if (burger) {
+      burger.setAttribute('aria-expanded', 'false');
+      burger.setAttribute('aria-label', 'Open menu');
+    }
     document.body.style.overflow = '';
   }
-  if (burger && sheet) {
-    burger.addEventListener('click', function () {
-      var open = sheet.classList.toggle('open');
-      burger.setAttribute('aria-expanded', String(open));
-      burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
-      document.body.style.overflow = open ? 'hidden' : '';
+  if (burgers.length && sheet) {
+    burgers.forEach(function (b) {
+      b.addEventListener('click', function () {
+        var open = sheet.classList.toggle('open');
+        if (burger) {
+          burger.setAttribute('aria-expanded', String(open));
+          burger.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+        }
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
     });
     sheet.addEventListener('click', function (e) { if (e.target.closest('a')) closeSheet(); });
     document.addEventListener('keydown', function (e) { if (e.key === 'Escape') closeSheet(); });

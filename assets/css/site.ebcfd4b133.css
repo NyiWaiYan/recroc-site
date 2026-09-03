@@ -236,27 +236,58 @@ hr.line { border: 0; height: 1px; background: var(--line); margin: 0; }
 .burger[aria-expanded="true"] .m { display: none; }
 .burger[aria-expanded="true"] .x { display: block; }
 
+/* Full-screen red panel. The services page has its own filters, so the menu
+   does not need to list 23 links. */
 .sheet {
-  position: fixed; inset: var(--nav-h) 0 0 0; z-index: 88;
-  background: #fff; overflow-y: auto; overscroll-behavior: contain;
-  padding-bottom: var(--s8);
-  opacity: 0; visibility: hidden; transform: translateY(-6px);
-  transition: opacity .26s var(--ease), transform .26s var(--ease), visibility .26s;
+  position: fixed; inset: 0; z-index: 95;
+  background: var(--red); color: #fff;
+  display: flex; flex-direction: column;
+  overscroll-behavior: contain;
+  opacity: 0; visibility: hidden;
+  transition: opacity .3s var(--ease), visibility .3s;
 }
-.sheet.open { opacity: 1; visibility: visible; transform: none; }
-.sheet a {
-  display: flex; align-items: center; justify-content: space-between; gap: var(--s4);
-  padding: 16px 0; border-bottom: 1px solid var(--line);
+.sheet.open { opacity: 1; visibility: visible; }
+.sheet-top {
+  height: var(--nav-h); flex: none;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.sheet-top .brand { color: #fff; margin: 0; }
+.sheet-x {
+  width: 40px; height: 40px; margin-right: -10px;
+  display: grid; place-items: center; color: #fff;
+}
+.sheet-x svg { width: 22px; height: 22px; }
+.sheet-nav {
+  flex: 1;
+  display: flex; flex-direction: column; justify-content: center;
+  gap: var(--s2);
+}
+.sheet-nav a {
   font-family: var(--display); font-weight: 500;
-  font-size: 19px; letter-spacing: -.024em;
+  font-size: clamp(30px, 9vw, 42px);
+  letter-spacing: -.04em; line-height: 1.1;
+  color: #fff;
+  padding: 8px 0;
+  opacity: 0; transform: translateY(12px);
+  transition: opacity .5s var(--ease), transform .5s var(--ease);
 }
-.sheet a svg { width: 15px; height: 15px; color: var(--line-2); flex: none; }
-.sheet .sub { font-family: var(--body); font-weight: 400; font-size: 16px; letter-spacing: -.01em; color: var(--ink-2); }
-.sheet .grp {
-  font-size: var(--t-note); color: var(--faint);
-  padding: var(--s6) 0 var(--s2);
+.sheet.open .sheet-nav a { opacity: 1; transform: none; }
+.sheet.open .sheet-nav a:nth-child(1) { transition-delay: 60ms; }
+.sheet.open .sheet-nav a:nth-child(2) { transition-delay: 110ms; }
+.sheet.open .sheet-nav a:nth-child(3) { transition-delay: 160ms; }
+.sheet.open .sheet-nav a:nth-child(4) { transition-delay: 210ms; }
+.sheet-foot {
+  flex: none;
+  display: flex; align-items: baseline; justify-content: space-between; gap: var(--s4);
+  padding-bottom: var(--s7);
+  font-size: var(--t-note);
+  /* white on red is only 4.88:1, so any transparency drops below AA */
+  color: #fff;
+  border-top: 1px solid rgba(255,255,255,.28);
+  padding-top: var(--s5);
 }
-.sheet-foot { padding-top: var(--s6); }
+.sheet-foot a { color: #fff; }
+.sheet-foot span { opacity: .85; }
 
 /* ---------- image fields ---------- */
 

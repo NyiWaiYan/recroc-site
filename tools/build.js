@@ -122,19 +122,22 @@ const nav = active => `
     </div>
   </header>
   <div class="sheet" id="sheet" data-sheet>
-    <div class="col">
+    <div class="col sheet-top">
+      <a class="brand" href="/">RecRoc</a>
+      <button class="sheet-x" type="button" data-burger aria-label="Close menu">${ic('close')}</button>
+    </div>
+    <nav class="col sheet-nav" aria-label="Mobile">
       <a href="/services/">Services</a>
-${site.groups.map(g => `      <p class="grp">${esc(g.name)}</p>
-${byGroup(g.id).map(s => `      <a class="sub" href="${url(s)}">${esc(s.name)}</a>`).join('\n')}`).join('\n')}
-      <p class="grp">Studio</p>
-      <a class="sub" href="/process/">Process</a>
-      <a class="sub" href="/about/">About</a>
-      <a class="sub" href="/contact/">Start a project</a>
+      <a href="/process/">Process</a>
+      <a href="/about/">About</a>
+      <a href="/contact/">Start a project</a>
+    </nav>
+    <div class="col sheet-foot">
+      <a href="mailto:${site.email}">${site.email}</a>
+      <span>${esc(site.tagline)}</span>
     </div>
   </div>`;
 
-/* ONE ending block. The call to action lives inside the footer, so pages do not
-   stack a red band and a dark footer on top of each other. */
 const foot = (h, p) => `
   <footer class="foot on-dark">
     <div class="col">
